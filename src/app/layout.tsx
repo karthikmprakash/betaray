@@ -32,7 +32,7 @@ export const viewport: Viewport = {
   themeColor: "#526E69",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${bricolage.variable} ${mono.variable} antialiased`}>
       <head>
