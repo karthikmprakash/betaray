@@ -1,0 +1,29 @@
+{
+  "name": "betaray-cli",
+  "version": "0.1.0",
+  "description": "CLI for Betaray test management",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "betaray": "./dist/index.js"
+  },
+  "files": ["dist"],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/index.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^12.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.4.0"
+  },
+  "keywords": ["betaray", "cli", "testing", "xray", "test-management"]
+}

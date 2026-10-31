@@ -35,3 +35,23 @@ jobs:
           tag_name: ${{ steps.tag.outputs.value }}
           generate_release_notes: true
           make_latest: true
+
+  publish-cli:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    needs: release
+    if: startsWith(github.ref, 'refs/tags/v')
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org
+      - run: npm --prefix cli install
+      - run: npm --prefix cli run build
+      - run: npm --prefix cli publish --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

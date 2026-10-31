@@ -4,10 +4,11 @@ import { useState } from "react"
 import { Menu, X, ArrowUpRight } from "lucide-react"
 
 const nav = [
-  { label: "Product", href: "#product" },
-  { label: "AI Studio", href: "#ai" },
-  { label: "Customers", href: "#customers" },
-  { label: "Pricing", href: "#pricing" },
+  { label: "Product", href: "/#product" },
+  { label: "AI Studio", href: "/#ai" },
+  { label: "Customers", href: "/#customers" },
+  { label: "Pricing", href: "/#pricing" },
+  { label: "Docs", href: "/docs" },
 ]
 
 export function Header(){

@@ -280,6 +280,19 @@ function Product() {
               <span className="h-1.5 w-1.5 rounded-full bg-[#526E69]" /> 24 results imported · just now
             </div>
           </FeatureCard>
+          <Link href="/docs#cli" className="sm:col-span-2 group">
+            <FeatureCard label="CLI & API" title="Built for AI agents.">
+              <div className="mt-5 rounded-[5px] bg-[#35434A] p-3 font-mono text-[10.5px] leading-[1.8] text-[#DDE8E1]">
+                <div className="text-[#A5BDB3]">$ betaray test create --summary &quot;Login flow&quot;</div>
+                <div className="text-[#A5BDB3]">$ betaray execution import --file results.json</div>
+                <div className="flex items-center gap-2">
+                  <span>Created BET-42</span>
+                  <span className="ml-auto rounded-[3px] bg-[#526E69] px-1.5 py-0.5 text-[9px] text-white">--json ready</span>
+                </div>
+              </div>
+              <div className="mt-3 inline-flex items-center gap-1 text-[11px] font-medium text-[#526E69] group-hover:gap-1.5 transition-all">Explore docs <ArrowRight size={11} aria-hidden="true" /></div>
+            </FeatureCard>
+          </Link>
         </div>
       </div>
     </section>
