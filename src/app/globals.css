@@ -73,3 +73,25 @@ body {
 
 ::selection { background: var(--accent-soft); color: var(--ink); }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+
+@keyframes mantaFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-1.2deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(1.2deg);
+  }
+}
+
+.manta-float {
+  animation: mantaFloat 9s ease-in-out infinite;
+  transform-origin: 50% 55%;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .manta-float {
+    animation: none;
+  }
+}

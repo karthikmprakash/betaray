@@ -2,6 +2,7 @@
 
 import { Header } from "@/components/marketing/Header"
 import { Footer } from "@/components/marketing/Footer"
+import { MantaArt, type MantaArtVariant } from "@/components/marketing/MantaArt"
 import { MantaRay } from "@/components/marketing/MantaRay"
 import Link from "next/link"
 import { useRef, useState } from "react"
@@ -83,21 +84,25 @@ const results = [
 const capabilities = [
   {
     icon: ClipboardCheck,
+    manta: "bank-right" as MantaArtVariant,
     label: "Manage with clarity",
     body: "Organize manual test cases, suites, and execution cycles in one place — with revisions, folders, and traceability built in.",
   },
   {
     icon: Search,
+    manta: "far" as MantaArtVariant,
     label: "Explore beyond the obvious",
     body: "Validate complex workflows through exploratory sessions, workflow checks, and CI-driven validation that look past the happy path.",
   },
   {
     icon: GitBranch,
+    manta: "small" as MantaArtVariant,
     label: "Connect your ecosystem",
     body: "Bring testing closer to development with Jira Cloud sync, project-scoped API tokens, and a CLI that fits your CI pipeline.",
   },
   {
     icon: BarChart3,
+    manta: "underside" as MantaArtVariant,
     label: "Understand what matters",
     body: "Turn execution data into release signals. See coverage, failures, and defects without drowning in noise.",
   },
@@ -167,7 +172,6 @@ function Hero() {
     target: heroRef,
     offset: ["start start", "end start"],
   })
-  const markY = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : 100])
   const cardY = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : -40])
 
   return (
@@ -175,17 +179,22 @@ function Hero() {
       ref={heroRef}
       className="relative overflow-hidden border-b border-[#D8E0DB]"
     >
-      <MantaRay
-        variant="fill"
-        className="pointer-events-none absolute -right-40 top-10 hidden w-[860px] text-[#526E69] opacity-[0.045] lg:block"
+      <MantaArt
+        variant="hero-loop"
+        priority
+        className="pointer-events-none absolute inset-y-0 right-0 hidden h-full w-[56%] translate-y-12 object-cover opacity-45 md:block"
+        style={{
+          maskImage: "linear-gradient(to right, transparent 0%, black 38%)",
+          WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 38%)",
+        }}
       />
-      <motion.div
-        className="pointer-events-none absolute -left-32 bottom-0 hidden w-[420px] text-[#526E69] opacity-[0.03] lg:block"
-        style={{ y: markY }}
-        aria-hidden="true"
-      >
+      <MantaArt
+        variant="bank-right"
+        className="pointer-events-none absolute -right-10 bottom-20 w-[280px] opacity-[0.12] md:hidden"
+      />
+      <div className="pointer-events-none absolute -left-32 bottom-0 hidden w-[420px] text-[#526E69] opacity-[0.03] lg:block" aria-hidden="true">
         <MantaRay variant="line" className="w-full" />
-      </motion.div>
+      </div>
 
       <div className="relative mx-auto grid max-w-[1360px] gap-14 px-6 pb-16 pt-16 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:px-10 lg:pb-24 lg:pt-24">
         <motion.div
@@ -369,9 +378,9 @@ function Philosophy() {
       id="philosophy"
       className="relative overflow-hidden border-b border-[#D8E0DB] bg-[#F7F5F0]"
     >
-      <MantaRay
-        variant="line"
-        className="pointer-events-none absolute -right-40 top-1/2 hidden w-[760px] -translate-y-1/2 text-[#526E69] opacity-[0.06] lg:block"
+      <MantaArt
+        variant="school"
+        className="pointer-events-none absolute -right-44 top-1/2 hidden w-[820px] -translate-y-1/2 opacity-[0.06] lg:block"
       />
       <div className="relative mx-auto grid max-w-[1360px] gap-14 px-6 py-24 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:px-10">
         <Reveal>
@@ -413,9 +422,9 @@ function Philosophy() {
             <div className="absolute right-5 top-5 text-[10px] font-medium uppercase tracking-[0.1em] text-[#8A9B95]">
               Ray / B
             </div>
-            <MantaRay
-              variant="line"
-              className="mx-auto mt-6 w-full max-w-[420px] text-[#526E69]"
+            <MantaArt
+              variant="bank-left"
+              className="manta-float mx-auto mt-5 w-full max-w-[430px] drop-shadow-[0_18px_28px_rgba(53,67,74,0.16)]"
             />
             <div className="mt-6 grid gap-3 border-t border-[#C7D1CA]/70 pt-5 sm:grid-cols-3">
               {[
@@ -475,9 +484,9 @@ function Capabilities() {
           return (
             <Reveal key={item.label} delay={0.04 * index} distance={18}>
               <div className="group relative h-full overflow-hidden rounded-[7px] border border-[#D8E0DB] bg-[#E6EEEA] p-6 transition-[border-color,transform] duration-200 hover:-translate-y-0.5 hover:border-[#AFC1B7]">
-                <MantaRay
-                  variant="fill"
-                  className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 text-[#526E69] opacity-[0.06] transition-opacity duration-200 group-hover:opacity-[0.1]"
+                <MantaArt
+                  variant={item.manta}
+                  className="pointer-events-none absolute -right-5 -top-5 h-28 w-28 object-contain opacity-[0.16] transition-opacity duration-200 group-hover:opacity-[0.26]"
                 />
                 <div className="relative flex h-9 w-9 items-center justify-center rounded-[5px] border border-[#C7D1CA] bg-[#F7F5F0] text-[#526E69]">
                   <Icon size={17} aria-hidden="true" />
@@ -500,15 +509,6 @@ function Capabilities() {
 function Traceability() {
   const sectionRef = useRef<HTMLElement>(null)
   const reduce = useReducedMotion() ?? false
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"],
-  })
-  const markY = useTransform(
-    scrollYProgress,
-    [0, 1],
-    [reduce ? 0 : 70, reduce ? 0 : -80],
-  )
   const chain = [
     { label: "Requirement", value: "BET-102", sub: "Payment fails with 3DS" },
     { label: "Tests", value: "3 linked", sub: "2 manual · 1 Cucumber" },
@@ -520,13 +520,14 @@ function Traceability() {
       ref={sectionRef}
       className="relative overflow-hidden bg-[#35434A] px-6 py-20 text-[#F7F5F0] lg:px-10"
     >
-      <motion.div
-        className="pointer-events-none absolute -right-28 top-4 hidden w-[540px] text-[#F7F5F0] opacity-[0.06] lg:block"
-        style={{ y: markY }}
-        aria-hidden="true"
-      >
-        <MantaRay variant="line" className="w-full" />
-      </motion.div>
+      <MantaArt
+        variant="underside"
+        className="pointer-events-none absolute -right-10 top-4 w-[300px] opacity-[0.08] lg:hidden"
+      />
+      <MantaArt
+        variant="ventral-loop"
+        className="pointer-events-none absolute -right-16 -top-8 hidden w-[460px] opacity-[0.1] lg:block"
+      />
       <div className="relative mx-auto max-w-[1360px]">
         <div className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:items-end">
           <div>
@@ -576,9 +577,9 @@ function Traceability() {
               ))}
             </div>
             <div className="mt-6 flex flex-wrap items-center gap-3 border-t border-white/10 pt-4 text-[11px] text-[#A5BDB3]">
-              <MantaRay
-                variant="line"
-                className="h-5 w-5 text-[#F7F5F0]/70"
+              <MantaArt
+                variant="far"
+                className="h-6 w-8 object-contain opacity-80"
               />
               <span>Traceability is built in. Export the matrix as evidence.</span>
               <Link
@@ -599,9 +600,9 @@ function AIStudio() {
   return (
     <section id="ai" className="grid lg:grid-cols-2">
       <div className="relative overflow-hidden border-b border-[#D8E0DB] bg-[#526E69] px-6 py-16 text-[#F7F5F0] lg:border-b-0 lg:border-r lg:px-10 lg:py-24">
-        <MantaRay
-          variant="line"
-          className="pointer-events-none absolute -right-24 top-10 w-[420px] text-[#F7F5F0] opacity-[0.08]"
+        <MantaArt
+          variant="underside"
+          className="pointer-events-none absolute -right-10 top-8 w-[240px] opacity-[0.1] sm:w-[380px]"
         />
         <SlideIn from="left" className="relative mx-auto max-w-[480px] lg:ml-auto lg:mr-0">
           <div className="text-[11px] font-medium uppercase tracking-[0.12em] text-[#DDE8E1]/65">
@@ -622,9 +623,9 @@ function AIStudio() {
         </SlideIn>
       </div>
       <div className="relative overflow-hidden bg-[#F7F5F0] px-6 py-16 lg:px-10 lg:py-24">
-        <MantaRay
-          variant="fill"
-          className="pointer-events-none absolute -left-20 bottom-0 w-[320px] text-[#526E69] opacity-[0.04]"
+        <MantaArt
+          variant="bank-right"
+          className="manta-float pointer-events-none absolute -left-16 bottom-0 w-[300px] opacity-[0.1]"
         />
         <SlideIn from="right" className="relative mx-auto max-w-[560px]">
           <div className="rounded-[6px] border border-[#D8E0DB] bg-white">
@@ -680,9 +681,9 @@ function OpenSource() {
       id="open-source"
       className="relative overflow-hidden border-y border-[#D8E0DB] bg-[#E6EEEA] px-6 py-24 lg:px-10"
     >
-      <MantaRay
-        variant="fill"
-        className="pointer-events-none absolute -right-28 -top-16 hidden w-[520px] text-[#526E69] opacity-[0.05] lg:block"
+      <MantaArt
+        variant="school"
+        className="pointer-events-none absolute -right-24 -top-10 hidden w-[680px] opacity-[0.08] lg:block"
       />
       <div className="relative mx-auto grid max-w-[1360px] gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
         <div>
@@ -850,13 +851,17 @@ function FAQ() {
 function Closing() {
   return (
     <section className="relative overflow-hidden bg-[#526E69] px-6 py-20 text-[#F7F5F0] lg:px-10">
-      <MantaRay
-        variant="line"
-        className="pointer-events-none absolute -right-32 -top-20 hidden w-[720px] text-[#F7F5F0] opacity-[0.08] lg:block"
+      <MantaArt
+        variant="underside"
+        className="pointer-events-none absolute -right-16 -top-12 w-[300px] opacity-[0.1] lg:hidden"
       />
-      <MantaRay
-        variant="fill"
-        className="pointer-events-none absolute -left-32 bottom-[-120px] hidden w-[420px] text-[#35434A] opacity-[0.06] lg:block"
+      <MantaArt
+        variant="underside"
+        className="pointer-events-none absolute -right-28 -top-20 hidden w-[680px] opacity-[0.1] lg:block"
+      />
+      <MantaArt
+        variant="bank-left"
+        className="manta-float pointer-events-none absolute -left-28 bottom-[-100px] hidden w-[420px] opacity-[0.12] lg:block"
       />
       <div className="relative mx-auto grid max-w-[1360px] gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
         <div>

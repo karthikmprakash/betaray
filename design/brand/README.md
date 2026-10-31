@@ -100,6 +100,14 @@ variant, not an instruction to recolour the existing application.
 - `vectorcraft-journal.json`: exact API command history.
 - `proposals/logo-proposal-02.*`: the side-by-side comparison that led to the
   current mark.
+- `mantas/`: the realistic manta illustration set — dorsal and ventral vector
+  source, a school key art, five 3D angle renders, and the EffectCraft project
+  (`mantas.ecproj`). Rendered transparent animations live in
+  `public/brand/betaray/mantas/`:
+  - `manta-hero-loop.webp` — a dorsal manta banking through a slow loop.
+  - `manta-ventral-loop.webp` — a ventral manta gliding below the surface.
+  - `manta-school.png` — five mantas at different angles and scales.
+  - `manta-angle-*.png` — individual bank, underside, far and small poses.
 
 The brand narrative and homepage copy live in
 [`../../docs/Betaray_Brand_Narrative.md`](../../docs/Betaray_Brand_Narrative.md).
