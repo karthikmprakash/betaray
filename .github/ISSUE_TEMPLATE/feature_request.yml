@@ -1,0 +1,34 @@
+name: Feature request
+description: Suggest an idea for Betaray
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What are you trying to do that Betaray doesn’t handle well today?
+      placeholder: As a QA lead, I want to ...
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: How should it work? Include UI/API changes if you have them in mind.
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority for you
+      options: [Nice to have, Important, Blocking adoption]
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+  - type: checkboxes
+    id: contribute
+    attributes:
+      label: Contribution
+      options:
+        - label: I’m willing to contribute a PR for this

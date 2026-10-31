@@ -1,0 +1,473 @@
+{
+  "app": "VectorCraft 0.19.0",
+  "nativeMasterReopened": true,
+  "artboards": 19,
+  "fontMatches": "exact",
+  "exportWarnings": [],
+  "counts": {
+    ".png": 30,
+    ".svg": 18,
+    ".pdf": 8,
+    ".ico": 1
+  },
+  "svgChecks": [
+    {
+      "name": "betaray-app-icon-lagoon.svg",
+      "paths": 2,
+      "viewBox": "0 0 512 512",
+      "outlined": true,
+      "rasterImages": 0
+    },
+    {
+      "name": "betaray-app-icon-lilac.svg",
+      "paths": 2,
+      "viewBox": "0 0 512 512",
+      "outlined": true,
+      "rasterImages": 0
+    },
+    {
+      "name": "betaray-app-icon-sage.svg",
+      "paths": 2,
+      "viewBox": "0 0 512 512",
+      "outlined": true,
+      "rasterImages": 0
+    },
+    {
+      "name": "betaray-horizontal-lilac.svg",
+      "paths": 2,
+      "viewBox": "0 0 640 220",
+      "outlined": true,
+      "rasterImages": 0
+    },
+    {
+      "name": "betaray-horizontal-mono.svg",
+      "paths": 2,
+      "viewBox": "0 0 640 220",
+      "outlined": true,
+      "rasterImages": 0
+    },
+    {
+      "name": "betaray-horizontal-primary.svg",
+      "paths": 2,
+      "viewBox": "0 0 640 220",
+      "outlined": true,
+      "rasterImages": 0
+    },
+    {
+      "name": "betaray-horizontal-reversed.svg",
+      "paths": 2,
+      "viewBox": "0 0 640 220",
+      "outlined": true,
+      "rasterImages": 0
+    },
+    {
+      "name": "betaray-mark-lilac.svg",
+      "paths": 1,
+      "viewBox": "0 0 256 256",
+      "outlined": true,
+      "rasterImages": 0
+    },
+    {
+      "name": "betaray-mark-mono.svg",
+      "paths": 1,
+      "viewBox": "0 0 256 256",
+      "outlined": true,
+      "rasterImages": 0
+    },
+    {
+      "name": "betaray-mark-primary.svg",
+      "paths": 1,
+      "viewBox": "0 0 256 256",
+      "outlined": true,
+      "rasterImages": 0
+    },
+    {
+      "name": "betaray-mark-reversed.svg",
+      "paths": 1,
+      "viewBox": "0 0 256 256",
+      "outlined": true,
+      "rasterImages": 0
+    },
+    {
+      "name": "betaray-maskable-icon.svg",
+      "paths": 1,
+      "viewBox": "0 0 512 512",
+      "outlined": true,
+      "rasterImages": 0
+    },
+    {
+      "name": "betaray-stacked-lilac.svg",
+      "paths": 2,
+      "viewBox": "0 0 440 440",
+      "outlined": true,
+      "rasterImages": 0
+    },
+    {
+      "name": "betaray-stacked-mono.svg",
+      "paths": 2,
+      "viewBox": "0 0 440 440",
+      "outlined": true,
+      "rasterImages": 0
+    },
+    {
+      "name": "betaray-stacked-primary.svg",
+      "paths": 2,
+      "viewBox": "0 0 440 440",
+      "outlined": true,
+      "rasterImages": 0
+    },
+    {
+      "name": "betaray-stacked-reversed.svg",
+      "paths": 2,
+      "viewBox": "0 0 440 440",
+      "outlined": true,
+      "rasterImages": 0
+    },
+    {
+      "name": "betaray-wordmark-primary.svg",
+      "paths": 1,
+      "viewBox": "0 0 480 160",
+      "outlined": true,
+      "rasterImages": 0
+    },
+    {
+      "name": "betaray-wordmark-reversed.svg",
+      "paths": 1,
+      "viewBox": "0 0 480 160",
+      "outlined": true,
+      "rasterImages": 0
+    }
+  ],
+  "pngChecks": [
+    {
+      "name": "betaray-app-icon-lagoon.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "alpha": [
+        0,
+        255
+      ]
+    },
+    {
+      "name": "betaray-app-icon-lilac.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "alpha": [
+        0,
+        255
+      ]
+    },
+    {
+      "name": "betaray-app-icon-sage.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "alpha": [
+        0,
+        255
+      ]
+    },
+    {
+      "name": "betaray-horizontal-lilac.png",
+      "size": [
+        1280,
+        440
+      ],
+      "alpha": [
+        0,
+        255
+      ]
+    },
+    {
+      "name": "betaray-horizontal-mono.png",
+      "size": [
+        1280,
+        440
+      ],
+      "alpha": [
+        0,
+        255
+      ]
+    },
+    {
+      "name": "betaray-horizontal-primary.png",
+      "size": [
+        1280,
+        440
+      ],
+      "alpha": [
+        0,
+        255
+      ]
+    },
+    {
+      "name": "betaray-horizontal-reversed.png",
+      "size": [
+        1280,
+        440
+      ],
+      "alpha": [
+        0,
+        255
+      ]
+    },
+    {
+      "name": "betaray-icon-1024.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "alpha": [
+        0,
+        255
+      ]
+    },
+    {
+      "name": "betaray-icon-128.png",
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        0,
+        255
+      ]
+    },
+    {
+      "name": "betaray-icon-16.png",
+      "size": [
+        16,
+        16
+      ],
+      "alpha": [
+        0,
+        255
+      ]
+    },
+    {
+      "name": "betaray-icon-180.png",
+      "size": [
+        180,
+        180
+      ],
+      "alpha": [
+        0,
+        255
+      ]
+    },
+    {
+      "name": "betaray-icon-192.png",
+      "size": [
+        192,
+        192
+      ],
+      "alpha": [
+        0,
+        255
+      ]
+    },
+    {
+      "name": "betaray-icon-256.png",
+      "size": [
+        256,
+        256
+      ],
+      "alpha": [
+        0,
+        255
+      ]
+    },
+    {
+      "name": "betaray-icon-32.png",
+      "size": [
+        32,
+        32
+      ],
+      "alpha": [
+        0,
+        255
+      ]
+    },
+    {
+      "name": "betaray-icon-48.png",
+      "size": [
+        48,
+        48
+      ],
+      "alpha": [
+        0,
+        255
+      ]
+    },
+    {
+      "name": "betaray-icon-512.png",
+      "size": [
+        512,
+        512
+      ],
+      "alpha": [
+        0,
+        255
+      ]
+    },
+    {
+      "name": "betaray-icon-64.png",
+      "size": [
+        64,
+        64
+      ],
+      "alpha": [
+        0,
+        255
+      ]
+    },
+    {
+      "name": "betaray-mark-lilac.png",
+      "size": [
+        512,
+        512
+      ],
+      "alpha": [
+        0,
+        255
+      ]
+    },
+    {
+      "name": "betaray-mark-mono.png",
+      "size": [
+        512,
+        512
+      ],
+      "alpha": [
+        0,
+        255
+      ]
+    },
+    {
+      "name": "betaray-mark-primary.png",
+      "size": [
+        512,
+        512
+      ],
+      "alpha": [
+        0,
+        255
+      ]
+    },
+    {
+      "name": "betaray-mark-reversed.png",
+      "size": [
+        512,
+        512
+      ],
+      "alpha": [
+        0,
+        255
+      ]
+    },
+    {
+      "name": "betaray-maskable-192.png",
+      "size": [
+        192,
+        192
+      ],
+      "alpha": [
+        255,
+        255
+      ]
+    },
+    {
+      "name": "betaray-maskable-512.png",
+      "size": [
+        512,
+        512
+      ],
+      "alpha": [
+        255,
+        255
+      ]
+    },
+    {
+      "name": "betaray-maskable-icon.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "alpha": [
+        255,
+        255
+      ]
+    },
+    {
+      "name": "betaray-stacked-lilac.png",
+      "size": [
+        880,
+        880
+      ],
+      "alpha": [
+        0,
+        255
+      ]
+    },
+    {
+      "name": "betaray-stacked-mono.png",
+      "size": [
+        880,
+        880
+      ],
+      "alpha": [
+        0,
+        255
+      ]
+    },
+    {
+      "name": "betaray-stacked-primary.png",
+      "size": [
+        880,
+        880
+      ],
+      "alpha": [
+        0,
+        255
+      ]
+    },
+    {
+      "name": "betaray-stacked-reversed.png",
+      "size": [
+        880,
+        880
+      ],
+      "alpha": [
+        0,
+        255
+      ]
+    },
+    {
+      "name": "betaray-wordmark-primary.png",
+      "size": [
+        960,
+        320
+      ],
+      "alpha": [
+        0,
+        255
+      ]
+    },
+    {
+      "name": "betaray-wordmark-reversed.png",
+      "size": [
+        960,
+        320
+      ],
+      "alpha": [
+        0,
+        255
+      ]
+    }
+  ]
+}

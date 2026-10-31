@@ -1,0 +1,174 @@
+{
+  "source": "betaray-identity.vectorcraft",
+  "artboards": [
+    {
+      "index": 0,
+      "name": "betaray-identity",
+      "width": 1440,
+      "height": 1120
+    },
+    {
+      "index": 1,
+      "name": "betaray-horizontal-primary",
+      "width": 640,
+      "height": 220
+    },
+    {
+      "index": 2,
+      "name": "betaray-horizontal-mono",
+      "width": 640,
+      "height": 220
+    },
+    {
+      "index": 3,
+      "name": "betaray-horizontal-reversed",
+      "width": 640,
+      "height": 220
+    },
+    {
+      "index": 4,
+      "name": "betaray-horizontal-lilac",
+      "width": 640,
+      "height": 220
+    },
+    {
+      "index": 5,
+      "name": "betaray-mark-primary",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "index": 6,
+      "name": "betaray-mark-mono",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "index": 7,
+      "name": "betaray-mark-reversed",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "index": 8,
+      "name": "betaray-mark-lilac",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "index": 9,
+      "name": "betaray-stacked-primary",
+      "width": 440,
+      "height": 440
+    },
+    {
+      "index": 10,
+      "name": "betaray-stacked-mono",
+      "width": 440,
+      "height": 440
+    },
+    {
+      "index": 11,
+      "name": "betaray-stacked-reversed",
+      "width": 440,
+      "height": 440
+    },
+    {
+      "index": 12,
+      "name": "betaray-stacked-lilac",
+      "width": 440,
+      "height": 440
+    },
+    {
+      "index": 13,
+      "name": "betaray-wordmark-primary",
+      "width": 480,
+      "height": 160
+    },
+    {
+      "index": 14,
+      "name": "betaray-wordmark-reversed",
+      "width": 480,
+      "height": 160
+    },
+    {
+      "index": 15,
+      "name": "betaray-app-icon-sage",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "index": 16,
+      "name": "betaray-app-icon-lagoon",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "index": 17,
+      "name": "betaray-app-icon-lilac",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "index": 18,
+      "name": "betaray-maskable-icon",
+      "width": 512,
+      "height": 512
+    }
+  ],
+  "fonts": [
+    {
+      "family": "Avenir Next",
+      "missing": false,
+      "missingGlyphs": 0,
+      "objects": 1,
+      "resolved": {
+        "family": "Avenir Next",
+        "style": "Demi Bold"
+      },
+      "runs": 1,
+      "status": "exact",
+      "style": "Demi Bold"
+    },
+    {
+      "family": "Avenir Next",
+      "missing": false,
+      "missingGlyphs": 0,
+      "objects": 5,
+      "resolved": {
+        "family": "Avenir Next",
+        "style": "Medium"
+      },
+      "runs": 5,
+      "status": "exact",
+      "style": "Medium"
+    },
+    {
+      "family": "Avenir Next",
+      "missing": false,
+      "missingGlyphs": 0,
+      "objects": 8,
+      "resolved": {
+        "family": "Avenir Next",
+        "style": "Regular"
+      },
+      "runs": 8,
+      "status": "exact",
+      "style": "Regular"
+    },
+    {
+      "family": "Mont",
+      "missing": false,
+      "missingGlyphs": 0,
+      "objects": 12,
+      "resolved": {
+        "family": "Mont",
+        "style": "SemiBold"
+      },
+      "runs": 12,
+      "status": "exact",
+      "style": "SemiBold"
+    }
+  ],
+  "warnings": []
+}

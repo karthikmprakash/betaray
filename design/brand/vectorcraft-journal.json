@@ -1,0 +1,8886 @@
+[
+  {
+    "request": {
+      "id": 1,
+      "method": "engine.execute",
+      "params": {
+        "command": "file.new",
+        "params": {
+          "name": "Betaray \u2014 Ray B identity / master",
+          "width": 1440,
+          "height": 1120,
+          "units": "Pixels",
+          "backgroundContents": "transparent"
+        }
+      }
+    },
+    "response": {
+      "id": 1,
+      "ok": true,
+      "result": {
+        "index": 2,
+        "previewMode": "default"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 2,
+      "method": "engine.execute",
+      "params": {
+        "command": "layer.new",
+        "params": {
+          "name": "Identity board / editable artwork",
+          "top": true
+        }
+      }
+    },
+    "response": {
+      "id": 2,
+      "ok": true,
+      "result": {
+        "id": 2
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 3,
+      "method": "engine.execute",
+      "params": {
+        "command": "shape.rectangle",
+        "params": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 1120,
+          "radius": 0
+        }
+      }
+    },
+    "response": {
+      "id": 3,
+      "ok": true,
+      "result": {
+        "id": 3
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 4,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setFill",
+        "params": {
+          "ids": [
+            3
+          ],
+          "color": "#F7F5F0"
+        }
+      }
+    },
+    "response": {
+      "id": 4,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 5,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setStroke",
+        "params": {
+          "ids": [
+            3
+          ],
+          "none": true
+        }
+      }
+    },
+    "response": {
+      "id": 5,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 6,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            3
+          ],
+          "name": "Warm paper"
+        }
+      }
+    },
+    "response": {
+      "id": 6,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 7,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.create",
+        "params": {
+          "text": "BETARAY",
+          "x": 64,
+          "y": 70,
+          "size": 14,
+          "color": "#35434A",
+          "font": "Avenir Next",
+          "style": "Demi Bold"
+        }
+      }
+    },
+    "response": {
+      "id": 7,
+      "ok": true,
+      "result": {
+        "bounds": {
+          "height": 19.123999999999995,
+          "width": 61.418000000000006,
+          "x": 64.0,
+          "y": 56.0
+        },
+        "id": 4
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 8,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.setStyle",
+        "params": {
+          "ids": [
+            4
+          ],
+          "tracking": 160
+        }
+      }
+    },
+    "response": {
+      "id": 8,
+      "ok": true,
+      "result": {
+        "ids": [
+          4
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 9,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            4
+          ],
+          "name": "BETARAY"
+        }
+      }
+    },
+    "response": {
+      "id": 9,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 10,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.create",
+        "params": {
+          "text": "The ray. The B. One mark.",
+          "x": 64,
+          "y": 123,
+          "size": 36,
+          "color": "#35434A",
+          "font": "Avenir Next",
+          "style": "Medium"
+        }
+      }
+    },
+    "response": {
+      "id": 10,
+      "ok": true,
+      "result": {
+        "bounds": {
+          "height": 49.17599999999999,
+          "width": 420.65999999999997,
+          "x": 64.0,
+          "y": 87.0
+        },
+        "id": 5
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 11,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.setStyle",
+        "params": {
+          "ids": [
+            5
+          ],
+          "tracking": -35
+        }
+      }
+    },
+    "response": {
+      "id": 11,
+      "ok": true,
+      "result": {
+        "ids": [
+          5
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 12,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            5
+          ],
+          "name": "The ray. The B. One mark."
+        }
+      }
+    },
+    "response": {
+      "id": 12,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 13,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.create",
+        "params": {
+          "text": "A horizontal manta ray, shaped into a two-counter monogram.",
+          "x": 65,
+          "y": 157,
+          "size": 16,
+          "color": "#677676",
+          "font": "Avenir Next",
+          "style": "Regular"
+        }
+      }
+    },
+    "response": {
+      "id": 13,
+      "ok": true,
+      "result": {
+        "bounds": {
+          "height": 21.855999999999995,
+          "width": 451.08799999999997,
+          "x": 65.0,
+          "y": 141.0
+        },
+        "id": 6
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 14,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.setStyle",
+        "params": {
+          "ids": [
+            6
+          ],
+          "tracking": 0
+        }
+      }
+    },
+    "response": {
+      "id": 14,
+      "ok": true,
+      "result": {
+        "ids": [
+          6
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 15,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            6
+          ],
+          "name": "A horizontal manta ray, shaped into a two-counter monogram."
+        }
+      }
+    },
+    "response": {
+      "id": 15,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 16,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.create",
+        "params": {
+          "d": "M 6 79\nC 29 78 48 73 65 66\nL 68 30 Q 68 18 80 18\nC 112 18 142 11 170 5\nC 159 30 150 53 132 68\nC 143 66 151 62 160 60\nC 166 58 172 59 177 62\nQ 183 66 187 70\nQ 179 70 175 78\nQ 179 86 187 86\nQ 183 90 177 94\nC 172 97 166 98 160 96\nC 151 94 143 90 132 88\nC 150 104 160 127 170 153\nC 142 146 112 138 80 138\nQ 68 138 68 126 L 65 90\nC 48 85 29 81 6 81 Q 2 80 6 79 Z\nM 87 42 C 107 41 123 34 138 27\nC 128 48 113 60 87 65 Z\nM 87 94 C 111 96 129 109 138 129\nC 120 122 106 116 87 115 Z"
+        }
+      }
+    },
+    "response": {
+      "id": 16,
+      "ok": true,
+      "result": {
+        "id": 7
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 17,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.setFillRule",
+        "params": {
+          "ids": [
+            7
+          ],
+          "rule": "evenOdd"
+        }
+      }
+    },
+    "response": {
+      "id": 17,
+      "ok": true,
+      "result": {
+        "changed": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 18,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setFill",
+        "params": {
+          "ids": [
+            7
+          ],
+          "color": "#526E69"
+        }
+      }
+    },
+    "response": {
+      "id": 18,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 19,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setStroke",
+        "params": {
+          "ids": [
+            7
+          ],
+          "none": true
+        }
+      }
+    },
+    "response": {
+      "id": 19,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 20,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.scale",
+        "params": {
+          "ids": [
+            7
+          ],
+          "sx": 175.0,
+          "sy": 175.0,
+          "origin": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "response": {
+      "id": 20,
+      "ok": true,
+      "result": {
+        "ids": [
+          7
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 21,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.move",
+        "params": {
+          "ids": [
+            7
+          ],
+          "dx": 255,
+          "dy": 229
+        }
+      }
+    },
+    "response": {
+      "id": 21,
+      "ok": true,
+      "result": {
+        "ids": [
+          7
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 22,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            7
+          ],
+          "name": "Betaray / ray-B symbol"
+        }
+      }
+    },
+    "response": {
+      "id": 22,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 23,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.create",
+        "params": {
+          "text": "betaray",
+          "x": 659,
+          "y": 420,
+          "size": 140,
+          "color": "#35434A",
+          "font": "Mont",
+          "style": "SemiBold"
+        }
+      }
+    },
+    "response": {
+      "id": 23,
+      "ok": true,
+      "result": {
+        "bounds": {
+          "height": 193.90000000000003,
+          "width": 571.2,
+          "x": 659.0,
+          "y": 279.29999999999995
+        },
+        "id": 8
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 24,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.setStyle",
+        "params": {
+          "ids": [
+            8
+          ],
+          "tracking": -35
+        }
+      }
+    },
+    "response": {
+      "id": 24,
+      "ok": true,
+      "result": {
+        "ids": [
+          8
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 25,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            8
+          ],
+          "name": "Betaray / wordmark"
+        }
+      }
+    },
+    "response": {
+      "id": 25,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 26,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.create",
+        "params": {
+          "text": "PRIMARY  /  LAGOON + SLATE",
+          "x": 65,
+          "y": 575,
+          "size": 12,
+          "color": "#677676",
+          "font": "Avenir Next",
+          "style": "Regular"
+        }
+      }
+    },
+    "response": {
+      "id": 26,
+      "ok": true,
+      "result": {
+        "bounds": {
+          "height": 16.392000000000053,
+          "width": 168.51600000000005,
+          "x": 65.0,
+          "y": 563.0
+        },
+        "id": 9
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 27,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.setStyle",
+        "params": {
+          "ids": [
+            9
+          ],
+          "tracking": 100
+        }
+      }
+    },
+    "response": {
+      "id": 27,
+      "ok": true,
+      "result": {
+        "ids": [
+          9
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 28,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            9
+          ],
+          "name": "PRIMARY  /  LAGOON + SLATE"
+        }
+      }
+    },
+    "response": {
+      "id": 28,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 29,
+      "method": "engine.execute",
+      "params": {
+        "command": "shape.rectangle",
+        "params": {
+          "x": 0,
+          "y": 620,
+          "width": 1440,
+          "height": 258,
+          "radius": 0
+        }
+      }
+    },
+    "response": {
+      "id": 29,
+      "ok": true,
+      "result": {
+        "id": 10
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 30,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setFill",
+        "params": {
+          "ids": [
+            10
+          ],
+          "color": "#526E69"
+        }
+      }
+    },
+    "response": {
+      "id": 30,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 31,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setStroke",
+        "params": {
+          "ids": [
+            10
+          ],
+          "none": true
+        }
+      }
+    },
+    "response": {
+      "id": 31,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 32,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            10
+          ],
+          "name": "Reverse usage / lagoon field"
+        }
+      }
+    },
+    "response": {
+      "id": 32,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 33,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.create",
+        "params": {
+          "d": "M 6 79\nC 29 78 48 73 65 66\nL 68 30 Q 68 18 80 18\nC 112 18 142 11 170 5\nC 159 30 150 53 132 68\nC 143 66 151 62 160 60\nC 166 58 172 59 177 62\nQ 183 66 187 70\nQ 179 70 175 78\nQ 179 86 187 86\nQ 183 90 177 94\nC 172 97 166 98 160 96\nC 151 94 143 90 132 88\nC 150 104 160 127 170 153\nC 142 146 112 138 80 138\nQ 68 138 68 126 L 65 90\nC 48 85 29 81 6 81 Q 2 80 6 79 Z\nM 87 42 C 107 41 123 34 138 27\nC 128 48 113 60 87 65 Z\nM 87 94 C 111 96 129 109 138 129\nC 120 122 106 116 87 115 Z"
+        }
+      }
+    },
+    "response": {
+      "id": 33,
+      "ok": true,
+      "result": {
+        "id": 11
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 34,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.setFillRule",
+        "params": {
+          "ids": [
+            11
+          ],
+          "rule": "evenOdd"
+        }
+      }
+    },
+    "response": {
+      "id": 34,
+      "ok": true,
+      "result": {
+        "changed": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 35,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setFill",
+        "params": {
+          "ids": [
+            11
+          ],
+          "color": "#F7F5F0"
+        }
+      }
+    },
+    "response": {
+      "id": 35,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 36,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setStroke",
+        "params": {
+          "ids": [
+            11
+          ],
+          "none": true
+        }
+      }
+    },
+    "response": {
+      "id": 36,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 37,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.scale",
+        "params": {
+          "ids": [
+            11
+          ],
+          "sx": 88.0,
+          "sy": 88.0,
+          "origin": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "response": {
+      "id": 37,
+      "ok": true,
+      "result": {
+        "ids": [
+          11
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 38,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.move",
+        "params": {
+          "ids": [
+            11
+          ],
+          "dx": 73,
+          "dy": 674
+        }
+      }
+    },
+    "response": {
+      "id": 38,
+      "ok": true,
+      "result": {
+        "ids": [
+          11
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 39,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            11
+          ],
+          "name": "Betaray / ray-B symbol"
+        }
+      }
+    },
+    "response": {
+      "id": 39,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 40,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.create",
+        "params": {
+          "text": "betaray",
+          "x": 290,
+          "y": 777,
+          "size": 82,
+          "color": "#F7F5F0",
+          "font": "Mont",
+          "style": "SemiBold"
+        }
+      }
+    },
+    "response": {
+      "id": 40,
+      "ok": true,
+      "result": {
+        "bounds": {
+          "height": 113.56999999999994,
+          "width": 334.55999999999995,
+          "x": 290.0,
+          "y": 694.59
+        },
+        "id": 12
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 41,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.setStyle",
+        "params": {
+          "ids": [
+            12
+          ],
+          "tracking": -35
+        }
+      }
+    },
+    "response": {
+      "id": 41,
+      "ok": true,
+      "result": {
+        "ids": [
+          12
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 42,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            12
+          ],
+          "name": "Betaray / wordmark"
+        }
+      }
+    },
+    "response": {
+      "id": 42,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 43,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.create",
+        "params": {
+          "text": "One colour. No gradients. The counters stay transparent.",
+          "x": 830,
+          "y": 751,
+          "size": 15,
+          "color": "#F7F5F0",
+          "font": "Avenir Next",
+          "style": "Regular"
+        }
+      }
+    },
+    "response": {
+      "id": 43,
+      "ok": true,
+      "result": {
+        "bounds": {
+          "height": 20.49000000000001,
+          "width": 385.0049999999999,
+          "x": 830.0,
+          "y": 736.0
+        },
+        "id": 13
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 44,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.setStyle",
+        "params": {
+          "ids": [
+            13
+          ],
+          "tracking": 0
+        }
+      }
+    },
+    "response": {
+      "id": 44,
+      "ok": true,
+      "result": {
+        "ids": [
+          13
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 45,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            13
+          ],
+          "name": "One colour. No gradients. The counters stay transparent."
+        }
+      }
+    },
+    "response": {
+      "id": 45,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 46,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.create",
+        "params": {
+          "text": "MARK + COLOUR VARIANTS",
+          "x": 65,
+          "y": 927,
+          "size": 12,
+          "color": "#677676",
+          "font": "Avenir Next",
+          "style": "Regular"
+        }
+      }
+    },
+    "response": {
+      "id": 46,
+      "ok": true,
+      "result": {
+        "bounds": {
+          "height": 16.392000000000053,
+          "width": 157.75200000000004,
+          "x": 65.0,
+          "y": 915.0
+        },
+        "id": 14
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 47,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.setStyle",
+        "params": {
+          "ids": [
+            14
+          ],
+          "tracking": 100
+        }
+      }
+    },
+    "response": {
+      "id": 47,
+      "ok": true,
+      "result": {
+        "ids": [
+          14
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 48,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            14
+          ],
+          "name": "MARK + COLOUR VARIANTS"
+        }
+      }
+    },
+    "response": {
+      "id": 48,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 49,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.create",
+        "params": {
+          "d": "M 6 79\nC 29 78 48 73 65 66\nL 68 30 Q 68 18 80 18\nC 112 18 142 11 170 5\nC 159 30 150 53 132 68\nC 143 66 151 62 160 60\nC 166 58 172 59 177 62\nQ 183 66 187 70\nQ 179 70 175 78\nQ 179 86 187 86\nQ 183 90 177 94\nC 172 97 166 98 160 96\nC 151 94 143 90 132 88\nC 150 104 160 127 170 153\nC 142 146 112 138 80 138\nQ 68 138 68 126 L 65 90\nC 48 85 29 81 6 81 Q 2 80 6 79 Z\nM 87 42 C 107 41 123 34 138 27\nC 128 48 113 60 87 65 Z\nM 87 94 C 111 96 129 109 138 129\nC 120 122 106 116 87 115 Z"
+        }
+      }
+    },
+    "response": {
+      "id": 49,
+      "ok": true,
+      "result": {
+        "id": 15
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 50,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.setFillRule",
+        "params": {
+          "ids": [
+            15
+          ],
+          "rule": "evenOdd"
+        }
+      }
+    },
+    "response": {
+      "id": 50,
+      "ok": true,
+      "result": {
+        "changed": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 51,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setFill",
+        "params": {
+          "ids": [
+            15
+          ],
+          "color": "#526E69"
+        }
+      }
+    },
+    "response": {
+      "id": 51,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 52,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setStroke",
+        "params": {
+          "ids": [
+            15
+          ],
+          "none": true
+        }
+      }
+    },
+    "response": {
+      "id": 52,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 53,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.scale",
+        "params": {
+          "ids": [
+            15
+          ],
+          "sx": 62.0,
+          "sy": 62.0,
+          "origin": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "response": {
+      "id": 53,
+      "ok": true,
+      "result": {
+        "ids": [
+          15
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 54,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.move",
+        "params": {
+          "ids": [
+            15
+          ],
+          "dx": 65,
+          "dy": 953
+        }
+      }
+    },
+    "response": {
+      "id": 54,
+      "ok": true,
+      "result": {
+        "ids": [
+          15
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 55,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            15
+          ],
+          "name": "Betaray / ray-B symbol"
+        }
+      }
+    },
+    "response": {
+      "id": 55,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 56,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.create",
+        "params": {
+          "d": "M 6 79\nC 29 78 48 73 65 66\nL 68 30 Q 68 18 80 18\nC 112 18 142 11 170 5\nC 159 30 150 53 132 68\nC 143 66 151 62 160 60\nC 166 58 172 59 177 62\nQ 183 66 187 70\nQ 179 70 175 78\nQ 179 86 187 86\nQ 183 90 177 94\nC 172 97 166 98 160 96\nC 151 94 143 90 132 88\nC 150 104 160 127 170 153\nC 142 146 112 138 80 138\nQ 68 138 68 126 L 65 90\nC 48 85 29 81 6 81 Q 2 80 6 79 Z\nM 87 42 C 107 41 123 34 138 27\nC 128 48 113 60 87 65 Z\nM 87 94 C 111 96 129 109 138 129\nC 120 122 106 116 87 115 Z"
+        }
+      }
+    },
+    "response": {
+      "id": 56,
+      "ok": true,
+      "result": {
+        "id": 16
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 57,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.setFillRule",
+        "params": {
+          "ids": [
+            16
+          ],
+          "rule": "evenOdd"
+        }
+      }
+    },
+    "response": {
+      "id": 57,
+      "ok": true,
+      "result": {
+        "changed": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 58,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setFill",
+        "params": {
+          "ids": [
+            16
+          ],
+          "color": "#35434A"
+        }
+      }
+    },
+    "response": {
+      "id": 58,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 59,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setStroke",
+        "params": {
+          "ids": [
+            16
+          ],
+          "none": true
+        }
+      }
+    },
+    "response": {
+      "id": 59,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 60,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.scale",
+        "params": {
+          "ids": [
+            16
+          ],
+          "sx": 62.0,
+          "sy": 62.0,
+          "origin": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "response": {
+      "id": 60,
+      "ok": true,
+      "result": {
+        "ids": [
+          16
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 61,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.move",
+        "params": {
+          "ids": [
+            16
+          ],
+          "dx": 255,
+          "dy": 953
+        }
+      }
+    },
+    "response": {
+      "id": 61,
+      "ok": true,
+      "result": {
+        "ids": [
+          16
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 62,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            16
+          ],
+          "name": "Betaray / ray-B symbol"
+        }
+      }
+    },
+    "response": {
+      "id": 62,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 63,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.create",
+        "params": {
+          "d": "M 6 79\nC 29 78 48 73 65 66\nL 68 30 Q 68 18 80 18\nC 112 18 142 11 170 5\nC 159 30 150 53 132 68\nC 143 66 151 62 160 60\nC 166 58 172 59 177 62\nQ 183 66 187 70\nQ 179 70 175 78\nQ 179 86 187 86\nQ 183 90 177 94\nC 172 97 166 98 160 96\nC 151 94 143 90 132 88\nC 150 104 160 127 170 153\nC 142 146 112 138 80 138\nQ 68 138 68 126 L 65 90\nC 48 85 29 81 6 81 Q 2 80 6 79 Z\nM 87 42 C 107 41 123 34 138 27\nC 128 48 113 60 87 65 Z\nM 87 94 C 111 96 129 109 138 129\nC 120 122 106 116 87 115 Z"
+        }
+      }
+    },
+    "response": {
+      "id": 63,
+      "ok": true,
+      "result": {
+        "id": 17
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 64,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.setFillRule",
+        "params": {
+          "ids": [
+            17
+          ],
+          "rule": "evenOdd"
+        }
+      }
+    },
+    "response": {
+      "id": 64,
+      "ok": true,
+      "result": {
+        "changed": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 65,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setFill",
+        "params": {
+          "ids": [
+            17
+          ],
+          "color": "#6B6AD6"
+        }
+      }
+    },
+    "response": {
+      "id": 65,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 66,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setStroke",
+        "params": {
+          "ids": [
+            17
+          ],
+          "none": true
+        }
+      }
+    },
+    "response": {
+      "id": 66,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 67,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.scale",
+        "params": {
+          "ids": [
+            17
+          ],
+          "sx": 62.0,
+          "sy": 62.0,
+          "origin": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "response": {
+      "id": 67,
+      "ok": true,
+      "result": {
+        "ids": [
+          17
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 68,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.move",
+        "params": {
+          "ids": [
+            17
+          ],
+          "dx": 445,
+          "dy": 953
+        }
+      }
+    },
+    "response": {
+      "id": 68,
+      "ok": true,
+      "result": {
+        "ids": [
+          17
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 69,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            17
+          ],
+          "name": "Betaray / ray-B symbol"
+        }
+      }
+    },
+    "response": {
+      "id": 69,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 70,
+      "method": "engine.execute",
+      "params": {
+        "command": "shape.rectangle",
+        "params": {
+          "x": 665,
+          "y": 939,
+          "width": 122,
+          "height": 122,
+          "radius": 28
+        }
+      }
+    },
+    "response": {
+      "id": 70,
+      "ok": true,
+      "result": {
+        "id": 18
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 71,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setFill",
+        "params": {
+          "ids": [
+            18
+          ],
+          "color": "#E6EEEA"
+        }
+      }
+    },
+    "response": {
+      "id": 71,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 72,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setStroke",
+        "params": {
+          "ids": [
+            18
+          ],
+          "none": true
+        }
+      }
+    },
+    "response": {
+      "id": 72,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 73,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            18
+          ],
+          "name": "App icon / mist"
+        }
+      }
+    },
+    "response": {
+      "id": 73,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 74,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.create",
+        "params": {
+          "d": "M 6 79\nC 29 78 48 73 65 66\nL 68 30 Q 68 18 80 18\nC 112 18 142 11 170 5\nC 159 30 150 53 132 68\nC 143 66 151 62 160 60\nC 166 58 172 59 177 62\nQ 183 66 187 70\nQ 179 70 175 78\nQ 179 86 187 86\nQ 183 90 177 94\nC 172 97 166 98 160 96\nC 151 94 143 90 132 88\nC 150 104 160 127 170 153\nC 142 146 112 138 80 138\nQ 68 138 68 126 L 65 90\nC 48 85 29 81 6 81 Q 2 80 6 79 Z\nM 87 42 C 107 41 123 34 138 27\nC 128 48 113 60 87 65 Z\nM 87 94 C 111 96 129 109 138 129\nC 120 122 106 116 87 115 Z"
+        }
+      }
+    },
+    "response": {
+      "id": 74,
+      "ok": true,
+      "result": {
+        "id": 19
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 75,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.setFillRule",
+        "params": {
+          "ids": [
+            19
+          ],
+          "rule": "evenOdd"
+        }
+      }
+    },
+    "response": {
+      "id": 75,
+      "ok": true,
+      "result": {
+        "changed": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 76,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setFill",
+        "params": {
+          "ids": [
+            19
+          ],
+          "color": "#526E69"
+        }
+      }
+    },
+    "response": {
+      "id": 76,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 77,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setStroke",
+        "params": {
+          "ids": [
+            19
+          ],
+          "none": true
+        }
+      }
+    },
+    "response": {
+      "id": 77,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 78,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.scale",
+        "params": {
+          "ids": [
+            19
+          ],
+          "sx": 57.99999999999999,
+          "sy": 57.99999999999999,
+          "origin": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "response": {
+      "id": 78,
+      "ok": true,
+      "result": {
+        "ids": [
+          19
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 79,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.move",
+        "params": {
+          "ids": [
+            19
+          ],
+          "dx": 670,
+          "dy": 960
+        }
+      }
+    },
+    "response": {
+      "id": 79,
+      "ok": true,
+      "result": {
+        "ids": [
+          19
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 80,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            19
+          ],
+          "name": "Betaray / ray-B symbol"
+        }
+      }
+    },
+    "response": {
+      "id": 80,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 81,
+      "method": "engine.execute",
+      "params": {
+        "command": "shape.rectangle",
+        "params": {
+          "x": 870,
+          "y": 941,
+          "width": 96,
+          "height": 42,
+          "radius": 6
+        }
+      }
+    },
+    "response": {
+      "id": 81,
+      "ok": true,
+      "result": {
+        "id": 20
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 82,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setFill",
+        "params": {
+          "ids": [
+            20
+          ],
+          "color": "#526E69"
+        }
+      }
+    },
+    "response": {
+      "id": 82,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 83,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setStroke",
+        "params": {
+          "ids": [
+            20
+          ],
+          "none": true
+        }
+      }
+    },
+    "response": {
+      "id": 83,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 84,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            20
+          ],
+          "name": "Lagoon swatch"
+        }
+      }
+    },
+    "response": {
+      "id": 84,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 85,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.create",
+        "params": {
+          "text": "Lagoon",
+          "x": 870,
+          "y": 1010,
+          "size": 12,
+          "color": "#35434A",
+          "font": "Avenir Next",
+          "style": "Medium"
+        }
+      }
+    },
+    "response": {
+      "id": 85,
+      "ok": true,
+      "result": {
+        "bounds": {
+          "height": 16.392000000000053,
+          "width": 41.84400000000005,
+          "x": 870.0,
+          "y": 998.0
+        },
+        "id": 21
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 86,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.setStyle",
+        "params": {
+          "ids": [
+            21
+          ],
+          "tracking": 0
+        }
+      }
+    },
+    "response": {
+      "id": 86,
+      "ok": true,
+      "result": {
+        "ids": [
+          21
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 87,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            21
+          ],
+          "name": "Lagoon"
+        }
+      }
+    },
+    "response": {
+      "id": 87,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 88,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.create",
+        "params": {
+          "text": "#526E69",
+          "x": 870,
+          "y": 1030,
+          "size": 11,
+          "color": "#677676",
+          "font": "Avenir Next",
+          "style": "Regular"
+        }
+      }
+    },
+    "response": {
+      "id": 88,
+      "ok": true,
+      "result": {
+        "bounds": {
+          "height": 15.026000000000067,
+          "width": 44.52800000000002,
+          "x": 870.0,
+          "y": 1019.0
+        },
+        "id": 22
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 89,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.setStyle",
+        "params": {
+          "ids": [
+            22
+          ],
+          "tracking": 0
+        }
+      }
+    },
+    "response": {
+      "id": 89,
+      "ok": true,
+      "result": {
+        "ids": [
+          22
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 90,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            22
+          ],
+          "name": "#526E69"
+        }
+      }
+    },
+    "response": {
+      "id": 90,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 91,
+      "method": "engine.execute",
+      "params": {
+        "command": "shape.rectangle",
+        "params": {
+          "x": 994,
+          "y": 941,
+          "width": 96,
+          "height": 42,
+          "radius": 6
+        }
+      }
+    },
+    "response": {
+      "id": 91,
+      "ok": true,
+      "result": {
+        "id": 23
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 92,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setFill",
+        "params": {
+          "ids": [
+            23
+          ],
+          "color": "#35434A"
+        }
+      }
+    },
+    "response": {
+      "id": 92,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 93,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setStroke",
+        "params": {
+          "ids": [
+            23
+          ],
+          "none": true
+        }
+      }
+    },
+    "response": {
+      "id": 93,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 94,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            23
+          ],
+          "name": "Slate swatch"
+        }
+      }
+    },
+    "response": {
+      "id": 94,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 95,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.create",
+        "params": {
+          "text": "Slate",
+          "x": 994,
+          "y": 1010,
+          "size": 12,
+          "color": "#35434A",
+          "font": "Avenir Next",
+          "style": "Medium"
+        }
+      }
+    },
+    "response": {
+      "id": 95,
+      "ok": true,
+      "result": {
+        "bounds": {
+          "height": 16.392000000000053,
+          "width": 27.15599999999995,
+          "x": 994.0,
+          "y": 998.0
+        },
+        "id": 24
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 96,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.setStyle",
+        "params": {
+          "ids": [
+            24
+          ],
+          "tracking": 0
+        }
+      }
+    },
+    "response": {
+      "id": 96,
+      "ok": true,
+      "result": {
+        "ids": [
+          24
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 97,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            24
+          ],
+          "name": "Slate"
+        }
+      }
+    },
+    "response": {
+      "id": 97,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 98,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.create",
+        "params": {
+          "text": "#35434A",
+          "x": 994,
+          "y": 1030,
+          "size": 11,
+          "color": "#677676",
+          "font": "Avenir Next",
+          "style": "Regular"
+        }
+      }
+    },
+    "response": {
+      "id": 98,
+      "ok": true,
+      "result": {
+        "bounds": {
+          "height": 15.026000000000067,
+          "width": 45.715999999999894,
+          "x": 994.0,
+          "y": 1019.0
+        },
+        "id": 25
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 99,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.setStyle",
+        "params": {
+          "ids": [
+            25
+          ],
+          "tracking": 0
+        }
+      }
+    },
+    "response": {
+      "id": 99,
+      "ok": true,
+      "result": {
+        "ids": [
+          25
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 100,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            25
+          ],
+          "name": "#35434A"
+        }
+      }
+    },
+    "response": {
+      "id": 100,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 101,
+      "method": "engine.execute",
+      "params": {
+        "command": "shape.rectangle",
+        "params": {
+          "x": 1118,
+          "y": 941,
+          "width": 96,
+          "height": 42,
+          "radius": 6
+        }
+      }
+    },
+    "response": {
+      "id": 101,
+      "ok": true,
+      "result": {
+        "id": 26
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 102,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setFill",
+        "params": {
+          "ids": [
+            26
+          ],
+          "color": "#6B6AD6"
+        }
+      }
+    },
+    "response": {
+      "id": 102,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 103,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setStroke",
+        "params": {
+          "ids": [
+            26
+          ],
+          "none": true
+        }
+      }
+    },
+    "response": {
+      "id": 103,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 104,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            26
+          ],
+          "name": "Lilac swatch"
+        }
+      }
+    },
+    "response": {
+      "id": 104,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 105,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.create",
+        "params": {
+          "text": "Lilac",
+          "x": 1118,
+          "y": 1010,
+          "size": 12,
+          "color": "#35434A",
+          "font": "Avenir Next",
+          "style": "Medium"
+        }
+      }
+    },
+    "response": {
+      "id": 105,
+      "ok": true,
+      "result": {
+        "bounds": {
+          "height": 16.392000000000053,
+          "width": 24.791999999999916,
+          "x": 1118.0,
+          "y": 998.0
+        },
+        "id": 27
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 106,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.setStyle",
+        "params": {
+          "ids": [
+            27
+          ],
+          "tracking": 0
+        }
+      }
+    },
+    "response": {
+      "id": 106,
+      "ok": true,
+      "result": {
+        "ids": [
+          27
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 107,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            27
+          ],
+          "name": "Lilac"
+        }
+      }
+    },
+    "response": {
+      "id": 107,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 108,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.create",
+        "params": {
+          "text": "#6B6AD6",
+          "x": 1118,
+          "y": 1030,
+          "size": 11,
+          "color": "#677676",
+          "font": "Avenir Next",
+          "style": "Regular"
+        }
+      }
+    },
+    "response": {
+      "id": 108,
+      "ok": true,
+      "result": {
+        "bounds": {
+          "height": 15.026000000000067,
+          "width": 48.278999999999996,
+          "x": 1118.0,
+          "y": 1019.0
+        },
+        "id": 28
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 109,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.setStyle",
+        "params": {
+          "ids": [
+            28
+          ],
+          "tracking": 0
+        }
+      }
+    },
+    "response": {
+      "id": 109,
+      "ok": true,
+      "result": {
+        "ids": [
+          28
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 110,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            28
+          ],
+          "name": "#6B6AD6"
+        }
+      }
+    },
+    "response": {
+      "id": 110,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 111,
+      "method": "engine.execute",
+      "params": {
+        "command": "shape.rectangle",
+        "params": {
+          "x": 1242,
+          "y": 941,
+          "width": 96,
+          "height": 42,
+          "radius": 6
+        }
+      }
+    },
+    "response": {
+      "id": 111,
+      "ok": true,
+      "result": {
+        "id": 29
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 112,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setFill",
+        "params": {
+          "ids": [
+            29
+          ],
+          "color": "#F7F5F0"
+        }
+      }
+    },
+    "response": {
+      "id": 112,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 113,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setStroke",
+        "params": {
+          "ids": [
+            29
+          ],
+          "none": true
+        }
+      }
+    },
+    "response": {
+      "id": 113,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 114,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            29
+          ],
+          "name": "Paper swatch"
+        }
+      }
+    },
+    "response": {
+      "id": 114,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 115,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.create",
+        "params": {
+          "text": "Paper",
+          "x": 1242,
+          "y": 1010,
+          "size": 12,
+          "color": "#35434A",
+          "font": "Avenir Next",
+          "style": "Medium"
+        }
+      }
+    },
+    "response": {
+      "id": 115,
+      "ok": true,
+      "result": {
+        "bounds": {
+          "height": 16.392000000000053,
+          "width": 31.799999999999955,
+          "x": 1242.0,
+          "y": 998.0
+        },
+        "id": 30
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 116,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.setStyle",
+        "params": {
+          "ids": [
+            30
+          ],
+          "tracking": 0
+        }
+      }
+    },
+    "response": {
+      "id": 116,
+      "ok": true,
+      "result": {
+        "ids": [
+          30
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 117,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            30
+          ],
+          "name": "Paper"
+        }
+      }
+    },
+    "response": {
+      "id": 117,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 118,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.create",
+        "params": {
+          "text": "#F7F5F0",
+          "x": 1242,
+          "y": 1030,
+          "size": 11,
+          "color": "#677676",
+          "font": "Avenir Next",
+          "style": "Regular"
+        }
+      }
+    },
+    "response": {
+      "id": 118,
+      "ok": true,
+      "result": {
+        "bounds": {
+          "height": 15.026000000000067,
+          "width": 43.80199999999991,
+          "x": 1242.0,
+          "y": 1019.0
+        },
+        "id": 31
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 119,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.setStyle",
+        "params": {
+          "ids": [
+            31
+          ],
+          "tracking": 0
+        }
+      }
+    },
+    "response": {
+      "id": 119,
+      "ok": true,
+      "result": {
+        "ids": [
+          31
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 120,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            31
+          ],
+          "name": "#F7F5F0"
+        }
+      }
+    },
+    "response": {
+      "id": 120,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 121,
+      "method": "engine.execute",
+      "params": {
+        "command": "artboard.new",
+        "params": {
+          "x": 0,
+          "y": 1280,
+          "width": 640,
+          "height": 220,
+          "name": "betaray-horizontal-primary"
+        }
+      }
+    },
+    "response": {
+      "id": 121,
+      "ok": true,
+      "result": {
+        "index": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 122,
+      "method": "engine.execute",
+      "params": {
+        "command": "layer.new",
+        "params": {
+          "name": "betaray-horizontal-primary",
+          "top": true
+        }
+      }
+    },
+    "response": {
+      "id": 122,
+      "ok": true,
+      "result": {
+        "id": 32
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 123,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.create",
+        "params": {
+          "d": "M 6 79\nC 29 78 48 73 65 66\nL 68 30 Q 68 18 80 18\nC 112 18 142 11 170 5\nC 159 30 150 53 132 68\nC 143 66 151 62 160 60\nC 166 58 172 59 177 62\nQ 183 66 187 70\nQ 179 70 175 78\nQ 179 86 187 86\nQ 183 90 177 94\nC 172 97 166 98 160 96\nC 151 94 143 90 132 88\nC 150 104 160 127 170 153\nC 142 146 112 138 80 138\nQ 68 138 68 126 L 65 90\nC 48 85 29 81 6 81 Q 2 80 6 79 Z\nM 87 42 C 107 41 123 34 138 27\nC 128 48 113 60 87 65 Z\nM 87 94 C 111 96 129 109 138 129\nC 120 122 106 116 87 115 Z"
+        }
+      }
+    },
+    "response": {
+      "id": 123,
+      "ok": true,
+      "result": {
+        "id": 33
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 124,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.setFillRule",
+        "params": {
+          "ids": [
+            33
+          ],
+          "rule": "evenOdd"
+        }
+      }
+    },
+    "response": {
+      "id": 124,
+      "ok": true,
+      "result": {
+        "changed": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 125,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setFill",
+        "params": {
+          "ids": [
+            33
+          ],
+          "color": "#526E69"
+        }
+      }
+    },
+    "response": {
+      "id": 125,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 126,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setStroke",
+        "params": {
+          "ids": [
+            33
+          ],
+          "none": true
+        }
+      }
+    },
+    "response": {
+      "id": 126,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 127,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.scale",
+        "params": {
+          "ids": [
+            33
+          ],
+          "sx": 94.0,
+          "sy": 94.0,
+          "origin": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "response": {
+      "id": 127,
+      "ok": true,
+      "result": {
+        "ids": [
+          33
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 128,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.move",
+        "params": {
+          "ids": [
+            33
+          ],
+          "dx": 36,
+          "dy": 1318
+        }
+      }
+    },
+    "response": {
+      "id": 128,
+      "ok": true,
+      "result": {
+        "ids": [
+          33
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 129,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            33
+          ],
+          "name": "Betaray / ray-B symbol"
+        }
+      }
+    },
+    "response": {
+      "id": 129,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 130,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.create",
+        "params": {
+          "text": "betaray",
+          "x": 240,
+          "y": 1420,
+          "size": 94,
+          "color": "#35434A",
+          "font": "Mont",
+          "style": "SemiBold"
+        }
+      }
+    },
+    "response": {
+      "id": 130,
+      "ok": true,
+      "result": {
+        "bounds": {
+          "height": 130.19000000000005,
+          "width": 383.52,
+          "x": 240.0,
+          "y": 1325.53
+        },
+        "id": 34
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 131,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.setStyle",
+        "params": {
+          "ids": [
+            34
+          ],
+          "tracking": -35
+        }
+      }
+    },
+    "response": {
+      "id": 131,
+      "ok": true,
+      "result": {
+        "ids": [
+          34
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 132,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            34
+          ],
+          "name": "Betaray / wordmark"
+        }
+      }
+    },
+    "response": {
+      "id": 132,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 133,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.group",
+        "params": {
+          "ids": [
+            33,
+            34
+          ]
+        }
+      }
+    },
+    "response": {
+      "id": 133,
+      "ok": true,
+      "result": {
+        "id": 35
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 134,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            35
+          ],
+          "name": "Betaray / horizontal lockup"
+        }
+      }
+    },
+    "response": {
+      "id": 134,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 135,
+      "method": "engine.execute",
+      "params": {
+        "command": "artboard.new",
+        "params": {
+          "x": 750,
+          "y": 1280,
+          "width": 640,
+          "height": 220,
+          "name": "betaray-horizontal-mono"
+        }
+      }
+    },
+    "response": {
+      "id": 135,
+      "ok": true,
+      "result": {
+        "index": 2
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 136,
+      "method": "engine.execute",
+      "params": {
+        "command": "layer.new",
+        "params": {
+          "name": "betaray-horizontal-mono",
+          "top": true
+        }
+      }
+    },
+    "response": {
+      "id": 136,
+      "ok": true,
+      "result": {
+        "id": 36
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 137,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.create",
+        "params": {
+          "d": "M 6 79\nC 29 78 48 73 65 66\nL 68 30 Q 68 18 80 18\nC 112 18 142 11 170 5\nC 159 30 150 53 132 68\nC 143 66 151 62 160 60\nC 166 58 172 59 177 62\nQ 183 66 187 70\nQ 179 70 175 78\nQ 179 86 187 86\nQ 183 90 177 94\nC 172 97 166 98 160 96\nC 151 94 143 90 132 88\nC 150 104 160 127 170 153\nC 142 146 112 138 80 138\nQ 68 138 68 126 L 65 90\nC 48 85 29 81 6 81 Q 2 80 6 79 Z\nM 87 42 C 107 41 123 34 138 27\nC 128 48 113 60 87 65 Z\nM 87 94 C 111 96 129 109 138 129\nC 120 122 106 116 87 115 Z"
+        }
+      }
+    },
+    "response": {
+      "id": 137,
+      "ok": true,
+      "result": {
+        "id": 37
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 138,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.setFillRule",
+        "params": {
+          "ids": [
+            37
+          ],
+          "rule": "evenOdd"
+        }
+      }
+    },
+    "response": {
+      "id": 138,
+      "ok": true,
+      "result": {
+        "changed": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 139,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setFill",
+        "params": {
+          "ids": [
+            37
+          ],
+          "color": "#35434A"
+        }
+      }
+    },
+    "response": {
+      "id": 139,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 140,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setStroke",
+        "params": {
+          "ids": [
+            37
+          ],
+          "none": true
+        }
+      }
+    },
+    "response": {
+      "id": 140,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 141,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.scale",
+        "params": {
+          "ids": [
+            37
+          ],
+          "sx": 94.0,
+          "sy": 94.0,
+          "origin": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "response": {
+      "id": 141,
+      "ok": true,
+      "result": {
+        "ids": [
+          37
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 142,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.move",
+        "params": {
+          "ids": [
+            37
+          ],
+          "dx": 786,
+          "dy": 1318
+        }
+      }
+    },
+    "response": {
+      "id": 142,
+      "ok": true,
+      "result": {
+        "ids": [
+          37
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 143,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            37
+          ],
+          "name": "Betaray / ray-B symbol"
+        }
+      }
+    },
+    "response": {
+      "id": 143,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 144,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.create",
+        "params": {
+          "text": "betaray",
+          "x": 990,
+          "y": 1420,
+          "size": 94,
+          "color": "#35434A",
+          "font": "Mont",
+          "style": "SemiBold"
+        }
+      }
+    },
+    "response": {
+      "id": 144,
+      "ok": true,
+      "result": {
+        "bounds": {
+          "height": 130.19000000000005,
+          "width": 383.52,
+          "x": 990.0,
+          "y": 1325.53
+        },
+        "id": 38
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 145,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.setStyle",
+        "params": {
+          "ids": [
+            38
+          ],
+          "tracking": -35
+        }
+      }
+    },
+    "response": {
+      "id": 145,
+      "ok": true,
+      "result": {
+        "ids": [
+          38
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 146,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            38
+          ],
+          "name": "Betaray / wordmark"
+        }
+      }
+    },
+    "response": {
+      "id": 146,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 147,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.group",
+        "params": {
+          "ids": [
+            37,
+            38
+          ]
+        }
+      }
+    },
+    "response": {
+      "id": 147,
+      "ok": true,
+      "result": {
+        "id": 39
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 148,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            39
+          ],
+          "name": "Betaray / horizontal lockup"
+        }
+      }
+    },
+    "response": {
+      "id": 148,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 149,
+      "method": "engine.execute",
+      "params": {
+        "command": "artboard.new",
+        "params": {
+          "x": 1500,
+          "y": 1280,
+          "width": 640,
+          "height": 220,
+          "name": "betaray-horizontal-reversed"
+        }
+      }
+    },
+    "response": {
+      "id": 149,
+      "ok": true,
+      "result": {
+        "index": 3
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 150,
+      "method": "engine.execute",
+      "params": {
+        "command": "layer.new",
+        "params": {
+          "name": "betaray-horizontal-reversed",
+          "top": true
+        }
+      }
+    },
+    "response": {
+      "id": 150,
+      "ok": true,
+      "result": {
+        "id": 40
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 151,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.create",
+        "params": {
+          "d": "M 6 79\nC 29 78 48 73 65 66\nL 68 30 Q 68 18 80 18\nC 112 18 142 11 170 5\nC 159 30 150 53 132 68\nC 143 66 151 62 160 60\nC 166 58 172 59 177 62\nQ 183 66 187 70\nQ 179 70 175 78\nQ 179 86 187 86\nQ 183 90 177 94\nC 172 97 166 98 160 96\nC 151 94 143 90 132 88\nC 150 104 160 127 170 153\nC 142 146 112 138 80 138\nQ 68 138 68 126 L 65 90\nC 48 85 29 81 6 81 Q 2 80 6 79 Z\nM 87 42 C 107 41 123 34 138 27\nC 128 48 113 60 87 65 Z\nM 87 94 C 111 96 129 109 138 129\nC 120 122 106 116 87 115 Z"
+        }
+      }
+    },
+    "response": {
+      "id": 151,
+      "ok": true,
+      "result": {
+        "id": 41
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 152,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.setFillRule",
+        "params": {
+          "ids": [
+            41
+          ],
+          "rule": "evenOdd"
+        }
+      }
+    },
+    "response": {
+      "id": 152,
+      "ok": true,
+      "result": {
+        "changed": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 153,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setFill",
+        "params": {
+          "ids": [
+            41
+          ],
+          "color": "#F7F5F0"
+        }
+      }
+    },
+    "response": {
+      "id": 153,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 154,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setStroke",
+        "params": {
+          "ids": [
+            41
+          ],
+          "none": true
+        }
+      }
+    },
+    "response": {
+      "id": 154,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 155,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.scale",
+        "params": {
+          "ids": [
+            41
+          ],
+          "sx": 94.0,
+          "sy": 94.0,
+          "origin": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "response": {
+      "id": 155,
+      "ok": true,
+      "result": {
+        "ids": [
+          41
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 156,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.move",
+        "params": {
+          "ids": [
+            41
+          ],
+          "dx": 1536,
+          "dy": 1318
+        }
+      }
+    },
+    "response": {
+      "id": 156,
+      "ok": true,
+      "result": {
+        "ids": [
+          41
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 157,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            41
+          ],
+          "name": "Betaray / ray-B symbol"
+        }
+      }
+    },
+    "response": {
+      "id": 157,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 158,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.create",
+        "params": {
+          "text": "betaray",
+          "x": 1740,
+          "y": 1420,
+          "size": 94,
+          "color": "#F7F5F0",
+          "font": "Mont",
+          "style": "SemiBold"
+        }
+      }
+    },
+    "response": {
+      "id": 158,
+      "ok": true,
+      "result": {
+        "bounds": {
+          "height": 130.19000000000005,
+          "width": 383.52,
+          "x": 1740.0,
+          "y": 1325.53
+        },
+        "id": 42
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 159,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.setStyle",
+        "params": {
+          "ids": [
+            42
+          ],
+          "tracking": -35
+        }
+      }
+    },
+    "response": {
+      "id": 159,
+      "ok": true,
+      "result": {
+        "ids": [
+          42
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 160,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            42
+          ],
+          "name": "Betaray / wordmark"
+        }
+      }
+    },
+    "response": {
+      "id": 160,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 161,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.group",
+        "params": {
+          "ids": [
+            41,
+            42
+          ]
+        }
+      }
+    },
+    "response": {
+      "id": 161,
+      "ok": true,
+      "result": {
+        "id": 43
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 162,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            43
+          ],
+          "name": "Betaray / horizontal lockup"
+        }
+      }
+    },
+    "response": {
+      "id": 162,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 163,
+      "method": "engine.execute",
+      "params": {
+        "command": "artboard.new",
+        "params": {
+          "x": 0,
+          "y": 1930,
+          "width": 640,
+          "height": 220,
+          "name": "betaray-horizontal-lilac"
+        }
+      }
+    },
+    "response": {
+      "id": 163,
+      "ok": true,
+      "result": {
+        "index": 4
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 164,
+      "method": "engine.execute",
+      "params": {
+        "command": "layer.new",
+        "params": {
+          "name": "betaray-horizontal-lilac",
+          "top": true
+        }
+      }
+    },
+    "response": {
+      "id": 164,
+      "ok": true,
+      "result": {
+        "id": 44
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 165,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.create",
+        "params": {
+          "d": "M 6 79\nC 29 78 48 73 65 66\nL 68 30 Q 68 18 80 18\nC 112 18 142 11 170 5\nC 159 30 150 53 132 68\nC 143 66 151 62 160 60\nC 166 58 172 59 177 62\nQ 183 66 187 70\nQ 179 70 175 78\nQ 179 86 187 86\nQ 183 90 177 94\nC 172 97 166 98 160 96\nC 151 94 143 90 132 88\nC 150 104 160 127 170 153\nC 142 146 112 138 80 138\nQ 68 138 68 126 L 65 90\nC 48 85 29 81 6 81 Q 2 80 6 79 Z\nM 87 42 C 107 41 123 34 138 27\nC 128 48 113 60 87 65 Z\nM 87 94 C 111 96 129 109 138 129\nC 120 122 106 116 87 115 Z"
+        }
+      }
+    },
+    "response": {
+      "id": 165,
+      "ok": true,
+      "result": {
+        "id": 45
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 166,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.setFillRule",
+        "params": {
+          "ids": [
+            45
+          ],
+          "rule": "evenOdd"
+        }
+      }
+    },
+    "response": {
+      "id": 166,
+      "ok": true,
+      "result": {
+        "changed": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 167,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setFill",
+        "params": {
+          "ids": [
+            45
+          ],
+          "color": "#6B6AD6"
+        }
+      }
+    },
+    "response": {
+      "id": 167,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 168,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setStroke",
+        "params": {
+          "ids": [
+            45
+          ],
+          "none": true
+        }
+      }
+    },
+    "response": {
+      "id": 168,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 169,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.scale",
+        "params": {
+          "ids": [
+            45
+          ],
+          "sx": 94.0,
+          "sy": 94.0,
+          "origin": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "response": {
+      "id": 169,
+      "ok": true,
+      "result": {
+        "ids": [
+          45
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 170,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.move",
+        "params": {
+          "ids": [
+            45
+          ],
+          "dx": 36,
+          "dy": 1968
+        }
+      }
+    },
+    "response": {
+      "id": 170,
+      "ok": true,
+      "result": {
+        "ids": [
+          45
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 171,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            45
+          ],
+          "name": "Betaray / ray-B symbol"
+        }
+      }
+    },
+    "response": {
+      "id": 171,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 172,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.create",
+        "params": {
+          "text": "betaray",
+          "x": 240,
+          "y": 2070,
+          "size": 94,
+          "color": "#6B6AD6",
+          "font": "Mont",
+          "style": "SemiBold"
+        }
+      }
+    },
+    "response": {
+      "id": 172,
+      "ok": true,
+      "result": {
+        "bounds": {
+          "height": 130.18999999999983,
+          "width": 383.52,
+          "x": 240.0,
+          "y": 1975.53
+        },
+        "id": 46
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 173,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.setStyle",
+        "params": {
+          "ids": [
+            46
+          ],
+          "tracking": -35
+        }
+      }
+    },
+    "response": {
+      "id": 173,
+      "ok": true,
+      "result": {
+        "ids": [
+          46
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 174,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            46
+          ],
+          "name": "Betaray / wordmark"
+        }
+      }
+    },
+    "response": {
+      "id": 174,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 175,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.group",
+        "params": {
+          "ids": [
+            45,
+            46
+          ]
+        }
+      }
+    },
+    "response": {
+      "id": 175,
+      "ok": true,
+      "result": {
+        "id": 47
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 176,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            47
+          ],
+          "name": "Betaray / horizontal lockup"
+        }
+      }
+    },
+    "response": {
+      "id": 176,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 177,
+      "method": "engine.execute",
+      "params": {
+        "command": "artboard.new",
+        "params": {
+          "x": 750,
+          "y": 1930,
+          "width": 256,
+          "height": 256,
+          "name": "betaray-mark-primary"
+        }
+      }
+    },
+    "response": {
+      "id": 177,
+      "ok": true,
+      "result": {
+        "index": 5
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 178,
+      "method": "engine.execute",
+      "params": {
+        "command": "layer.new",
+        "params": {
+          "name": "betaray-mark-primary",
+          "top": true
+        }
+      }
+    },
+    "response": {
+      "id": 178,
+      "ok": true,
+      "result": {
+        "id": 48
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 179,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.create",
+        "params": {
+          "d": "M 6 79\nC 29 78 48 73 65 66\nL 68 30 Q 68 18 80 18\nC 112 18 142 11 170 5\nC 159 30 150 53 132 68\nC 143 66 151 62 160 60\nC 166 58 172 59 177 62\nQ 183 66 187 70\nQ 179 70 175 78\nQ 179 86 187 86\nQ 183 90 177 94\nC 172 97 166 98 160 96\nC 151 94 143 90 132 88\nC 150 104 160 127 170 153\nC 142 146 112 138 80 138\nQ 68 138 68 126 L 65 90\nC 48 85 29 81 6 81 Q 2 80 6 79 Z\nM 87 42 C 107 41 123 34 138 27\nC 128 48 113 60 87 65 Z\nM 87 94 C 111 96 129 109 138 129\nC 120 122 106 116 87 115 Z"
+        }
+      }
+    },
+    "response": {
+      "id": 179,
+      "ok": true,
+      "result": {
+        "id": 49
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 180,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.setFillRule",
+        "params": {
+          "ids": [
+            49
+          ],
+          "rule": "evenOdd"
+        }
+      }
+    },
+    "response": {
+      "id": 180,
+      "ok": true,
+      "result": {
+        "changed": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 181,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setFill",
+        "params": {
+          "ids": [
+            49
+          ],
+          "color": "#526E69"
+        }
+      }
+    },
+    "response": {
+      "id": 181,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 182,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setStroke",
+        "params": {
+          "ids": [
+            49
+          ],
+          "none": true
+        }
+      }
+    },
+    "response": {
+      "id": 182,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 183,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.scale",
+        "params": {
+          "ids": [
+            49
+          ],
+          "sx": 120.0,
+          "sy": 120.0,
+          "origin": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "response": {
+      "id": 183,
+      "ok": true,
+      "result": {
+        "ids": [
+          49
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 184,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.move",
+        "params": {
+          "ids": [
+            49
+          ],
+          "dx": 762,
+          "dy": 1968
+        }
+      }
+    },
+    "response": {
+      "id": 184,
+      "ok": true,
+      "result": {
+        "ids": [
+          49
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 185,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            49
+          ],
+          "name": "Betaray / ray-B symbol"
+        }
+      }
+    },
+    "response": {
+      "id": 185,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 186,
+      "method": "engine.execute",
+      "params": {
+        "command": "artboard.new",
+        "params": {
+          "x": 1500,
+          "y": 1930,
+          "width": 256,
+          "height": 256,
+          "name": "betaray-mark-mono"
+        }
+      }
+    },
+    "response": {
+      "id": 186,
+      "ok": true,
+      "result": {
+        "index": 6
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 187,
+      "method": "engine.execute",
+      "params": {
+        "command": "layer.new",
+        "params": {
+          "name": "betaray-mark-mono",
+          "top": true
+        }
+      }
+    },
+    "response": {
+      "id": 187,
+      "ok": true,
+      "result": {
+        "id": 50
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 188,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.create",
+        "params": {
+          "d": "M 6 79\nC 29 78 48 73 65 66\nL 68 30 Q 68 18 80 18\nC 112 18 142 11 170 5\nC 159 30 150 53 132 68\nC 143 66 151 62 160 60\nC 166 58 172 59 177 62\nQ 183 66 187 70\nQ 179 70 175 78\nQ 179 86 187 86\nQ 183 90 177 94\nC 172 97 166 98 160 96\nC 151 94 143 90 132 88\nC 150 104 160 127 170 153\nC 142 146 112 138 80 138\nQ 68 138 68 126 L 65 90\nC 48 85 29 81 6 81 Q 2 80 6 79 Z\nM 87 42 C 107 41 123 34 138 27\nC 128 48 113 60 87 65 Z\nM 87 94 C 111 96 129 109 138 129\nC 120 122 106 116 87 115 Z"
+        }
+      }
+    },
+    "response": {
+      "id": 188,
+      "ok": true,
+      "result": {
+        "id": 51
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 189,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.setFillRule",
+        "params": {
+          "ids": [
+            51
+          ],
+          "rule": "evenOdd"
+        }
+      }
+    },
+    "response": {
+      "id": 189,
+      "ok": true,
+      "result": {
+        "changed": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 190,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setFill",
+        "params": {
+          "ids": [
+            51
+          ],
+          "color": "#35434A"
+        }
+      }
+    },
+    "response": {
+      "id": 190,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 191,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setStroke",
+        "params": {
+          "ids": [
+            51
+          ],
+          "none": true
+        }
+      }
+    },
+    "response": {
+      "id": 191,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 192,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.scale",
+        "params": {
+          "ids": [
+            51
+          ],
+          "sx": 120.0,
+          "sy": 120.0,
+          "origin": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "response": {
+      "id": 192,
+      "ok": true,
+      "result": {
+        "ids": [
+          51
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 193,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.move",
+        "params": {
+          "ids": [
+            51
+          ],
+          "dx": 1512,
+          "dy": 1968
+        }
+      }
+    },
+    "response": {
+      "id": 193,
+      "ok": true,
+      "result": {
+        "ids": [
+          51
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 194,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            51
+          ],
+          "name": "Betaray / ray-B symbol"
+        }
+      }
+    },
+    "response": {
+      "id": 194,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 195,
+      "method": "engine.execute",
+      "params": {
+        "command": "artboard.new",
+        "params": {
+          "x": 0,
+          "y": 2580,
+          "width": 256,
+          "height": 256,
+          "name": "betaray-mark-reversed"
+        }
+      }
+    },
+    "response": {
+      "id": 195,
+      "ok": true,
+      "result": {
+        "index": 7
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 196,
+      "method": "engine.execute",
+      "params": {
+        "command": "layer.new",
+        "params": {
+          "name": "betaray-mark-reversed",
+          "top": true
+        }
+      }
+    },
+    "response": {
+      "id": 196,
+      "ok": true,
+      "result": {
+        "id": 52
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 197,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.create",
+        "params": {
+          "d": "M 6 79\nC 29 78 48 73 65 66\nL 68 30 Q 68 18 80 18\nC 112 18 142 11 170 5\nC 159 30 150 53 132 68\nC 143 66 151 62 160 60\nC 166 58 172 59 177 62\nQ 183 66 187 70\nQ 179 70 175 78\nQ 179 86 187 86\nQ 183 90 177 94\nC 172 97 166 98 160 96\nC 151 94 143 90 132 88\nC 150 104 160 127 170 153\nC 142 146 112 138 80 138\nQ 68 138 68 126 L 65 90\nC 48 85 29 81 6 81 Q 2 80 6 79 Z\nM 87 42 C 107 41 123 34 138 27\nC 128 48 113 60 87 65 Z\nM 87 94 C 111 96 129 109 138 129\nC 120 122 106 116 87 115 Z"
+        }
+      }
+    },
+    "response": {
+      "id": 197,
+      "ok": true,
+      "result": {
+        "id": 53
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 198,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.setFillRule",
+        "params": {
+          "ids": [
+            53
+          ],
+          "rule": "evenOdd"
+        }
+      }
+    },
+    "response": {
+      "id": 198,
+      "ok": true,
+      "result": {
+        "changed": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 199,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setFill",
+        "params": {
+          "ids": [
+            53
+          ],
+          "color": "#F7F5F0"
+        }
+      }
+    },
+    "response": {
+      "id": 199,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 200,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setStroke",
+        "params": {
+          "ids": [
+            53
+          ],
+          "none": true
+        }
+      }
+    },
+    "response": {
+      "id": 200,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 201,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.scale",
+        "params": {
+          "ids": [
+            53
+          ],
+          "sx": 120.0,
+          "sy": 120.0,
+          "origin": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "response": {
+      "id": 201,
+      "ok": true,
+      "result": {
+        "ids": [
+          53
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 202,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.move",
+        "params": {
+          "ids": [
+            53
+          ],
+          "dx": 12,
+          "dy": 2618
+        }
+      }
+    },
+    "response": {
+      "id": 202,
+      "ok": true,
+      "result": {
+        "ids": [
+          53
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 203,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            53
+          ],
+          "name": "Betaray / ray-B symbol"
+        }
+      }
+    },
+    "response": {
+      "id": 203,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 204,
+      "method": "engine.execute",
+      "params": {
+        "command": "artboard.new",
+        "params": {
+          "x": 750,
+          "y": 2580,
+          "width": 256,
+          "height": 256,
+          "name": "betaray-mark-lilac"
+        }
+      }
+    },
+    "response": {
+      "id": 204,
+      "ok": true,
+      "result": {
+        "index": 8
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 205,
+      "method": "engine.execute",
+      "params": {
+        "command": "layer.new",
+        "params": {
+          "name": "betaray-mark-lilac",
+          "top": true
+        }
+      }
+    },
+    "response": {
+      "id": 205,
+      "ok": true,
+      "result": {
+        "id": 54
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 206,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.create",
+        "params": {
+          "d": "M 6 79\nC 29 78 48 73 65 66\nL 68 30 Q 68 18 80 18\nC 112 18 142 11 170 5\nC 159 30 150 53 132 68\nC 143 66 151 62 160 60\nC 166 58 172 59 177 62\nQ 183 66 187 70\nQ 179 70 175 78\nQ 179 86 187 86\nQ 183 90 177 94\nC 172 97 166 98 160 96\nC 151 94 143 90 132 88\nC 150 104 160 127 170 153\nC 142 146 112 138 80 138\nQ 68 138 68 126 L 65 90\nC 48 85 29 81 6 81 Q 2 80 6 79 Z\nM 87 42 C 107 41 123 34 138 27\nC 128 48 113 60 87 65 Z\nM 87 94 C 111 96 129 109 138 129\nC 120 122 106 116 87 115 Z"
+        }
+      }
+    },
+    "response": {
+      "id": 206,
+      "ok": true,
+      "result": {
+        "id": 55
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 207,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.setFillRule",
+        "params": {
+          "ids": [
+            55
+          ],
+          "rule": "evenOdd"
+        }
+      }
+    },
+    "response": {
+      "id": 207,
+      "ok": true,
+      "result": {
+        "changed": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 208,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setFill",
+        "params": {
+          "ids": [
+            55
+          ],
+          "color": "#6B6AD6"
+        }
+      }
+    },
+    "response": {
+      "id": 208,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 209,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setStroke",
+        "params": {
+          "ids": [
+            55
+          ],
+          "none": true
+        }
+      }
+    },
+    "response": {
+      "id": 209,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 210,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.scale",
+        "params": {
+          "ids": [
+            55
+          ],
+          "sx": 120.0,
+          "sy": 120.0,
+          "origin": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "response": {
+      "id": 210,
+      "ok": true,
+      "result": {
+        "ids": [
+          55
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 211,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.move",
+        "params": {
+          "ids": [
+            55
+          ],
+          "dx": 762,
+          "dy": 2618
+        }
+      }
+    },
+    "response": {
+      "id": 211,
+      "ok": true,
+      "result": {
+        "ids": [
+          55
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 212,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            55
+          ],
+          "name": "Betaray / ray-B symbol"
+        }
+      }
+    },
+    "response": {
+      "id": 212,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 213,
+      "method": "engine.execute",
+      "params": {
+        "command": "artboard.new",
+        "params": {
+          "x": 1500,
+          "y": 2580,
+          "width": 440,
+          "height": 440,
+          "name": "betaray-stacked-primary"
+        }
+      }
+    },
+    "response": {
+      "id": 213,
+      "ok": true,
+      "result": {
+        "index": 9
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 214,
+      "method": "engine.execute",
+      "params": {
+        "command": "layer.new",
+        "params": {
+          "name": "betaray-stacked-primary",
+          "top": true
+        }
+      }
+    },
+    "response": {
+      "id": 214,
+      "ok": true,
+      "result": {
+        "id": 56
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 215,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.create",
+        "params": {
+          "d": "M 6 79\nC 29 78 48 73 65 66\nL 68 30 Q 68 18 80 18\nC 112 18 142 11 170 5\nC 159 30 150 53 132 68\nC 143 66 151 62 160 60\nC 166 58 172 59 177 62\nQ 183 66 187 70\nQ 179 70 175 78\nQ 179 86 187 86\nQ 183 90 177 94\nC 172 97 166 98 160 96\nC 151 94 143 90 132 88\nC 150 104 160 127 170 153\nC 142 146 112 138 80 138\nQ 68 138 68 126 L 65 90\nC 48 85 29 81 6 81 Q 2 80 6 79 Z\nM 87 42 C 107 41 123 34 138 27\nC 128 48 113 60 87 65 Z\nM 87 94 C 111 96 129 109 138 129\nC 120 122 106 116 87 115 Z"
+        }
+      }
+    },
+    "response": {
+      "id": 215,
+      "ok": true,
+      "result": {
+        "id": 57
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 216,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.setFillRule",
+        "params": {
+          "ids": [
+            57
+          ],
+          "rule": "evenOdd"
+        }
+      }
+    },
+    "response": {
+      "id": 216,
+      "ok": true,
+      "result": {
+        "changed": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 217,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setFill",
+        "params": {
+          "ids": [
+            57
+          ],
+          "color": "#526E69"
+        }
+      }
+    },
+    "response": {
+      "id": 217,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 218,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setStroke",
+        "params": {
+          "ids": [
+            57
+          ],
+          "none": true
+        }
+      }
+    },
+    "response": {
+      "id": 218,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 219,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.scale",
+        "params": {
+          "ids": [
+            57
+          ],
+          "sx": 165.0,
+          "sy": 165.0,
+          "origin": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "response": {
+      "id": 219,
+      "ok": true,
+      "result": {
+        "ids": [
+          57
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 220,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.move",
+        "params": {
+          "ids": [
+            57
+          ],
+          "dx": 1568,
+          "dy": 2620
+        }
+      }
+    },
+    "response": {
+      "id": 220,
+      "ok": true,
+      "result": {
+        "ids": [
+          57
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 221,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            57
+          ],
+          "name": "Betaray / ray-B symbol"
+        }
+      }
+    },
+    "response": {
+      "id": 221,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 222,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.create",
+        "params": {
+          "text": "betaray",
+          "x": 1582,
+          "y": 2949,
+          "size": 82,
+          "color": "#35434A",
+          "font": "Mont",
+          "style": "SemiBold"
+        }
+      }
+    },
+    "response": {
+      "id": 222,
+      "ok": true,
+      "result": {
+        "bounds": {
+          "height": 113.56999999999971,
+          "width": 334.55999999999995,
+          "x": 1582.0,
+          "y": 2866.59
+        },
+        "id": 58
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 223,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.setStyle",
+        "params": {
+          "ids": [
+            58
+          ],
+          "tracking": -35
+        }
+      }
+    },
+    "response": {
+      "id": 223,
+      "ok": true,
+      "result": {
+        "ids": [
+          58
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 224,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            58
+          ],
+          "name": "Betaray / wordmark"
+        }
+      }
+    },
+    "response": {
+      "id": 224,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 225,
+      "method": "engine.execute",
+      "params": {
+        "command": "artboard.new",
+        "params": {
+          "x": 0,
+          "y": 3230,
+          "width": 440,
+          "height": 440,
+          "name": "betaray-stacked-mono"
+        }
+      }
+    },
+    "response": {
+      "id": 225,
+      "ok": true,
+      "result": {
+        "index": 10
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 226,
+      "method": "engine.execute",
+      "params": {
+        "command": "layer.new",
+        "params": {
+          "name": "betaray-stacked-mono",
+          "top": true
+        }
+      }
+    },
+    "response": {
+      "id": 226,
+      "ok": true,
+      "result": {
+        "id": 59
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 227,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.create",
+        "params": {
+          "d": "M 6 79\nC 29 78 48 73 65 66\nL 68 30 Q 68 18 80 18\nC 112 18 142 11 170 5\nC 159 30 150 53 132 68\nC 143 66 151 62 160 60\nC 166 58 172 59 177 62\nQ 183 66 187 70\nQ 179 70 175 78\nQ 179 86 187 86\nQ 183 90 177 94\nC 172 97 166 98 160 96\nC 151 94 143 90 132 88\nC 150 104 160 127 170 153\nC 142 146 112 138 80 138\nQ 68 138 68 126 L 65 90\nC 48 85 29 81 6 81 Q 2 80 6 79 Z\nM 87 42 C 107 41 123 34 138 27\nC 128 48 113 60 87 65 Z\nM 87 94 C 111 96 129 109 138 129\nC 120 122 106 116 87 115 Z"
+        }
+      }
+    },
+    "response": {
+      "id": 227,
+      "ok": true,
+      "result": {
+        "id": 60
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 228,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.setFillRule",
+        "params": {
+          "ids": [
+            60
+          ],
+          "rule": "evenOdd"
+        }
+      }
+    },
+    "response": {
+      "id": 228,
+      "ok": true,
+      "result": {
+        "changed": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 229,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setFill",
+        "params": {
+          "ids": [
+            60
+          ],
+          "color": "#35434A"
+        }
+      }
+    },
+    "response": {
+      "id": 229,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 230,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setStroke",
+        "params": {
+          "ids": [
+            60
+          ],
+          "none": true
+        }
+      }
+    },
+    "response": {
+      "id": 230,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 231,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.scale",
+        "params": {
+          "ids": [
+            60
+          ],
+          "sx": 165.0,
+          "sy": 165.0,
+          "origin": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "response": {
+      "id": 231,
+      "ok": true,
+      "result": {
+        "ids": [
+          60
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 232,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.move",
+        "params": {
+          "ids": [
+            60
+          ],
+          "dx": 68,
+          "dy": 3270
+        }
+      }
+    },
+    "response": {
+      "id": 232,
+      "ok": true,
+      "result": {
+        "ids": [
+          60
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 233,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            60
+          ],
+          "name": "Betaray / ray-B symbol"
+        }
+      }
+    },
+    "response": {
+      "id": 233,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 234,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.create",
+        "params": {
+          "text": "betaray",
+          "x": 82,
+          "y": 3599,
+          "size": 82,
+          "color": "#35434A",
+          "font": "Mont",
+          "style": "SemiBold"
+        }
+      }
+    },
+    "response": {
+      "id": 234,
+      "ok": true,
+      "result": {
+        "bounds": {
+          "height": 113.56999999999971,
+          "width": 334.55999999999995,
+          "x": 82.0,
+          "y": 3516.59
+        },
+        "id": 61
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 235,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.setStyle",
+        "params": {
+          "ids": [
+            61
+          ],
+          "tracking": -35
+        }
+      }
+    },
+    "response": {
+      "id": 235,
+      "ok": true,
+      "result": {
+        "ids": [
+          61
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 236,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            61
+          ],
+          "name": "Betaray / wordmark"
+        }
+      }
+    },
+    "response": {
+      "id": 236,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 237,
+      "method": "engine.execute",
+      "params": {
+        "command": "artboard.new",
+        "params": {
+          "x": 750,
+          "y": 3230,
+          "width": 440,
+          "height": 440,
+          "name": "betaray-stacked-reversed"
+        }
+      }
+    },
+    "response": {
+      "id": 237,
+      "ok": true,
+      "result": {
+        "index": 11
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 238,
+      "method": "engine.execute",
+      "params": {
+        "command": "layer.new",
+        "params": {
+          "name": "betaray-stacked-reversed",
+          "top": true
+        }
+      }
+    },
+    "response": {
+      "id": 238,
+      "ok": true,
+      "result": {
+        "id": 62
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 239,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.create",
+        "params": {
+          "d": "M 6 79\nC 29 78 48 73 65 66\nL 68 30 Q 68 18 80 18\nC 112 18 142 11 170 5\nC 159 30 150 53 132 68\nC 143 66 151 62 160 60\nC 166 58 172 59 177 62\nQ 183 66 187 70\nQ 179 70 175 78\nQ 179 86 187 86\nQ 183 90 177 94\nC 172 97 166 98 160 96\nC 151 94 143 90 132 88\nC 150 104 160 127 170 153\nC 142 146 112 138 80 138\nQ 68 138 68 126 L 65 90\nC 48 85 29 81 6 81 Q 2 80 6 79 Z\nM 87 42 C 107 41 123 34 138 27\nC 128 48 113 60 87 65 Z\nM 87 94 C 111 96 129 109 138 129\nC 120 122 106 116 87 115 Z"
+        }
+      }
+    },
+    "response": {
+      "id": 239,
+      "ok": true,
+      "result": {
+        "id": 63
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 240,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.setFillRule",
+        "params": {
+          "ids": [
+            63
+          ],
+          "rule": "evenOdd"
+        }
+      }
+    },
+    "response": {
+      "id": 240,
+      "ok": true,
+      "result": {
+        "changed": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 241,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setFill",
+        "params": {
+          "ids": [
+            63
+          ],
+          "color": "#F7F5F0"
+        }
+      }
+    },
+    "response": {
+      "id": 241,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 242,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setStroke",
+        "params": {
+          "ids": [
+            63
+          ],
+          "none": true
+        }
+      }
+    },
+    "response": {
+      "id": 242,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 243,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.scale",
+        "params": {
+          "ids": [
+            63
+          ],
+          "sx": 165.0,
+          "sy": 165.0,
+          "origin": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "response": {
+      "id": 243,
+      "ok": true,
+      "result": {
+        "ids": [
+          63
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 244,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.move",
+        "params": {
+          "ids": [
+            63
+          ],
+          "dx": 818,
+          "dy": 3270
+        }
+      }
+    },
+    "response": {
+      "id": 244,
+      "ok": true,
+      "result": {
+        "ids": [
+          63
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 245,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            63
+          ],
+          "name": "Betaray / ray-B symbol"
+        }
+      }
+    },
+    "response": {
+      "id": 245,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 246,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.create",
+        "params": {
+          "text": "betaray",
+          "x": 832,
+          "y": 3599,
+          "size": 82,
+          "color": "#F7F5F0",
+          "font": "Mont",
+          "style": "SemiBold"
+        }
+      }
+    },
+    "response": {
+      "id": 246,
+      "ok": true,
+      "result": {
+        "bounds": {
+          "height": 113.56999999999971,
+          "width": 334.55999999999995,
+          "x": 832.0,
+          "y": 3516.59
+        },
+        "id": 64
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 247,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.setStyle",
+        "params": {
+          "ids": [
+            64
+          ],
+          "tracking": -35
+        }
+      }
+    },
+    "response": {
+      "id": 247,
+      "ok": true,
+      "result": {
+        "ids": [
+          64
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 248,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            64
+          ],
+          "name": "Betaray / wordmark"
+        }
+      }
+    },
+    "response": {
+      "id": 248,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 249,
+      "method": "engine.execute",
+      "params": {
+        "command": "artboard.new",
+        "params": {
+          "x": 1500,
+          "y": 3230,
+          "width": 440,
+          "height": 440,
+          "name": "betaray-stacked-lilac"
+        }
+      }
+    },
+    "response": {
+      "id": 249,
+      "ok": true,
+      "result": {
+        "index": 12
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 250,
+      "method": "engine.execute",
+      "params": {
+        "command": "layer.new",
+        "params": {
+          "name": "betaray-stacked-lilac",
+          "top": true
+        }
+      }
+    },
+    "response": {
+      "id": 250,
+      "ok": true,
+      "result": {
+        "id": 65
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 251,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.create",
+        "params": {
+          "d": "M 6 79\nC 29 78 48 73 65 66\nL 68 30 Q 68 18 80 18\nC 112 18 142 11 170 5\nC 159 30 150 53 132 68\nC 143 66 151 62 160 60\nC 166 58 172 59 177 62\nQ 183 66 187 70\nQ 179 70 175 78\nQ 179 86 187 86\nQ 183 90 177 94\nC 172 97 166 98 160 96\nC 151 94 143 90 132 88\nC 150 104 160 127 170 153\nC 142 146 112 138 80 138\nQ 68 138 68 126 L 65 90\nC 48 85 29 81 6 81 Q 2 80 6 79 Z\nM 87 42 C 107 41 123 34 138 27\nC 128 48 113 60 87 65 Z\nM 87 94 C 111 96 129 109 138 129\nC 120 122 106 116 87 115 Z"
+        }
+      }
+    },
+    "response": {
+      "id": 251,
+      "ok": true,
+      "result": {
+        "id": 66
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 252,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.setFillRule",
+        "params": {
+          "ids": [
+            66
+          ],
+          "rule": "evenOdd"
+        }
+      }
+    },
+    "response": {
+      "id": 252,
+      "ok": true,
+      "result": {
+        "changed": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 253,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setFill",
+        "params": {
+          "ids": [
+            66
+          ],
+          "color": "#6B6AD6"
+        }
+      }
+    },
+    "response": {
+      "id": 253,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 254,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setStroke",
+        "params": {
+          "ids": [
+            66
+          ],
+          "none": true
+        }
+      }
+    },
+    "response": {
+      "id": 254,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 255,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.scale",
+        "params": {
+          "ids": [
+            66
+          ],
+          "sx": 165.0,
+          "sy": 165.0,
+          "origin": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "response": {
+      "id": 255,
+      "ok": true,
+      "result": {
+        "ids": [
+          66
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 256,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.move",
+        "params": {
+          "ids": [
+            66
+          ],
+          "dx": 1568,
+          "dy": 3270
+        }
+      }
+    },
+    "response": {
+      "id": 256,
+      "ok": true,
+      "result": {
+        "ids": [
+          66
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 257,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            66
+          ],
+          "name": "Betaray / ray-B symbol"
+        }
+      }
+    },
+    "response": {
+      "id": 257,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 258,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.create",
+        "params": {
+          "text": "betaray",
+          "x": 1582,
+          "y": 3599,
+          "size": 82,
+          "color": "#6B6AD6",
+          "font": "Mont",
+          "style": "SemiBold"
+        }
+      }
+    },
+    "response": {
+      "id": 258,
+      "ok": true,
+      "result": {
+        "bounds": {
+          "height": 113.56999999999971,
+          "width": 334.55999999999995,
+          "x": 1582.0,
+          "y": 3516.59
+        },
+        "id": 67
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 259,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.setStyle",
+        "params": {
+          "ids": [
+            67
+          ],
+          "tracking": -35
+        }
+      }
+    },
+    "response": {
+      "id": 259,
+      "ok": true,
+      "result": {
+        "ids": [
+          67
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 260,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            67
+          ],
+          "name": "Betaray / wordmark"
+        }
+      }
+    },
+    "response": {
+      "id": 260,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 261,
+      "method": "engine.execute",
+      "params": {
+        "command": "artboard.new",
+        "params": {
+          "x": 0,
+          "y": 3880,
+          "width": 480,
+          "height": 160,
+          "name": "betaray-wordmark-primary"
+        }
+      }
+    },
+    "response": {
+      "id": 261,
+      "ok": true,
+      "result": {
+        "index": 13
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 262,
+      "method": "engine.execute",
+      "params": {
+        "command": "layer.new",
+        "params": {
+          "name": "betaray-wordmark-primary",
+          "top": true
+        }
+      }
+    },
+    "response": {
+      "id": 262,
+      "ok": true,
+      "result": {
+        "id": 68
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 263,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.create",
+        "params": {
+          "text": "betaray",
+          "x": 59,
+          "y": 3992,
+          "size": 106,
+          "color": "#35434A",
+          "font": "Mont",
+          "style": "SemiBold"
+        }
+      }
+    },
+    "response": {
+      "id": 263,
+      "ok": true,
+      "result": {
+        "bounds": {
+          "height": 146.8100000000004,
+          "width": 432.48,
+          "x": 59.0,
+          "y": 3885.47
+        },
+        "id": 69
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 264,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.setStyle",
+        "params": {
+          "ids": [
+            69
+          ],
+          "tracking": -35
+        }
+      }
+    },
+    "response": {
+      "id": 264,
+      "ok": true,
+      "result": {
+        "ids": [
+          69
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 265,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            69
+          ],
+          "name": "Betaray / wordmark"
+        }
+      }
+    },
+    "response": {
+      "id": 265,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 266,
+      "method": "engine.execute",
+      "params": {
+        "command": "artboard.new",
+        "params": {
+          "x": 750,
+          "y": 3880,
+          "width": 480,
+          "height": 160,
+          "name": "betaray-wordmark-reversed"
+        }
+      }
+    },
+    "response": {
+      "id": 266,
+      "ok": true,
+      "result": {
+        "index": 14
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 267,
+      "method": "engine.execute",
+      "params": {
+        "command": "layer.new",
+        "params": {
+          "name": "betaray-wordmark-reversed",
+          "top": true
+        }
+      }
+    },
+    "response": {
+      "id": 267,
+      "ok": true,
+      "result": {
+        "id": 70
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 268,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.create",
+        "params": {
+          "text": "betaray",
+          "x": 809,
+          "y": 3992,
+          "size": 106,
+          "color": "#F7F5F0",
+          "font": "Mont",
+          "style": "SemiBold"
+        }
+      }
+    },
+    "response": {
+      "id": 268,
+      "ok": true,
+      "result": {
+        "bounds": {
+          "height": 146.8100000000004,
+          "width": 432.48,
+          "x": 809.0,
+          "y": 3885.47
+        },
+        "id": 71
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 269,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.setStyle",
+        "params": {
+          "ids": [
+            71
+          ],
+          "tracking": -35
+        }
+      }
+    },
+    "response": {
+      "id": 269,
+      "ok": true,
+      "result": {
+        "ids": [
+          71
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 270,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            71
+          ],
+          "name": "Betaray / wordmark"
+        }
+      }
+    },
+    "response": {
+      "id": 270,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 271,
+      "method": "engine.execute",
+      "params": {
+        "command": "artboard.new",
+        "params": {
+          "x": 1500,
+          "y": 3880,
+          "width": 512,
+          "height": 512,
+          "name": "betaray-app-icon-sage"
+        }
+      }
+    },
+    "response": {
+      "id": 271,
+      "ok": true,
+      "result": {
+        "index": 15
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 272,
+      "method": "engine.execute",
+      "params": {
+        "command": "layer.new",
+        "params": {
+          "name": "betaray-app-icon-sage",
+          "top": true
+        }
+      }
+    },
+    "response": {
+      "id": 272,
+      "ok": true,
+      "result": {
+        "id": 72
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 273,
+      "method": "engine.execute",
+      "params": {
+        "command": "shape.rectangle",
+        "params": {
+          "x": 1500,
+          "y": 3880,
+          "width": 512,
+          "height": 512,
+          "radius": 112
+        }
+      }
+    },
+    "response": {
+      "id": 273,
+      "ok": true,
+      "result": {
+        "id": 73
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 274,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setFill",
+        "params": {
+          "ids": [
+            73
+          ],
+          "color": "#E6EEEA"
+        }
+      }
+    },
+    "response": {
+      "id": 274,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 275,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setStroke",
+        "params": {
+          "ids": [
+            73
+          ],
+          "none": true
+        }
+      }
+    },
+    "response": {
+      "id": 275,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 276,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            73
+          ],
+          "name": "App tile / sage"
+        }
+      }
+    },
+    "response": {
+      "id": 276,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 277,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.create",
+        "params": {
+          "d": "M 6 79\nC 29 78 48 73 65 66\nL 68 30 Q 68 18 80 18\nC 112 18 142 11 170 5\nC 159 30 150 53 132 68\nC 143 66 151 62 160 60\nC 166 58 172 59 177 62\nQ 183 66 187 70\nQ 179 70 175 78\nQ 179 86 187 86\nQ 183 90 177 94\nC 172 97 166 98 160 96\nC 151 94 143 90 132 88\nC 150 104 160 127 170 153\nC 142 146 112 138 80 138\nQ 68 138 68 126 L 65 90\nC 48 85 29 81 6 81 Q 2 80 6 79 Z\nM 87 42 C 107 41 123 34 138 27\nC 128 48 113 60 87 65 Z\nM 87 94 C 111 96 129 109 138 129\nC 120 122 106 116 87 115 Z"
+        }
+      }
+    },
+    "response": {
+      "id": 277,
+      "ok": true,
+      "result": {
+        "id": 74
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 278,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.setFillRule",
+        "params": {
+          "ids": [
+            74
+          ],
+          "rule": "evenOdd"
+        }
+      }
+    },
+    "response": {
+      "id": 278,
+      "ok": true,
+      "result": {
+        "changed": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 279,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setFill",
+        "params": {
+          "ids": [
+            74
+          ],
+          "color": "#526E69"
+        }
+      }
+    },
+    "response": {
+      "id": 279,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 280,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setStroke",
+        "params": {
+          "ids": [
+            74
+          ],
+          "none": true
+        }
+      }
+    },
+    "response": {
+      "id": 280,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 281,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.scale",
+        "params": {
+          "ids": [
+            74
+          ],
+          "sx": 235.0,
+          "sy": 235.0,
+          "origin": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "response": {
+      "id": 281,
+      "ok": true,
+      "result": {
+        "ids": [
+          74
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 282,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.move",
+        "params": {
+          "ids": [
+            74
+          ],
+          "dx": 1514,
+          "dy": 3952
+        }
+      }
+    },
+    "response": {
+      "id": 282,
+      "ok": true,
+      "result": {
+        "ids": [
+          74
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 283,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            74
+          ],
+          "name": "Betaray / ray-B symbol"
+        }
+      }
+    },
+    "response": {
+      "id": 283,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 284,
+      "method": "engine.execute",
+      "params": {
+        "command": "artboard.new",
+        "params": {
+          "x": 0,
+          "y": 4530,
+          "width": 512,
+          "height": 512,
+          "name": "betaray-app-icon-lagoon"
+        }
+      }
+    },
+    "response": {
+      "id": 284,
+      "ok": true,
+      "result": {
+        "index": 16
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 285,
+      "method": "engine.execute",
+      "params": {
+        "command": "layer.new",
+        "params": {
+          "name": "betaray-app-icon-lagoon",
+          "top": true
+        }
+      }
+    },
+    "response": {
+      "id": 285,
+      "ok": true,
+      "result": {
+        "id": 75
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 286,
+      "method": "engine.execute",
+      "params": {
+        "command": "shape.rectangle",
+        "params": {
+          "x": 0,
+          "y": 4530,
+          "width": 512,
+          "height": 512,
+          "radius": 112
+        }
+      }
+    },
+    "response": {
+      "id": 286,
+      "ok": true,
+      "result": {
+        "id": 76
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 287,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setFill",
+        "params": {
+          "ids": [
+            76
+          ],
+          "color": "#526E69"
+        }
+      }
+    },
+    "response": {
+      "id": 287,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 288,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setStroke",
+        "params": {
+          "ids": [
+            76
+          ],
+          "none": true
+        }
+      }
+    },
+    "response": {
+      "id": 288,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 289,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            76
+          ],
+          "name": "App tile / lagoon"
+        }
+      }
+    },
+    "response": {
+      "id": 289,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 290,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.create",
+        "params": {
+          "d": "M 6 79\nC 29 78 48 73 65 66\nL 68 30 Q 68 18 80 18\nC 112 18 142 11 170 5\nC 159 30 150 53 132 68\nC 143 66 151 62 160 60\nC 166 58 172 59 177 62\nQ 183 66 187 70\nQ 179 70 175 78\nQ 179 86 187 86\nQ 183 90 177 94\nC 172 97 166 98 160 96\nC 151 94 143 90 132 88\nC 150 104 160 127 170 153\nC 142 146 112 138 80 138\nQ 68 138 68 126 L 65 90\nC 48 85 29 81 6 81 Q 2 80 6 79 Z\nM 87 42 C 107 41 123 34 138 27\nC 128 48 113 60 87 65 Z\nM 87 94 C 111 96 129 109 138 129\nC 120 122 106 116 87 115 Z"
+        }
+      }
+    },
+    "response": {
+      "id": 290,
+      "ok": true,
+      "result": {
+        "id": 77
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 291,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.setFillRule",
+        "params": {
+          "ids": [
+            77
+          ],
+          "rule": "evenOdd"
+        }
+      }
+    },
+    "response": {
+      "id": 291,
+      "ok": true,
+      "result": {
+        "changed": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 292,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setFill",
+        "params": {
+          "ids": [
+            77
+          ],
+          "color": "#F7F5F0"
+        }
+      }
+    },
+    "response": {
+      "id": 292,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 293,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setStroke",
+        "params": {
+          "ids": [
+            77
+          ],
+          "none": true
+        }
+      }
+    },
+    "response": {
+      "id": 293,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 294,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.scale",
+        "params": {
+          "ids": [
+            77
+          ],
+          "sx": 235.0,
+          "sy": 235.0,
+          "origin": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "response": {
+      "id": 294,
+      "ok": true,
+      "result": {
+        "ids": [
+          77
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 295,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.move",
+        "params": {
+          "ids": [
+            77
+          ],
+          "dx": 14,
+          "dy": 4602
+        }
+      }
+    },
+    "response": {
+      "id": 295,
+      "ok": true,
+      "result": {
+        "ids": [
+          77
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 296,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            77
+          ],
+          "name": "Betaray / ray-B symbol"
+        }
+      }
+    },
+    "response": {
+      "id": 296,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 297,
+      "method": "engine.execute",
+      "params": {
+        "command": "artboard.new",
+        "params": {
+          "x": 750,
+          "y": 4530,
+          "width": 512,
+          "height": 512,
+          "name": "betaray-app-icon-lilac"
+        }
+      }
+    },
+    "response": {
+      "id": 297,
+      "ok": true,
+      "result": {
+        "index": 17
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 298,
+      "method": "engine.execute",
+      "params": {
+        "command": "layer.new",
+        "params": {
+          "name": "betaray-app-icon-lilac",
+          "top": true
+        }
+      }
+    },
+    "response": {
+      "id": 298,
+      "ok": true,
+      "result": {
+        "id": 78
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 299,
+      "method": "engine.execute",
+      "params": {
+        "command": "shape.rectangle",
+        "params": {
+          "x": 750,
+          "y": 4530,
+          "width": 512,
+          "height": 512,
+          "radius": 112
+        }
+      }
+    },
+    "response": {
+      "id": 299,
+      "ok": true,
+      "result": {
+        "id": 79
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 300,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setFill",
+        "params": {
+          "ids": [
+            79
+          ],
+          "color": "#6B6AD6"
+        }
+      }
+    },
+    "response": {
+      "id": 300,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 301,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setStroke",
+        "params": {
+          "ids": [
+            79
+          ],
+          "none": true
+        }
+      }
+    },
+    "response": {
+      "id": 301,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 302,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            79
+          ],
+          "name": "App tile / lilac"
+        }
+      }
+    },
+    "response": {
+      "id": 302,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 303,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.create",
+        "params": {
+          "d": "M 6 79\nC 29 78 48 73 65 66\nL 68 30 Q 68 18 80 18\nC 112 18 142 11 170 5\nC 159 30 150 53 132 68\nC 143 66 151 62 160 60\nC 166 58 172 59 177 62\nQ 183 66 187 70\nQ 179 70 175 78\nQ 179 86 187 86\nQ 183 90 177 94\nC 172 97 166 98 160 96\nC 151 94 143 90 132 88\nC 150 104 160 127 170 153\nC 142 146 112 138 80 138\nQ 68 138 68 126 L 65 90\nC 48 85 29 81 6 81 Q 2 80 6 79 Z\nM 87 42 C 107 41 123 34 138 27\nC 128 48 113 60 87 65 Z\nM 87 94 C 111 96 129 109 138 129\nC 120 122 106 116 87 115 Z"
+        }
+      }
+    },
+    "response": {
+      "id": 303,
+      "ok": true,
+      "result": {
+        "id": 80
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 304,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.setFillRule",
+        "params": {
+          "ids": [
+            80
+          ],
+          "rule": "evenOdd"
+        }
+      }
+    },
+    "response": {
+      "id": 304,
+      "ok": true,
+      "result": {
+        "changed": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 305,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setFill",
+        "params": {
+          "ids": [
+            80
+          ],
+          "color": "#F7F5F0"
+        }
+      }
+    },
+    "response": {
+      "id": 305,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 306,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setStroke",
+        "params": {
+          "ids": [
+            80
+          ],
+          "none": true
+        }
+      }
+    },
+    "response": {
+      "id": 306,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 307,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.scale",
+        "params": {
+          "ids": [
+            80
+          ],
+          "sx": 235.0,
+          "sy": 235.0,
+          "origin": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "response": {
+      "id": 307,
+      "ok": true,
+      "result": {
+        "ids": [
+          80
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 308,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.move",
+        "params": {
+          "ids": [
+            80
+          ],
+          "dx": 764,
+          "dy": 4602
+        }
+      }
+    },
+    "response": {
+      "id": 308,
+      "ok": true,
+      "result": {
+        "ids": [
+          80
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 309,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            80
+          ],
+          "name": "Betaray / ray-B symbol"
+        }
+      }
+    },
+    "response": {
+      "id": 309,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 310,
+      "method": "engine.execute",
+      "params": {
+        "command": "artboard.new",
+        "params": {
+          "x": 1500,
+          "y": 4530,
+          "width": 512,
+          "height": 512,
+          "name": "betaray-maskable-icon"
+        }
+      }
+    },
+    "response": {
+      "id": 310,
+      "ok": true,
+      "result": {
+        "index": 18
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 311,
+      "method": "engine.execute",
+      "params": {
+        "command": "layer.new",
+        "params": {
+          "name": "betaray-maskable-icon",
+          "top": true
+        }
+      }
+    },
+    "response": {
+      "id": 311,
+      "ok": true,
+      "result": {
+        "id": 81
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 312,
+      "method": "engine.execute",
+      "params": {
+        "command": "shape.rectangle",
+        "params": {
+          "x": 1500,
+          "y": 4530,
+          "width": 512,
+          "height": 512,
+          "radius": 0
+        }
+      }
+    },
+    "response": {
+      "id": 312,
+      "ok": true,
+      "result": {
+        "id": 82
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 313,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setFill",
+        "params": {
+          "ids": [
+            82
+          ],
+          "color": "#526E69"
+        }
+      }
+    },
+    "response": {
+      "id": 313,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 314,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setStroke",
+        "params": {
+          "ids": [
+            82
+          ],
+          "none": true
+        }
+      }
+    },
+    "response": {
+      "id": 314,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 315,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            82
+          ],
+          "name": "Maskable tile / full bleed"
+        }
+      }
+    },
+    "response": {
+      "id": 315,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 316,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.create",
+        "params": {
+          "d": "M 6 79\nC 29 78 48 73 65 66\nL 68 30 Q 68 18 80 18\nC 112 18 142 11 170 5\nC 159 30 150 53 132 68\nC 143 66 151 62 160 60\nC 166 58 172 59 177 62\nQ 183 66 187 70\nQ 179 70 175 78\nQ 179 86 187 86\nQ 183 90 177 94\nC 172 97 166 98 160 96\nC 151 94 143 90 132 88\nC 150 104 160 127 170 153\nC 142 146 112 138 80 138\nQ 68 138 68 126 L 65 90\nC 48 85 29 81 6 81 Q 2 80 6 79 Z\nM 87 42 C 107 41 123 34 138 27\nC 128 48 113 60 87 65 Z\nM 87 94 C 111 96 129 109 138 129\nC 120 122 106 116 87 115 Z"
+        }
+      }
+    },
+    "response": {
+      "id": 316,
+      "ok": true,
+      "result": {
+        "id": 83
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 317,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.setFillRule",
+        "params": {
+          "ids": [
+            83
+          ],
+          "rule": "evenOdd"
+        }
+      }
+    },
+    "response": {
+      "id": 317,
+      "ok": true,
+      "result": {
+        "changed": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 318,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setFill",
+        "params": {
+          "ids": [
+            83
+          ],
+          "color": "#F7F5F0"
+        }
+      }
+    },
+    "response": {
+      "id": 318,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 319,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setStroke",
+        "params": {
+          "ids": [
+            83
+          ],
+          "none": true
+        }
+      }
+    },
+    "response": {
+      "id": 319,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 320,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.scale",
+        "params": {
+          "ids": [
+            83
+          ],
+          "sx": 160.0,
+          "sy": 160.0,
+          "origin": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "response": {
+      "id": 320,
+      "ok": true,
+      "result": {
+        "ids": [
+          83
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 321,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.move",
+        "params": {
+          "ids": [
+            83
+          ],
+          "dx": 1587,
+          "dy": 4658
+        }
+      }
+    },
+    "response": {
+      "id": 321,
+      "ok": true,
+      "result": {
+        "ids": [
+          83
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 322,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            83
+          ],
+          "name": "Betaray / ray-B symbol"
+        }
+      }
+    },
+    "response": {
+      "id": 322,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 323,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.fonts",
+        "params": {}
+      }
+    },
+    "response": {
+      "id": 323,
+      "ok": true,
+      "result": [
+        {
+          "family": "Avenir Next",
+          "missing": false,
+          "missingGlyphs": 0,
+          "objects": 1,
+          "resolved": {
+            "family": "Avenir Next",
+            "style": "Demi Bold"
+          },
+          "runs": 1,
+          "status": "exact",
+          "style": "Demi Bold"
+        },
+        {
+          "family": "Avenir Next",
+          "missing": false,
+          "missingGlyphs": 0,
+          "objects": 5,
+          "resolved": {
+            "family": "Avenir Next",
+            "style": "Medium"
+          },
+          "runs": 5,
+          "status": "exact",
+          "style": "Medium"
+        },
+        {
+          "family": "Avenir Next",
+          "missing": false,
+          "missingGlyphs": 0,
+          "objects": 8,
+          "resolved": {
+            "family": "Avenir Next",
+            "style": "Regular"
+          },
+          "runs": 8,
+          "status": "exact",
+          "style": "Regular"
+        },
+        {
+          "family": "Mont",
+          "missing": false,
+          "missingGlyphs": 0,
+          "objects": 12,
+          "resolved": {
+            "family": "Mont",
+            "style": "SemiBold"
+          },
+          "runs": 12,
+          "status": "exact",
+          "style": "SemiBold"
+        }
+      ]
+    }
+  },
+  {
+    "request": {
+      "id": 324,
+      "method": "engine.execute",
+      "params": {
+        "command": "select.set",
+        "params": {
+          "ids": []
+        }
+      }
+    },
+    "response": {
+      "id": 324,
+      "ok": true,
+      "result": {
+        "count": 0,
+        "ids": []
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 325,
+      "method": "app.save",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/design/brand/betaray-identity.vectorcraft"
+      }
+    },
+    "response": {
+      "id": 325,
+      "ok": true,
+      "result": {
+        "background": true,
+        "format": "vectorcraft",
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/design/brand/betaray-identity.vectorcraft",
+        "status": "Saving betaray-identity.vectorcraft\u2026",
+        "warnings": []
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 326,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/design/brand/betaray-identity.png",
+        "format": "png",
+        "artboard": 0,
+        "scale": 1.25
+      }
+    },
+    "response": {
+      "id": 326,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/design/brand/betaray-identity.png",
+        "status": "Exporting betaray-identity.png\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 327,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/design/brand/betaray-identity.pdf",
+        "format": "pdf",
+        "artboard": 0,
+        "advanced": {
+          "outlineText": true
+        }
+      }
+    },
+    "response": {
+      "id": 327,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/design/brand/betaray-identity.pdf",
+        "status": "Exporting betaray-identity.pdf\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 328,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-horizontal-primary.svg",
+        "format": "svg",
+        "artboard": 1,
+        "svg": {
+          "outlineText": true,
+          "minify": false,
+          "preserveEditing": false,
+          "responsive": true
+        }
+      }
+    },
+    "response": {
+      "id": 328,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-horizontal-primary.svg",
+        "status": "Exporting betaray-horizontal-primary.svg\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 329,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-horizontal-primary.png",
+        "format": "png",
+        "artboard": 1,
+        "scale": 2,
+        "background": "transparent"
+      }
+    },
+    "response": {
+      "id": 329,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-horizontal-primary.png",
+        "status": "Exporting betaray-horizontal-primary.png\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 330,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-horizontal-primary.pdf",
+        "format": "pdf",
+        "artboard": 1,
+        "advanced": {
+          "outlineText": true
+        }
+      }
+    },
+    "response": {
+      "id": 330,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-horizontal-primary.pdf",
+        "status": "Exporting betaray-horizontal-primary.pdf\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 331,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-horizontal-mono.svg",
+        "format": "svg",
+        "artboard": 2,
+        "svg": {
+          "outlineText": true,
+          "minify": false,
+          "preserveEditing": false,
+          "responsive": true
+        }
+      }
+    },
+    "response": {
+      "id": 331,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-horizontal-mono.svg",
+        "status": "Exporting betaray-horizontal-mono.svg\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 332,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-horizontal-mono.png",
+        "format": "png",
+        "artboard": 2,
+        "scale": 2,
+        "background": "transparent"
+      }
+    },
+    "response": {
+      "id": 332,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-horizontal-mono.png",
+        "status": "Exporting betaray-horizontal-mono.png\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 333,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-horizontal-mono.pdf",
+        "format": "pdf",
+        "artboard": 2,
+        "advanced": {
+          "outlineText": true
+        }
+      }
+    },
+    "response": {
+      "id": 333,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-horizontal-mono.pdf",
+        "status": "Exporting betaray-horizontal-mono.pdf\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 334,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-horizontal-reversed.svg",
+        "format": "svg",
+        "artboard": 3,
+        "svg": {
+          "outlineText": true,
+          "minify": false,
+          "preserveEditing": false,
+          "responsive": true
+        }
+      }
+    },
+    "response": {
+      "id": 334,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-horizontal-reversed.svg",
+        "status": "Exporting betaray-horizontal-reversed.svg\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 335,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-horizontal-reversed.png",
+        "format": "png",
+        "artboard": 3,
+        "scale": 2,
+        "background": "transparent"
+      }
+    },
+    "response": {
+      "id": 335,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-horizontal-reversed.png",
+        "status": "Exporting betaray-horizontal-reversed.png\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 336,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-horizontal-reversed.pdf",
+        "format": "pdf",
+        "artboard": 3,
+        "advanced": {
+          "outlineText": true
+        }
+      }
+    },
+    "response": {
+      "id": 336,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-horizontal-reversed.pdf",
+        "status": "Exporting betaray-horizontal-reversed.pdf\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 337,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-horizontal-lilac.svg",
+        "format": "svg",
+        "artboard": 4,
+        "svg": {
+          "outlineText": true,
+          "minify": false,
+          "preserveEditing": false,
+          "responsive": true
+        }
+      }
+    },
+    "response": {
+      "id": 337,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-horizontal-lilac.svg",
+        "status": "Exporting betaray-horizontal-lilac.svg\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 338,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-horizontal-lilac.png",
+        "format": "png",
+        "artboard": 4,
+        "scale": 2,
+        "background": "transparent"
+      }
+    },
+    "response": {
+      "id": 338,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-horizontal-lilac.png",
+        "status": "Exporting betaray-horizontal-lilac.png\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 339,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-horizontal-lilac.pdf",
+        "format": "pdf",
+        "artboard": 4,
+        "advanced": {
+          "outlineText": true
+        }
+      }
+    },
+    "response": {
+      "id": 339,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-horizontal-lilac.pdf",
+        "status": "Exporting betaray-horizontal-lilac.pdf\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 340,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-mark-primary.svg",
+        "format": "svg",
+        "artboard": 5,
+        "svg": {
+          "outlineText": true,
+          "minify": false,
+          "preserveEditing": false,
+          "responsive": true
+        }
+      }
+    },
+    "response": {
+      "id": 340,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-mark-primary.svg",
+        "status": "Exporting betaray-mark-primary.svg\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 341,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-mark-primary.png",
+        "format": "png",
+        "artboard": 5,
+        "scale": 2,
+        "background": "transparent"
+      }
+    },
+    "response": {
+      "id": 341,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-mark-primary.png",
+        "status": "Exporting betaray-mark-primary.png\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 342,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-mark-mono.svg",
+        "format": "svg",
+        "artboard": 6,
+        "svg": {
+          "outlineText": true,
+          "minify": false,
+          "preserveEditing": false,
+          "responsive": true
+        }
+      }
+    },
+    "response": {
+      "id": 342,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-mark-mono.svg",
+        "status": "Exporting betaray-mark-mono.svg\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 343,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-mark-mono.png",
+        "format": "png",
+        "artboard": 6,
+        "scale": 2,
+        "background": "transparent"
+      }
+    },
+    "response": {
+      "id": 343,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-mark-mono.png",
+        "status": "Exporting betaray-mark-mono.png\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 344,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-mark-reversed.svg",
+        "format": "svg",
+        "artboard": 7,
+        "svg": {
+          "outlineText": true,
+          "minify": false,
+          "preserveEditing": false,
+          "responsive": true
+        }
+      }
+    },
+    "response": {
+      "id": 344,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-mark-reversed.svg",
+        "status": "Exporting betaray-mark-reversed.svg\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 345,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-mark-reversed.png",
+        "format": "png",
+        "artboard": 7,
+        "scale": 2,
+        "background": "transparent"
+      }
+    },
+    "response": {
+      "id": 345,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-mark-reversed.png",
+        "status": "Exporting betaray-mark-reversed.png\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 346,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-mark-lilac.svg",
+        "format": "svg",
+        "artboard": 8,
+        "svg": {
+          "outlineText": true,
+          "minify": false,
+          "preserveEditing": false,
+          "responsive": true
+        }
+      }
+    },
+    "response": {
+      "id": 346,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-mark-lilac.svg",
+        "status": "Exporting betaray-mark-lilac.svg\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 347,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-mark-lilac.png",
+        "format": "png",
+        "artboard": 8,
+        "scale": 2,
+        "background": "transparent"
+      }
+    },
+    "response": {
+      "id": 347,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-mark-lilac.png",
+        "status": "Exporting betaray-mark-lilac.png\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 348,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-stacked-primary.svg",
+        "format": "svg",
+        "artboard": 9,
+        "svg": {
+          "outlineText": true,
+          "minify": false,
+          "preserveEditing": false,
+          "responsive": true
+        }
+      }
+    },
+    "response": {
+      "id": 348,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-stacked-primary.svg",
+        "status": "Exporting betaray-stacked-primary.svg\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 349,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-stacked-primary.png",
+        "format": "png",
+        "artboard": 9,
+        "scale": 2,
+        "background": "transparent"
+      }
+    },
+    "response": {
+      "id": 349,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-stacked-primary.png",
+        "status": "Exporting betaray-stacked-primary.png\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 350,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-stacked-primary.pdf",
+        "format": "pdf",
+        "artboard": 9,
+        "advanced": {
+          "outlineText": true
+        }
+      }
+    },
+    "response": {
+      "id": 350,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-stacked-primary.pdf",
+        "status": "Exporting betaray-stacked-primary.pdf\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 351,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-stacked-mono.svg",
+        "format": "svg",
+        "artboard": 10,
+        "svg": {
+          "outlineText": true,
+          "minify": false,
+          "preserveEditing": false,
+          "responsive": true
+        }
+      }
+    },
+    "response": {
+      "id": 351,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-stacked-mono.svg",
+        "status": "Exporting betaray-stacked-mono.svg\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 352,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-stacked-mono.png",
+        "format": "png",
+        "artboard": 10,
+        "scale": 2,
+        "background": "transparent"
+      }
+    },
+    "response": {
+      "id": 352,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-stacked-mono.png",
+        "status": "Exporting betaray-stacked-mono.png\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 353,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-stacked-mono.pdf",
+        "format": "pdf",
+        "artboard": 10,
+        "advanced": {
+          "outlineText": true
+        }
+      }
+    },
+    "response": {
+      "id": 353,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-stacked-mono.pdf",
+        "status": "Exporting betaray-stacked-mono.pdf\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 354,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-stacked-reversed.svg",
+        "format": "svg",
+        "artboard": 11,
+        "svg": {
+          "outlineText": true,
+          "minify": false,
+          "preserveEditing": false,
+          "responsive": true
+        }
+      }
+    },
+    "response": {
+      "id": 354,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-stacked-reversed.svg",
+        "status": "Exporting betaray-stacked-reversed.svg\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 355,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-stacked-reversed.png",
+        "format": "png",
+        "artboard": 11,
+        "scale": 2,
+        "background": "transparent"
+      }
+    },
+    "response": {
+      "id": 355,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-stacked-reversed.png",
+        "status": "Exporting betaray-stacked-reversed.png\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 356,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-stacked-reversed.pdf",
+        "format": "pdf",
+        "artboard": 11,
+        "advanced": {
+          "outlineText": true
+        }
+      }
+    },
+    "response": {
+      "id": 356,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-stacked-reversed.pdf",
+        "status": "Exporting betaray-stacked-reversed.pdf\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 357,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-stacked-lilac.svg",
+        "format": "svg",
+        "artboard": 12,
+        "svg": {
+          "outlineText": true,
+          "minify": false,
+          "preserveEditing": false,
+          "responsive": true
+        }
+      }
+    },
+    "response": {
+      "id": 357,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-stacked-lilac.svg",
+        "status": "Exporting betaray-stacked-lilac.svg\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 358,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-stacked-lilac.png",
+        "format": "png",
+        "artboard": 12,
+        "scale": 2,
+        "background": "transparent"
+      }
+    },
+    "response": {
+      "id": 358,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-stacked-lilac.png",
+        "status": "Exporting betaray-stacked-lilac.png\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 359,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-stacked-lilac.pdf",
+        "format": "pdf",
+        "artboard": 12,
+        "advanced": {
+          "outlineText": true
+        }
+      }
+    },
+    "response": {
+      "id": 359,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-stacked-lilac.pdf",
+        "status": "Exporting betaray-stacked-lilac.pdf\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 360,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-wordmark-primary.svg",
+        "format": "svg",
+        "artboard": 13,
+        "svg": {
+          "outlineText": true,
+          "minify": false,
+          "preserveEditing": false,
+          "responsive": true
+        }
+      }
+    },
+    "response": {
+      "id": 360,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-wordmark-primary.svg",
+        "status": "Exporting betaray-wordmark-primary.svg\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 361,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-wordmark-primary.png",
+        "format": "png",
+        "artboard": 13,
+        "scale": 2,
+        "background": "transparent"
+      }
+    },
+    "response": {
+      "id": 361,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-wordmark-primary.png",
+        "status": "Exporting betaray-wordmark-primary.png\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 362,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-wordmark-reversed.svg",
+        "format": "svg",
+        "artboard": 14,
+        "svg": {
+          "outlineText": true,
+          "minify": false,
+          "preserveEditing": false,
+          "responsive": true
+        }
+      }
+    },
+    "response": {
+      "id": 362,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-wordmark-reversed.svg",
+        "status": "Exporting betaray-wordmark-reversed.svg\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 363,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-wordmark-reversed.png",
+        "format": "png",
+        "artboard": 14,
+        "scale": 2,
+        "background": "transparent"
+      }
+    },
+    "response": {
+      "id": 363,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-wordmark-reversed.png",
+        "status": "Exporting betaray-wordmark-reversed.png\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 364,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-app-icon-sage.svg",
+        "format": "svg",
+        "artboard": 15,
+        "svg": {
+          "outlineText": true,
+          "minify": false,
+          "preserveEditing": false,
+          "responsive": true
+        }
+      }
+    },
+    "response": {
+      "id": 364,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-app-icon-sage.svg",
+        "status": "Exporting betaray-app-icon-sage.svg\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 365,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-app-icon-sage.png",
+        "format": "png",
+        "artboard": 15,
+        "scale": 2,
+        "background": "transparent"
+      }
+    },
+    "response": {
+      "id": 365,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-app-icon-sage.png",
+        "status": "Exporting betaray-app-icon-sage.png\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 366,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-app-icon-lagoon.svg",
+        "format": "svg",
+        "artboard": 16,
+        "svg": {
+          "outlineText": true,
+          "minify": false,
+          "preserveEditing": false,
+          "responsive": true
+        }
+      }
+    },
+    "response": {
+      "id": 366,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-app-icon-lagoon.svg",
+        "status": "Exporting betaray-app-icon-lagoon.svg\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 367,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-app-icon-lagoon.png",
+        "format": "png",
+        "artboard": 16,
+        "scale": 2,
+        "background": "transparent"
+      }
+    },
+    "response": {
+      "id": 367,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-app-icon-lagoon.png",
+        "status": "Exporting betaray-app-icon-lagoon.png\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 368,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-app-icon-lilac.svg",
+        "format": "svg",
+        "artboard": 17,
+        "svg": {
+          "outlineText": true,
+          "minify": false,
+          "preserveEditing": false,
+          "responsive": true
+        }
+      }
+    },
+    "response": {
+      "id": 368,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-app-icon-lilac.svg",
+        "status": "Exporting betaray-app-icon-lilac.svg\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 369,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-app-icon-lilac.png",
+        "format": "png",
+        "artboard": 17,
+        "scale": 2,
+        "background": "transparent"
+      }
+    },
+    "response": {
+      "id": 369,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-app-icon-lilac.png",
+        "status": "Exporting betaray-app-icon-lilac.png\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 370,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-maskable-icon.svg",
+        "format": "svg",
+        "artboard": 18,
+        "svg": {
+          "outlineText": true,
+          "minify": false,
+          "preserveEditing": false,
+          "responsive": true
+        }
+      }
+    },
+    "response": {
+      "id": 370,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-maskable-icon.svg",
+        "status": "Exporting betaray-maskable-icon.svg\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 371,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-maskable-icon.png",
+        "format": "png",
+        "artboard": 18,
+        "scale": 2,
+        "background": "transparent"
+      }
+    },
+    "response": {
+      "id": 371,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-maskable-icon.png",
+        "status": "Exporting betaray-maskable-icon.png\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 372,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-icon-16.png",
+        "format": "png",
+        "artboard": 16,
+        "scale": 0.03125,
+        "background": "transparent"
+      }
+    },
+    "response": {
+      "id": 372,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-icon-16.png",
+        "status": "Exporting betaray-icon-16.png\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 373,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-icon-32.png",
+        "format": "png",
+        "artboard": 16,
+        "scale": 0.0625,
+        "background": "transparent"
+      }
+    },
+    "response": {
+      "id": 373,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-icon-32.png",
+        "status": "Exporting betaray-icon-32.png\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 374,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-icon-48.png",
+        "format": "png",
+        "artboard": 16,
+        "scale": 0.09375,
+        "background": "transparent"
+      }
+    },
+    "response": {
+      "id": 374,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-icon-48.png",
+        "status": "Exporting betaray-icon-48.png\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 375,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-icon-64.png",
+        "format": "png",
+        "artboard": 16,
+        "scale": 0.125,
+        "background": "transparent"
+      }
+    },
+    "response": {
+      "id": 375,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-icon-64.png",
+        "status": "Exporting betaray-icon-64.png\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 376,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-icon-128.png",
+        "format": "png",
+        "artboard": 16,
+        "scale": 0.25,
+        "background": "transparent"
+      }
+    },
+    "response": {
+      "id": 376,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-icon-128.png",
+        "status": "Exporting betaray-icon-128.png\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 377,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-icon-180.png",
+        "format": "png",
+        "artboard": 16,
+        "scale": 0.3515625,
+        "background": "transparent"
+      }
+    },
+    "response": {
+      "id": 377,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-icon-180.png",
+        "status": "Exporting betaray-icon-180.png\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 378,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-icon-192.png",
+        "format": "png",
+        "artboard": 16,
+        "scale": 0.375,
+        "background": "transparent"
+      }
+    },
+    "response": {
+      "id": 378,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-icon-192.png",
+        "status": "Exporting betaray-icon-192.png\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 379,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-icon-256.png",
+        "format": "png",
+        "artboard": 16,
+        "scale": 0.5,
+        "background": "transparent"
+      }
+    },
+    "response": {
+      "id": 379,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-icon-256.png",
+        "status": "Exporting betaray-icon-256.png\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 380,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-icon-512.png",
+        "format": "png",
+        "artboard": 16,
+        "scale": 1.0,
+        "background": "transparent"
+      }
+    },
+    "response": {
+      "id": 380,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-icon-512.png",
+        "status": "Exporting betaray-icon-512.png\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 381,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-icon-1024.png",
+        "format": "png",
+        "artboard": 16,
+        "scale": 2.0,
+        "background": "transparent"
+      }
+    },
+    "response": {
+      "id": 381,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-icon-1024.png",
+        "status": "Exporting betaray-icon-1024.png\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 382,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-maskable-192.png",
+        "format": "png",
+        "artboard": 18,
+        "scale": 0.375
+      }
+    },
+    "response": {
+      "id": 382,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-maskable-192.png",
+        "status": "Exporting betaray-maskable-192.png\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 383,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-maskable-512.png",
+        "format": "png",
+        "artboard": 18,
+        "scale": 1.0
+      }
+    },
+    "response": {
+      "id": 383,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/public/brand/betaray/betaray-maskable-512.png",
+        "status": "Exporting betaray-maskable-512.png\u2026"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 384,
+      "method": "ui.focus",
+      "params": {}
+    },
+    "response": {
+      "id": 384,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 385,
+      "method": "engine.execute",
+      "params": {
+        "command": "view.goToArtboard",
+        "params": {
+          "index": 0
+        }
+      }
+    },
+    "response": {
+      "id": 385,
+      "ok": true,
+      "result": {
+        "index": 0
+      }
+    }
+  }
+]

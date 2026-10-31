@@ -1,0 +1,1572 @@
+[
+  {
+    "request": {
+      "id": 1,
+      "method": "engine.execute",
+      "params": {
+        "command": "file.new",
+        "params": {
+          "name": "Betaray \u2014 symbol proof",
+          "width": 1120,
+          "height": 680,
+          "units": "Pixels"
+        }
+      }
+    },
+    "response": {
+      "id": 1,
+      "ok": true,
+      "result": {
+        "index": 0,
+        "previewMode": "default"
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 2,
+      "method": "engine.execute",
+      "params": {
+        "command": "shape.rectangle",
+        "params": {
+          "x": 0,
+          "y": 0,
+          "width": 1120,
+          "height": 680,
+          "radius": 0
+        }
+      }
+    },
+    "response": {
+      "id": 2,
+      "ok": true,
+      "result": {
+        "id": 2
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 3,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setFill",
+        "params": {
+          "ids": [
+            2
+          ],
+          "color": "#F7F5F0"
+        }
+      }
+    },
+    "response": {
+      "id": 3,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 4,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setStroke",
+        "params": {
+          "ids": [
+            2
+          ],
+          "none": true
+        }
+      }
+    },
+    "response": {
+      "id": 4,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 5,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            2
+          ],
+          "name": "Proof background"
+        }
+      }
+    },
+    "response": {
+      "id": 5,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 6,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.create",
+        "params": {
+          "text": "betaray",
+          "x": 60,
+          "y": 60,
+          "size": 25,
+          "color": "#35434A",
+          "font": "Avenir Next",
+          "style": "Demi Bold"
+        }
+      }
+    },
+    "response": {
+      "id": 6,
+      "ok": true,
+      "result": {
+        "bounds": {
+          "height": 34.150000000000006,
+          "width": 87.82499999999999,
+          "x": 60.0,
+          "y": 35.0
+        },
+        "id": 3
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 7,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.setStyle",
+        "params": {
+          "ids": [
+            3
+          ],
+          "tracking": -30
+        }
+      }
+    },
+    "response": {
+      "id": 7,
+      "ok": true,
+      "result": {
+        "ids": [
+          3
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 8,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            3
+          ],
+          "name": "betaray"
+        }
+      }
+    },
+    "response": {
+      "id": 8,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 9,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.create",
+        "params": {
+          "text": "Horizontal ray / B monogram",
+          "x": 60,
+          "y": 105,
+          "size": 15,
+          "color": "#677676",
+          "font": "Avenir Next",
+          "style": "Regular"
+        }
+      }
+    },
+    "response": {
+      "id": 9,
+      "ok": true,
+      "result": {
+        "bounds": {
+          "height": 20.489999999999995,
+          "width": 197.02499999999998,
+          "x": 60.0,
+          "y": 90.0
+        },
+        "id": 4
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 10,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.setStyle",
+        "params": {
+          "ids": [
+            4
+          ],
+          "tracking": 0
+        }
+      }
+    },
+    "response": {
+      "id": 10,
+      "ok": true,
+      "result": {
+        "ids": [
+          4
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 11,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            4
+          ],
+          "name": "Horizontal ray / B monogram"
+        }
+      }
+    },
+    "response": {
+      "id": 11,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 12,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.create",
+        "params": {
+          "d": "M 6 79\nC 28 76 47 70 65 64\nL 68 30 Q 68 18 80 18\nC 112 18 142 11 170 5\nC 159 30 150 53 132 68\nC 143 66 151 60 161 56\nC 167 54 172 55 176 58\nL 193 66 L 182 78 L 193 90 L 176 98\nC 172 101 166 102 161 100\nC 151 95 143 90 132 88\nC 150 104 160 127 170 153\nC 142 146 112 138 80 138\nQ 68 138 68 126 L 65 92\nC 47 87 28 82 6 81 Q 2 80 6 79 Z\nM 87 42 C 107 41 123 34 138 27\nC 128 48 113 60 87 65 Z\nM 87 94 C 111 96 129 109 138 129\nC 120 122 106 116 87 115 Z"
+        }
+      }
+    },
+    "response": {
+      "id": 12,
+      "ok": true,
+      "result": {
+        "id": 5
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 13,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.setFillRule",
+        "params": {
+          "ids": [
+            5
+          ],
+          "rule": "evenOdd"
+        }
+      }
+    },
+    "response": {
+      "id": 13,
+      "ok": true,
+      "result": {
+        "changed": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 14,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setFill",
+        "params": {
+          "ids": [
+            5
+          ],
+          "color": "#526E69"
+        }
+      }
+    },
+    "response": {
+      "id": 14,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 15,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setStroke",
+        "params": {
+          "ids": [
+            5
+          ],
+          "none": true
+        }
+      }
+    },
+    "response": {
+      "id": 15,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 16,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.scale",
+        "params": {
+          "ids": [
+            5
+          ],
+          "sx": 210.0,
+          "sy": 210.0,
+          "origin": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "response": {
+      "id": 16,
+      "ok": true,
+      "result": {
+        "ids": [
+          5
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 17,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.move",
+        "params": {
+          "ids": [
+            5
+          ],
+          "dx": 90,
+          "dy": 185
+        }
+      }
+    },
+    "response": {
+      "id": 17,
+      "ok": true,
+      "result": {
+        "ids": [
+          5
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 18,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            5
+          ],
+          "name": "Betaray / ray-B symbol"
+        }
+      }
+    },
+    "response": {
+      "id": 18,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 19,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.create",
+        "params": {
+          "d": "M 6 79\nC 28 76 47 70 65 64\nL 68 30 Q 68 18 80 18\nC 112 18 142 11 170 5\nC 159 30 150 53 132 68\nC 143 66 151 60 161 56\nC 167 54 172 55 176 58\nL 193 66 L 182 78 L 193 90 L 176 98\nC 172 101 166 102 161 100\nC 151 95 143 90 132 88\nC 150 104 160 127 170 153\nC 142 146 112 138 80 138\nQ 68 138 68 126 L 65 92\nC 47 87 28 82 6 81 Q 2 80 6 79 Z\nM 87 42 C 107 41 123 34 138 27\nC 128 48 113 60 87 65 Z\nM 87 94 C 111 96 129 109 138 129\nC 120 122 106 116 87 115 Z"
+        }
+      }
+    },
+    "response": {
+      "id": 19,
+      "ok": true,
+      "result": {
+        "id": 6
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 20,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.setFillRule",
+        "params": {
+          "ids": [
+            6
+          ],
+          "rule": "evenOdd"
+        }
+      }
+    },
+    "response": {
+      "id": 20,
+      "ok": true,
+      "result": {
+        "changed": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 21,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setFill",
+        "params": {
+          "ids": [
+            6
+          ],
+          "color": "#6B6AD6"
+        }
+      }
+    },
+    "response": {
+      "id": 21,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 22,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setStroke",
+        "params": {
+          "ids": [
+            6
+          ],
+          "none": true
+        }
+      }
+    },
+    "response": {
+      "id": 22,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 23,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.scale",
+        "params": {
+          "ids": [
+            6
+          ],
+          "sx": 150.0,
+          "sy": 150.0,
+          "origin": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "response": {
+      "id": 23,
+      "ok": true,
+      "result": {
+        "ids": [
+          6
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 24,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.move",
+        "params": {
+          "ids": [
+            6
+          ],
+          "dx": 625,
+          "dy": 210
+        }
+      }
+    },
+    "response": {
+      "id": 24,
+      "ok": true,
+      "result": {
+        "ids": [
+          6
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 25,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            6
+          ],
+          "name": "Betaray / ray-B symbol"
+        }
+      }
+    },
+    "response": {
+      "id": 25,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 26,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.create",
+        "params": {
+          "d": "M 6 79\nC 28 76 47 70 65 64\nL 68 30 Q 68 18 80 18\nC 112 18 142 11 170 5\nC 159 30 150 53 132 68\nC 143 66 151 60 161 56\nC 167 54 172 55 176 58\nL 193 66 L 182 78 L 193 90 L 176 98\nC 172 101 166 102 161 100\nC 151 95 143 90 132 88\nC 150 104 160 127 170 153\nC 142 146 112 138 80 138\nQ 68 138 68 126 L 65 92\nC 47 87 28 82 6 81 Q 2 80 6 79 Z\nM 87 42 C 107 41 123 34 138 27\nC 128 48 113 60 87 65 Z\nM 87 94 C 111 96 129 109 138 129\nC 120 122 106 116 87 115 Z"
+        }
+      }
+    },
+    "response": {
+      "id": 26,
+      "ok": true,
+      "result": {
+        "id": 7
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 27,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.setFillRule",
+        "params": {
+          "ids": [
+            7
+          ],
+          "rule": "evenOdd"
+        }
+      }
+    },
+    "response": {
+      "id": 27,
+      "ok": true,
+      "result": {
+        "changed": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 28,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setFill",
+        "params": {
+          "ids": [
+            7
+          ],
+          "color": "#526E69"
+        }
+      }
+    },
+    "response": {
+      "id": 28,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 29,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setStroke",
+        "params": {
+          "ids": [
+            7
+          ],
+          "none": true
+        }
+      }
+    },
+    "response": {
+      "id": 29,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 30,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.scale",
+        "params": {
+          "ids": [
+            7
+          ],
+          "sx": 10.81081081081081,
+          "sy": 10.81081081081081,
+          "origin": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "response": {
+      "id": 30,
+      "ok": true,
+      "result": {
+        "ids": [
+          7
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 31,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.move",
+        "params": {
+          "ids": [
+            7
+          ],
+          "dx": 90,
+          "dy": 570
+        }
+      }
+    },
+    "response": {
+      "id": 31,
+      "ok": true,
+      "result": {
+        "ids": [
+          7
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 32,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            7
+          ],
+          "name": "Optical test / 16"
+        }
+      }
+    },
+    "response": {
+      "id": 32,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 33,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.create",
+        "params": {
+          "text": "16 px high",
+          "x": 90,
+          "y": 650,
+          "size": 12,
+          "color": "#677676",
+          "font": "Avenir Next",
+          "style": "Regular"
+        }
+      }
+    },
+    "response": {
+      "id": 33,
+      "ok": true,
+      "result": {
+        "bounds": {
+          "height": 16.392000000000053,
+          "width": 57.92400000000001,
+          "x": 90.0,
+          "y": 638.0
+        },
+        "id": 8
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 34,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.setStyle",
+        "params": {
+          "ids": [
+            8
+          ],
+          "tracking": 0
+        }
+      }
+    },
+    "response": {
+      "id": 34,
+      "ok": true,
+      "result": {
+        "ids": [
+          8
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 35,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            8
+          ],
+          "name": "16 px high"
+        }
+      }
+    },
+    "response": {
+      "id": 35,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 36,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.create",
+        "params": {
+          "d": "M 6 79\nC 28 76 47 70 65 64\nL 68 30 Q 68 18 80 18\nC 112 18 142 11 170 5\nC 159 30 150 53 132 68\nC 143 66 151 60 161 56\nC 167 54 172 55 176 58\nL 193 66 L 182 78 L 193 90 L 176 98\nC 172 101 166 102 161 100\nC 151 95 143 90 132 88\nC 150 104 160 127 170 153\nC 142 146 112 138 80 138\nQ 68 138 68 126 L 65 92\nC 47 87 28 82 6 81 Q 2 80 6 79 Z\nM 87 42 C 107 41 123 34 138 27\nC 128 48 113 60 87 65 Z\nM 87 94 C 111 96 129 109 138 129\nC 120 122 106 116 87 115 Z"
+        }
+      }
+    },
+    "response": {
+      "id": 36,
+      "ok": true,
+      "result": {
+        "id": 9
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 37,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.setFillRule",
+        "params": {
+          "ids": [
+            9
+          ],
+          "rule": "evenOdd"
+        }
+      }
+    },
+    "response": {
+      "id": 37,
+      "ok": true,
+      "result": {
+        "changed": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 38,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setFill",
+        "params": {
+          "ids": [
+            9
+          ],
+          "color": "#526E69"
+        }
+      }
+    },
+    "response": {
+      "id": 38,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 39,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setStroke",
+        "params": {
+          "ids": [
+            9
+          ],
+          "none": true
+        }
+      }
+    },
+    "response": {
+      "id": 39,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 40,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.scale",
+        "params": {
+          "ids": [
+            9
+          ],
+          "sx": 16.216216216216218,
+          "sy": 16.216216216216218,
+          "origin": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "response": {
+      "id": 40,
+      "ok": true,
+      "result": {
+        "ids": [
+          9
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 41,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.move",
+        "params": {
+          "ids": [
+            9
+          ],
+          "dx": 240,
+          "dy": 570
+        }
+      }
+    },
+    "response": {
+      "id": 41,
+      "ok": true,
+      "result": {
+        "ids": [
+          9
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 42,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            9
+          ],
+          "name": "Optical test / 24"
+        }
+      }
+    },
+    "response": {
+      "id": 42,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 43,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.create",
+        "params": {
+          "text": "24 px high",
+          "x": 240,
+          "y": 650,
+          "size": 12,
+          "color": "#677676",
+          "font": "Avenir Next",
+          "style": "Regular"
+        }
+      }
+    },
+    "response": {
+      "id": 43,
+      "ok": true,
+      "result": {
+        "bounds": {
+          "height": 16.392000000000053,
+          "width": 57.92399999999998,
+          "x": 240.0,
+          "y": 638.0
+        },
+        "id": 10
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 44,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.setStyle",
+        "params": {
+          "ids": [
+            10
+          ],
+          "tracking": 0
+        }
+      }
+    },
+    "response": {
+      "id": 44,
+      "ok": true,
+      "result": {
+        "ids": [
+          10
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 45,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            10
+          ],
+          "name": "24 px high"
+        }
+      }
+    },
+    "response": {
+      "id": 45,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 46,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.create",
+        "params": {
+          "d": "M 6 79\nC 28 76 47 70 65 64\nL 68 30 Q 68 18 80 18\nC 112 18 142 11 170 5\nC 159 30 150 53 132 68\nC 143 66 151 60 161 56\nC 167 54 172 55 176 58\nL 193 66 L 182 78 L 193 90 L 176 98\nC 172 101 166 102 161 100\nC 151 95 143 90 132 88\nC 150 104 160 127 170 153\nC 142 146 112 138 80 138\nQ 68 138 68 126 L 65 92\nC 47 87 28 82 6 81 Q 2 80 6 79 Z\nM 87 42 C 107 41 123 34 138 27\nC 128 48 113 60 87 65 Z\nM 87 94 C 111 96 129 109 138 129\nC 120 122 106 116 87 115 Z"
+        }
+      }
+    },
+    "response": {
+      "id": 46,
+      "ok": true,
+      "result": {
+        "id": 11
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 47,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.setFillRule",
+        "params": {
+          "ids": [
+            11
+          ],
+          "rule": "evenOdd"
+        }
+      }
+    },
+    "response": {
+      "id": 47,
+      "ok": true,
+      "result": {
+        "changed": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 48,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setFill",
+        "params": {
+          "ids": [
+            11
+          ],
+          "color": "#526E69"
+        }
+      }
+    },
+    "response": {
+      "id": 48,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 49,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setStroke",
+        "params": {
+          "ids": [
+            11
+          ],
+          "none": true
+        }
+      }
+    },
+    "response": {
+      "id": 49,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 50,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.scale",
+        "params": {
+          "ids": [
+            11
+          ],
+          "sx": 21.62162162162162,
+          "sy": 21.62162162162162,
+          "origin": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "response": {
+      "id": 50,
+      "ok": true,
+      "result": {
+        "ids": [
+          11
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 51,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.move",
+        "params": {
+          "ids": [
+            11
+          ],
+          "dx": 390,
+          "dy": 570
+        }
+      }
+    },
+    "response": {
+      "id": 51,
+      "ok": true,
+      "result": {
+        "ids": [
+          11
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 52,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            11
+          ],
+          "name": "Optical test / 32"
+        }
+      }
+    },
+    "response": {
+      "id": 52,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 53,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.create",
+        "params": {
+          "text": "32 px high",
+          "x": 390,
+          "y": 650,
+          "size": 12,
+          "color": "#677676",
+          "font": "Avenir Next",
+          "style": "Regular"
+        }
+      }
+    },
+    "response": {
+      "id": 53,
+      "ok": true,
+      "result": {
+        "bounds": {
+          "height": 16.392000000000053,
+          "width": 57.92399999999998,
+          "x": 390.0,
+          "y": 638.0
+        },
+        "id": 12
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 54,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.setStyle",
+        "params": {
+          "ids": [
+            12
+          ],
+          "tracking": 0
+        }
+      }
+    },
+    "response": {
+      "id": 54,
+      "ok": true,
+      "result": {
+        "ids": [
+          12
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 55,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            12
+          ],
+          "name": "32 px high"
+        }
+      }
+    },
+    "response": {
+      "id": 55,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 56,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.create",
+        "params": {
+          "d": "M 6 79\nC 28 76 47 70 65 64\nL 68 30 Q 68 18 80 18\nC 112 18 142 11 170 5\nC 159 30 150 53 132 68\nC 143 66 151 60 161 56\nC 167 54 172 55 176 58\nL 193 66 L 182 78 L 193 90 L 176 98\nC 172 101 166 102 161 100\nC 151 95 143 90 132 88\nC 150 104 160 127 170 153\nC 142 146 112 138 80 138\nQ 68 138 68 126 L 65 92\nC 47 87 28 82 6 81 Q 2 80 6 79 Z\nM 87 42 C 107 41 123 34 138 27\nC 128 48 113 60 87 65 Z\nM 87 94 C 111 96 129 109 138 129\nC 120 122 106 116 87 115 Z"
+        }
+      }
+    },
+    "response": {
+      "id": 56,
+      "ok": true,
+      "result": {
+        "id": 13
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 57,
+      "method": "engine.execute",
+      "params": {
+        "command": "path.setFillRule",
+        "params": {
+          "ids": [
+            13
+          ],
+          "rule": "evenOdd"
+        }
+      }
+    },
+    "response": {
+      "id": 57,
+      "ok": true,
+      "result": {
+        "changed": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 58,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setFill",
+        "params": {
+          "ids": [
+            13
+          ],
+          "color": "#526E69"
+        }
+      }
+    },
+    "response": {
+      "id": 58,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 59,
+      "method": "engine.execute",
+      "params": {
+        "command": "paint.setStroke",
+        "params": {
+          "ids": [
+            13
+          ],
+          "none": true
+        }
+      }
+    },
+    "response": {
+      "id": 59,
+      "ok": true,
+      "result": {
+        "objects": 1
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 60,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.scale",
+        "params": {
+          "ids": [
+            13
+          ],
+          "sx": 32.432432432432435,
+          "sy": 32.432432432432435,
+          "origin": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    "response": {
+      "id": 60,
+      "ok": true,
+      "result": {
+        "ids": [
+          13
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 61,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.move",
+        "params": {
+          "ids": [
+            13
+          ],
+          "dx": 540,
+          "dy": 570
+        }
+      }
+    },
+    "response": {
+      "id": 61,
+      "ok": true,
+      "result": {
+        "ids": [
+          13
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 62,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            13
+          ],
+          "name": "Optical test / 48"
+        }
+      }
+    },
+    "response": {
+      "id": 62,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 63,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.create",
+        "params": {
+          "text": "48 px high",
+          "x": 540,
+          "y": 650,
+          "size": 12,
+          "color": "#677676",
+          "font": "Avenir Next",
+          "style": "Regular"
+        }
+      }
+    },
+    "response": {
+      "id": 63,
+      "ok": true,
+      "result": {
+        "bounds": {
+          "height": 16.392000000000053,
+          "width": 57.92399999999998,
+          "x": 540.0,
+          "y": 638.0
+        },
+        "id": 14
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 64,
+      "method": "engine.execute",
+      "params": {
+        "command": "text.setStyle",
+        "params": {
+          "ids": [
+            14
+          ],
+          "tracking": 0
+        }
+      }
+    },
+    "response": {
+      "id": 64,
+      "ok": true,
+      "result": {
+        "ids": [
+          14
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 65,
+      "method": "engine.execute",
+      "params": {
+        "command": "object.setProps",
+        "params": {
+          "ids": [
+            14
+          ],
+          "name": "48 px high"
+        }
+      }
+    },
+    "response": {
+      "id": 65,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 66,
+      "method": "engine.execute",
+      "params": {
+        "command": "select.set",
+        "params": {
+          "ids": []
+        }
+      }
+    },
+    "response": {
+      "id": 66,
+      "ok": true,
+      "result": {
+        "count": 0,
+        "ids": []
+      }
+    }
+  },
+  {
+    "request": {
+      "id": 67,
+      "method": "engine.execute",
+      "params": {
+        "command": "view.fitArtboard",
+        "params": {}
+      }
+    },
+    "response": {
+      "id": 67,
+      "ok": true,
+      "result": null
+    }
+  },
+  {
+    "request": {
+      "id": 68,
+      "method": "app.export",
+      "params": {
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/design/brand/symbol-proof.png",
+        "format": "png",
+        "scale": 1,
+        "background": "#F7F5F0"
+      }
+    },
+    "response": {
+      "id": 68,
+      "ok": true,
+      "result": {
+        "background": true,
+        "path": "/Users/karthikmprakash/Documents/Personal/Projects/xray/betaray/design/brand/symbol-proof.png",
+        "status": "Exporting symbol-proof.png\u2026"
+      }
+    }
+  }
+]

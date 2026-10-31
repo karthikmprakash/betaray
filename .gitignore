@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Isolated integration-test build
+/.next-qa/
+/prisma/*.db
+/prisma/*.db-journal
+!.env.example

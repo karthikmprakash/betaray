@@ -1,0 +1,58 @@
+name: Bug report
+description: Report a problem with Betaray
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for reporting! Please fill in the details so we can reproduce the issue.
+  - type: input
+    id: version
+    attributes:
+      label: Betaray version / image tag
+      description: e.g. v0.1.0, main@abc1234, or ghcr.io/karthikmprakash/betaray:latest
+      placeholder: v0.1.0
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options: [UI / workspace, Auth / sessions, API / tokens, Jira sync, Drafts / AI, Executions / reports, Self-hosting / Docker, Other]
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Minimal steps, including project setup if relevant
+      placeholder: "1. Create project BET\n2. ..."
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: Include error messages, screenshots, or server logs (redact secrets)
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, Node version, database, deployment type
+      placeholder: macOS, Node 22, SQLite, Docker
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I searched existing issues
+          required: true
+        - label: I can reproduce on `main`
+          required: false

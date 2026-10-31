@@ -1,0 +1,14 @@
+node_modules
+.next
+.next-qa
+.git
+.gitignore
+.env
+.env.local
+prisma/*.db
+prisma/*.db-journal
+coverage
+npm-debug.log*
+.DS_Store
+design
+.taste-skill

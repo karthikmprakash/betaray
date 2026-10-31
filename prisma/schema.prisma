@@ -1,0 +1,460 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String               @id @default(cuid())
+  email        String               @unique
+  name         String
+  avatar       String?
+  passwordHash String?
+  sessions     Session[]
+  memberships  OrganizationMember[]
+  role         String               @default("Tester") // Admin, Tester, Viewer
+  createdAt    DateTime             @default(now())
+  projects     ProjectMember[]
+  auditLogs    AuditLog[]
+}
+
+model Project {
+  explorations ExploratorySession[]
+  id           String               @id @default(cuid())
+  key          String // e.g. BET
+  workspaceId  String?
+  archivedAt   DateTime?
+  workspace    Workspace?           @relation(fields: [workspaceId], references: [id])
+  nextIssue    Int                  @default(400)
+  drafts       TestDraft[]
+  versions     ReleaseVersion[]
+  name         String
+  description  String?
+  template     String               @default("Scrum")
+  createdAt    DateTime             @default(now())
+  members      ProjectMember[]
+  issues       Issue[]
+  tests        Test[]
+  testSets     TestSet[]
+  testPlans    TestPlan[]
+  executions   TestExecution[]
+  folders      Folder[]
+  envs         Environment[]
+  jiraConnection JiraConnection?
+
+  @@unique([workspaceId, key])
+}
+
+model ProjectMember {
+  id        String  @id @default(cuid())
+  userId    String
+  projectId String
+  role      String  @default("Tester")
+  user      User    @relation(fields: [userId], references: [id])
+  project   Project @relation(fields: [projectId], references: [id])
+
+  @@unique([userId, projectId])
+}
+
+model Folder {
+  id        String   @id @default(cuid())
+  name      String
+  projectId String
+  parentId  String?
+  project   Project  @relation(fields: [projectId], references: [id])
+  parent    Folder?  @relation("FolderHierarchy", fields: [parentId], references: [id])
+  children  Folder[] @relation("FolderHierarchy")
+  tests     Test[]
+}
+
+model Issue {
+  id          String            @id @default(cuid())
+  key         String
+  projectId   String
+  type        String // Story, Bug, Task, Epic
+  summary     String
+  description String?
+  status      String            @default("To Do")
+  priority    String            @default("Medium")
+  assigneeId  String?
+  createdAt   DateTime          @default(now())
+  project     Project           @relation(fields: [projectId], references: [id])
+  testLinks   RequirementLink[]
+  jiraLinks   JiraIssueLink[]
+
+  @@unique([projectId, key])
+}
+
+model Test {
+  id               String            @id @default(cuid())
+  key              String
+  projectId        String
+  summary          String
+  description      String?
+  type             String            @default("Manual") // Manual, Cucumber, Generic
+  priority         String            @default("Medium")
+  status           String            @default("To Do")
+  labels           String? // comma separated
+  folderId         String?
+  precondition     String?
+  gherkin          String?
+  steps            TestStep[]
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
+  revision         Int               @default(1)
+  archivedAt       DateTime?
+  revisions        TestRevision[]
+  comments         TestComment[]
+  project          Project           @relation(fields: [projectId], references: [id])
+  folder           Folder?           @relation(fields: [folderId], references: [id])
+  requirementLinks RequirementLink[]
+  testRuns         TestRun[]
+  sets             TestSetTest[]
+  plans            TestPlanTest[]
+
+  @@unique([projectId, key])
+}
+
+model TestStep {
+  id       String  @id @default(cuid())
+  testId   String
+  order    Int
+  action   String
+  data     String?
+  expected String?
+  test     Test    @relation(fields: [testId], references: [id], onDelete: Cascade)
+}
+
+model RequirementLink {
+  id        String   @id @default(cuid())
+  testId    String
+  issueId   String
+  createdAt DateTime @default(now())
+  test      Test     @relation(fields: [testId], references: [id], onDelete: Cascade)
+  issue     Issue    @relation(fields: [issueId], references: [id], onDelete: Cascade)
+
+  @@unique([testId, issueId])
+}
+
+model TestSet {
+  id        String        @id @default(cuid())
+  key       String
+  projectId String
+  name      String
+  createdAt DateTime      @default(now())
+  project   Project       @relation(fields: [projectId], references: [id])
+  tests     TestSetTest[]
+
+  @@unique([projectId, key])
+}
+
+model TestSetTest {
+  id        String  @id @default(cuid())
+  testSetId String
+  testId    String
+  testSet   TestSet @relation(fields: [testSetId], references: [id], onDelete: Cascade)
+  test      Test    @relation(fields: [testId], references: [id], onDelete: Cascade)
+
+  @@unique([testSetId, testId])
+}
+
+model TestPlan {
+  id         String          @id @default(cuid())
+  key        String
+  projectId  String
+  name       String
+  status     String          @default("In Progress")
+  createdAt  DateTime        @default(now())
+  project    Project         @relation(fields: [projectId], references: [id])
+  tests      TestPlanTest[]
+  executions TestExecution[]
+
+  @@unique([projectId, key])
+}
+
+model TestPlanTest {
+  id         String   @id @default(cuid())
+  testPlanId String
+  testId     String
+  testPlan   TestPlan @relation(fields: [testPlanId], references: [id], onDelete: Cascade)
+  test       Test     @relation(fields: [testId], references: [id], onDelete: Cascade)
+
+  @@unique([testPlanId, testId])
+}
+
+model TestExecution {
+  revision    Int       @default(1)
+  notes       String?
+  id          String    @id @default(cuid())
+  key         String
+  projectId   String
+  name        String
+  description String?
+  status      String    @default("To Do")
+  environment String?
+  version     String?
+  testPlanId  String?
+  createdAt   DateTime  @default(now())
+  project     Project   @relation(fields: [projectId], references: [id])
+  testPlan    TestPlan? @relation(fields: [testPlanId], references: [id])
+  runs        TestRun[]
+
+  @@unique([projectId, key])
+}
+
+model TestRun {
+  id          String        @id @default(cuid())
+  testId      String
+  executionId String
+  status      String        @default("TODO") // TODO, PASS, FAIL, EXECUTING, ABORTED, BLOCKED
+  assignee    String?
+  executedBy  String?
+  executedAt  DateTime?
+  comment     String?
+  defects     String? // comma keys
+  evidence    String?
+  steps       TestRunStep[]
+  test        Test          @relation(fields: [testId], references: [id], onDelete: Cascade)
+  execution   TestExecution @relation(fields: [executionId], references: [id], onDelete: Cascade)
+
+  @@unique([testId, executionId])
+}
+
+model TestRunStep {
+  id      String  @id @default(cuid())
+  runId   String
+  order   Int
+  status  String  @default("TODO")
+  comment String?
+  defects String?
+  run     TestRun @relation(fields: [runId], references: [id], onDelete: Cascade)
+}
+
+model Environment {
+  description String?
+  baseUrl     String?
+  region      String?
+  archivedAt  DateTime?
+  id          String    @id @default(cuid())
+  name        String
+  projectId   String
+  project     Project   @relation(fields: [projectId], references: [id])
+
+  @@unique([projectId, name])
+}
+
+model AuditLog {
+  organizationId String?
+  projectId      String?
+  id             String   @id @default(cuid())
+  action         String
+  entity         String
+  entityId       String
+  userId         String?
+  detail         String?
+  createdAt      DateTime @default(now())
+  user           User?    @relation(fields: [userId], references: [id])
+}
+
+model ApiKey {
+  projectId  String?
+  userId     String?
+  scope      String    @default("read")
+  prefix     String?
+  expiresAt  DateTime?
+  revokedAt  DateTime?
+  lastUsedAt DateTime?
+  id         String    @id @default(cuid())
+  name       String
+  token      String    @unique
+  createdAt  DateTime  @default(now())
+}
+
+model Organization {
+  id          String               @id @default(cuid())
+  name        String
+  createdAt   DateTime             @default(now())
+  members     OrganizationMember[]
+  workspaces  Workspace[]
+  invitations Invitation[]
+  jiraConnections JiraConnection[]
+}
+
+model OrganizationMember {
+  id             String       @id @default(cuid())
+  organizationId String
+  userId         String
+  role           String       @default("Tester")
+  organization   Organization @relation(fields: [organizationId], references: [id])
+  user           User         @relation(fields: [userId], references: [id])
+
+  @@unique([organizationId, userId])
+}
+
+model Workspace {
+  id             String       @id @default(cuid())
+  name           String
+  organizationId String
+  createdAt      DateTime     @default(now())
+  organization   Organization @relation(fields: [organizationId], references: [id])
+  projects       Project[]
+
+  @@unique([organizationId, name])
+}
+
+model Session {
+  id        String   @id
+  userId    String
+  expiresAt DateTime
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model Invitation {
+  id             String       @id @default(cuid())
+  organizationId String
+  email          String
+  role           String
+  tokenHash      String       @unique
+  expiresAt      DateTime
+  acceptedAt     DateTime?
+  createdAt      DateTime     @default(now())
+  organization   Organization @relation(fields: [organizationId], references: [id])
+}
+
+model TestRevision {
+  id        String   @id @default(cuid())
+  testId    String
+  revision  Int
+  snapshot  String
+  actor     String
+  createdAt DateTime @default(now())
+  test      Test     @relation(fields: [testId], references: [id], onDelete: Cascade)
+
+  @@unique([testId, revision])
+}
+
+model TestComment {
+  id        String   @id @default(cuid())
+  testId    String
+  body      String
+  actor     String
+  createdAt DateTime @default(now())
+  test      Test     @relation(fields: [testId], references: [id], onDelete: Cascade)
+}
+
+model TestDraft {
+  id             String   @id @default(cuid())
+  projectId      String
+  source         String
+  requirementKey String?
+  type           String
+  mode           String
+  payload        String
+  approvedTestId String?  @unique
+  createdBy      String
+  approvedBy     String?
+  createdAt      DateTime @default(now())
+  project        Project  @relation(fields: [projectId], references: [id])
+}
+
+model ReleaseVersion {
+  id          String  @id @default(cuid())
+  projectId   String
+  name        String
+  status      String  @default("Planned")
+  description String?
+  project     Project @relation(fields: [projectId], references: [id])
+
+  @@unique([projectId, name])
+}
+
+model AuthAttempt {
+  id       String   @id
+  count    Int      @default(0)
+  windowAt DateTime @default(now())
+}
+
+model ExploratorySession {
+  id              String    @id @default(cuid())
+  projectId       String
+  title           String
+  charter         String
+  notes           String    @default("[]")
+  status          String    @default("Running")
+  durationSeconds Int       @default(0)
+  lastStartedAt   DateTime?
+  revision        Int       @default(1)
+  createdAt       DateTime  @default(now())
+  createdBy       String
+  project         Project   @relation(fields: [projectId], references: [id])
+}
+
+
+model JiraConnection {
+  id               String   @id @default(cuid())
+  organizationId   String
+  projectId        String   @unique
+  mode             String   @default("cloud")
+  cloudId          String
+  siteUrl          String
+  siteName         String?
+  accessToken      String
+  refreshToken     String
+  expiresAt        DateTime
+  scope            String
+  jiraProjectId    String?
+  jiraProjectKey   String?
+  jiraProjectName  String?
+  defaultIssueType String   @default("Story")
+  status           String   @default("connected")
+  lastSyncedAt     DateTime?
+  lastSyncError    String?
+  webhookId        String?
+  webhookSecret    String?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+  organization     Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  project          Project      @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  links            JiraIssueLink[]
+  syncLogs         JiraSyncLog[]
+}
+
+model JiraIssueLink {
+  id              String   @id @default(cuid())
+  connectionId    String
+  issueId         String
+  jiraIssueId     String
+  jiraIssueKey    String
+  jiraUpdatedAt   DateTime?
+  jiraStatus      String?
+  jiraType        String?
+  syncHash        String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  connection      JiraConnection @relation(fields: [connectionId], references: [id], onDelete: Cascade)
+  issue           Issue          @relation(fields: [issueId], references: [id], onDelete: Cascade)
+
+  @@unique([connectionId, jiraIssueKey])
+  @@unique([connectionId, issueId])
+  @@index([jiraIssueKey])
+}
+
+model JiraSyncLog {
+  id           String   @id @default(cuid())
+  connectionId String
+  direction    String   @default("inbound")
+  status       String
+  imported     Int      @default(0)
+  updated      Int      @default(0)
+  failed       Int      @default(0)
+  message      String?
+  createdAt    DateTime @default(now())
+  connection   JiraConnection @relation(fields: [connectionId], references: [id], onDelete: Cascade)
+
+  @@index([connectionId, createdAt])
+}
