@@ -40,18 +40,22 @@ Open **http://localhost:3001/login** and create an organization. Signup creates 
 ## Docker (GHCR)
 
 ```sh
-docker run --env-file .env -p 3000:3000 ghcr.io/karthikmprakash/betaray:latest
+docker run --env-file .env -p 3000:3000 \
+  -v betaray-data:/app/data \
+  ghcr.io/karthikmprakash/betaray:latest
 # or build locally
 docker build -t betaray:local .
-docker run --env-file .env -p 3000:3000 betaray:local
+docker run --env-file .env -p 3000:3000 -v betaray-data:/app/data betaray:local
 ```
+
+The SQLite file lives on `/app/data`. Prisma resolves `file:../data/prod.db` relative to `prisma/schema.prisma`, so `DATABASE_URL="file:../data/prod.db"` points at that volume.
 
 Images are published on every push to `main` as `main`, `main-<sha>`, and `latest`, and on tags as `v*`. See [`.github/workflows/docker.yml`](.github/workflows/docker.yml).
 
 Set these in production:
 
 ```env
-DATABASE_URL="file:./data/prod.db"   # or your Postgres URL when you migrate
+DATABASE_URL="file:../data/prod.db"   # mounted at /app/data in Docker
 APP_URL="https://qa.example.com"
 JIRA_CLIENT_ID=""        # only if you use Jira Cloud
 JIRA_CLIENT_SECRET=""

@@ -27,6 +27,9 @@ COPY --from=builder /app/public ./public
 COPY --from=builder /app/prisma ./prisma
 COPY --from=builder /app/next.config.ts ./next.config.ts
 COPY --from=builder /app/scripts ./scripts
+# SQLite lives on a mounted volume at /app/data. Create it with the runtime
+# user's ownership so Docker initializes a new named volume writable by app.
+RUN mkdir -p /app/data && chown app:app /app/data
 RUN chown -R app:app /app
 USER app
 EXPOSE 3000

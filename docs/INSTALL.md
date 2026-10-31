@@ -68,7 +68,7 @@ volumes:
 
 | Variable | Required | Description |
 |---|---|---|
-| `DATABASE_URL` | Yes | DB connection. `file:./dev.db` for SQLite, Postgres URL for production. |
+| `DATABASE_URL` | Yes | DB connection. `file:./dev.db` for local SQLite, `file:../data/prod.db` for the Docker volume. |
 | `APP_URL` | Prod | Canonical origin, e.g. `https://qa.example.com`. Used for OAuth callbacks and links. |
 | `ALLOW_LOCAL_DEMO` | No | Set to `"true"` to enable seeded demo data (dev only). |
 | `JIRA_CLIENT_ID` | Jira | Atlassian OAuth app client ID. |
@@ -399,7 +399,7 @@ Update `prisma/schema.prisma` datasource to `postgresql`, run `npx prisma migrat
 
 ### Backups
 
-- SQLite: snapshot `prisma/dev.db` (or `./data/prod.db` in Docker).
+- SQLite: snapshot `prisma/dev.db` locally, or the volume mounted at `/app/data` in Docker (`DATABASE_URL="file:../data/prod.db"`).
 - Postgres: `pg_dump` or cloud automated backups. Test restores.
 - Back up `JIRA_TOKEN_KEY` separately — without it Jira tokens cannot be decrypted.
 
