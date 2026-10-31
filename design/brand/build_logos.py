@@ -50,29 +50,9 @@ class VectorCraft:
         return obj
 
 
-# A right-facing, horizontal ray. The left body edge and two wing counters
-# make the B, rather than placing an unrelated letter on an animal drawing.
-RAY_PATH = """M 6 79
-C 29 78 48 73 65 66
-L 68 30 Q 68 18 80 18
-C 112 18 142 11 170 5
-C 159 30 150 53 132 68
-C 143 66 151 62 160 60
-C 166 58 172 59 177 62
-Q 183 66 187 70
-Q 179 70 175 78
-Q 179 86 187 86
-Q 183 90 177 94
-C 172 97 166 98 160 96
-C 151 94 143 90 132 88
-C 150 104 160 127 170 153
-C 142 146 112 138 80 138
-Q 68 138 68 126 L 65 90
-C 48 85 29 81 6 81 Q 2 80 6 79 Z
-M 87 42 C 107 41 123 34 138 27
-C 128 48 113 60 87 65 Z
-M 87 94 C 111 96 129 109 138 129
-C 120 122 106 116 87 115 Z"""
+# B first, manta second. The solid stem and waist make the letter; the two
+# counters are the ray's swept wings. Coordinates are normalized in ray().
+RAY_PATH = """M 44 218 C 44 232 54 240 68 240 C 136 240 202 234 232 228 C 216 198 192 164 158 144 C 136 132 116 132 104 128 C 116 124 136 124 158 112 C 192 92 216 58 232 28 C 202 22 136 16 68 16 C 54 16 44 24 44 38 Z M 92 64 C 138 64 180 56 202 48 C 188 76 162 96 128 108 C 116 113 104 110 98 102 C 94 95 92 80 92 64 Z M 92 192 C 92 176 94 161 98 154 C 104 146 116 143 128 148 C 162 160 188 180 202 208 C 180 200 138 192 92 192 Z"""
 
 
 def ray(vc, x, y, scale, fill, name="Betaray / ray-B symbol"):
@@ -80,6 +60,8 @@ def ray(vc, x, y, scale, fill, name="Betaray / ray-B symbol"):
     vc.run("path.setFillRule", {"ids": [obj], "rule": "evenOdd"})
     vc.run("paint.setFill", {"ids": [obj], "color": fill})
     vc.run("paint.setStroke", {"ids": [obj], "none": True})
+    # Normalize the path bounds to the origin so x/y below mean top-left.
+    vc.run("object.move", {"ids": [obj], "dx": -44, "dy": -16})
     vc.run("object.scale", {"ids": [obj], "sx": scale * 100, "sy": scale * 100, "origin": [0, 0]})
     vc.run("object.move", {"ids": [obj], "dx": x, "dy": y})
     vc.name(obj, name)
@@ -92,10 +74,10 @@ def proof():
     vc.rect(0, 0, 1120, 680, "#F7F5F0", "Proof background")
     vc.text("betaray", 60, 60, 25, "#35434A", style="Demi Bold", tracking=-30)
     vc.text("Horizontal ray / B monogram", 60, 105, 15, "#677676")
-    ray(vc, 90, 185, 2.1, "#526E69")
-    ray(vc, 625, 210, 1.5, "#6B6AD6")
+    ray(vc, 90, 150, 1.8, "#526E69")
+    ray(vc, 625, 190, 1.2, "#6B6AD6")
     for i, size in enumerate([16, 24, 32, 48]):
-        ray(vc, 90 + i * 150, 570, size / 148, "#526E69", "Optical test / " + str(size))
+        ray(vc, 90 + i * 150, 570, size / 224, "#526E69", "Optical test / " + str(size))
         vc.text(str(size) + " px high", 90 + i * 150, 650, 12, "#677676")
     vc.run("select.set", {"ids": []})
     vc.run("view.fitArtboard")
@@ -123,8 +105,8 @@ def identity():
         return vc.text("betaray", x, y, size, color, name, font="Mont", style="SemiBold", tracking=-35)
 
     def horizontal(x, y, color, word_color=None):
-        symbol = ray(vc, x + 36, y + 38, 0.94, color)
-        word = wordmark(x + 240, y + 140, 94, word_color or color)
+        symbol = ray(vc, x + 40, y + 38, 0.60, color)
+        word = wordmark(x + 175, y + 140, 88, word_color or color)
         group = vc.run("object.group", {"ids": [symbol, word]})["id"]
         vc.name(group, "Betaray / horizontal lockup")
         return group
@@ -134,23 +116,23 @@ def identity():
     vc.rect(0, 0, 1440, 1120, PALETTE["paper"], "Warm paper")
     vc.text("BETARAY", 64, 70, 14, PALETTE["ink"], style="Demi Bold", tracking=160)
     vc.text("The ray. The B. One mark.", 64, 123, 36, PALETTE["ink"], style="Medium", tracking=-35)
-    vc.text("A horizontal manta ray, shaped into a two-counter monogram.", 65, 157, 16, "#677676")
+    vc.text("A B first. The manta\u2019s wings become its two counters.", 65, 157, 16, "#677676")
 
-    ray(vc, 255, 229, 1.75, PALETTE["lagoon"])
-    wordmark(659, 420, 140, PALETTE["ink"])
+    ray(vc, 255, 229, 1.35, PALETTE["lagoon"])
+    wordmark(575, 420, 140, PALETTE["ink"])
     vc.text("PRIMARY  /  LAGOON + SLATE", 65, 575, 12, "#677676", tracking=100)
 
     vc.rect(0, 620, 1440, 258, PALETTE["lagoon"], "Reverse usage / lagoon field")
-    ray(vc, 73, 674, 0.88, PALETTE["paper"])
+    ray(vc, 73, 674, 0.62, PALETTE["paper"])
     wordmark(290, 777, 82, PALETTE["paper"])
     vc.text("One colour. No gradients. The counters stay transparent.", 830, 751, 15, PALETTE["paper"])
 
     vc.text("MARK + COLOUR VARIANTS", 65, 927, 12, "#677676", tracking=100)
-    ray(vc, 65, 953, 0.62, PALETTE["lagoon"])
-    ray(vc, 255, 953, 0.62, PALETTE["ink"])
-    ray(vc, 445, 953, 0.62, PALETTE["lilac"])
+    ray(vc, 65, 953, 0.45, PALETTE["lagoon"])
+    ray(vc, 255, 953, 0.45, PALETTE["ink"])
+    ray(vc, 445, 953, 0.45, PALETTE["lilac"])
     vc.rect(665, 939, 122, 122, PALETTE["mist"], "App icon / mist", radius=28)
-    ray(vc, 670, 960, 0.58, PALETTE["lagoon"])
+    ray(vc, 690, 965, 0.4, PALETTE["lagoon"])
     for i, (name, hex_value) in enumerate([("Lagoon", PALETTE["lagoon"]), ("Slate", PALETTE["ink"]), ("Lilac", PALETTE["lilac"]), ("Paper", PALETTE["paper"])]):
         x = 870 + i * 124
         vc.rect(x, 941, 96, 42, hex_value, name + " swatch", radius=6)
@@ -164,11 +146,11 @@ def identity():
 
     for name, color in variants:
         x, y = board("betaray-mark-" + name, 256, 256)
-        ray(vc, x + 12, y + 38, 1.2, color)
+        ray(vc, x + 39, y + 22, 0.95, color)
 
     for name, color in variants:
         x, y = board("betaray-stacked-" + name, 440, 440)
-        ray(vc, x + 68, y + 40, 1.65, color)
+        ray(vc, x + 107, y + 30, 1.2, color)
         wordmark(x + 82, y + 369, 82, PALETTE["ink"] if name == "primary" else color)
 
     for name, color in [("primary", PALETTE["ink"]), ("reversed", PALETTE["paper"])]:
@@ -178,12 +160,12 @@ def identity():
     for name, bg, fg in [("sage", PALETTE["mist"], PALETTE["lagoon"]), ("lagoon", PALETTE["lagoon"], PALETTE["paper"]), ("lilac", PALETTE["lilac"], PALETTE["paper"])]:
         x, y = board("betaray-app-icon-" + name, 512, 512)
         vc.rect(x, y, 512, 512, bg, "App tile / " + name, radius=112)
-        ray(vc, x + 14, y + 72, 2.35, fg)
+        ray(vc, x + 76, y + 42, 1.9, fg)
 
     # Maskable icon has an opaque square background; mark sits inside its safe zone.
     x, y = board("betaray-maskable-icon", 512, 512)
     vc.rect(x, y, 512, 512, PALETTE["lagoon"], "Maskable tile / full bleed")
-    ray(vc, x + 87, y + 128, 1.6, PALETTE["paper"])
+    ray(vc, x + 130, y + 103, 1.35, PALETTE["paper"])
 
     # Typography stays live in the native master, paths in production SVGs.
     fonts = vc.run("text.fonts")

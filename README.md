@@ -8,7 +8,11 @@
   <a href="https://nextjs.org"><img alt="Next.js 16" src="https://img.shields.io/badge/next.js-16-black?logo=next.js" /></a>
 </p>
 
+### See beyond the surface.
+
 Open-source test management — an **Xray alternative** built for self-hosting. Organize work as **organization → workspace → project → tests**, with revisions, draft review, executions, coverage, scoped API tokens, and **Jira Cloud sync**. No fake compliance claims.
+
+Inspired by the manta ray: broad coverage, precise filtering, and movement that keeps quality connected. Read the [brand narrative](docs/Betaray_Brand_Narrative.md).
 
 - **Stack:** Next.js 16 + React 19, Prisma 6, SQLite (local) → Postgres-ready, Zustand, Tailwind
 - **Auth:** email/password, scrypt, HttpOnly sessions, throttling, Owner/Admin/Tester/Viewer roles

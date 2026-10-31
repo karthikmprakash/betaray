@@ -2,9 +2,10 @@ import type { MetadataRoute } from "next"
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Betaray — test management in Jira",
+    name: "Betaray — See beyond the surface",
     short_name: "Betaray",
-    description: "Design, run and automate tests natively inside Jira, with every requirement traceable.",
+    description:
+      "Test management that brings clarity to complexity, with Jira Cloud integration and an open-source, self-hosted core.",
     start_url: "/app",
     display: "standalone",
     background_color: "#F7F5F0",

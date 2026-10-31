@@ -97,7 +97,7 @@ unauthenticated but requires the per-connection secret embedded in its URL.
 - The webhook URL contains a high-entropy per-connection secret.
 - Disconnecting attempts to delete the Jira webhook, then removes local
   credentials. Imported requirements remain.
-- Requires Jira Cloud. Data Center uses a separate PAT-based connector.
+- Requires Jira Cloud. Jira Data Center is not supported yet.
 
 ## Current limitations
 

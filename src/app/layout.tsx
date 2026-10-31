@@ -16,13 +16,15 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Betaray — AI-Powered Test Management in Jira",
-  description: "Bring QA and development together in Jira. Betaray designs, runs and automates tests where work happens — with every requirement traceable.",
+  title: "Betaray — See beyond the surface. Test management with clarity.",
+  description:
+    "Test management that brings clarity to complexity. Plan, organize, and execute software tests with confidence — with Jira Cloud integration, traceability, and an open-source, self-hosted core.",
   applicationName: "Betaray",
   manifest: "/manifest.webmanifest",
   openGraph: {
-    title: "Betaray — Testing, where the work lives",
-    description: "Test management natively inside Jira, with every requirement traceable.",
+    title: "Betaray — See beyond the surface.",
+    description:
+      "Test management that brings clarity to complexity. Inspired by the manta ray.",
     siteName: "Betaray",
     type: "website",
   },

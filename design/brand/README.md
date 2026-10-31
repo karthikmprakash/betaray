@@ -2,9 +2,14 @@
 
 ## Concept
 
-A right-facing horizontal manta ray, with its spine and two swept-wing
-cut-outs forming the B. The tail extends left, leaving the head facing the
-wordmark. This is a first proposed identity, not a cleared trademark.
+**See beyond the surface.** The mark reads as a confident B first; on a second
+look, the two counters become the swept wings of a manta ray. The solid left
+stem is the ray's body, the outer silhouette is the letter, and the wing-shaped
+negative space carries the ocean story without drawing every fin and tail.
+
+The identity deliberately removes the literal head and tail detail of the
+first sketch. At 16–32px the B stays legible; at large sizes the wing curves do
+the storytelling.
 
 Drawn as editable Bézier artwork through **VectorCraft 0.19.0's live control
 API**. All SVG, PNG and PDF artwork was exported by VectorCraft, not traced
@@ -69,7 +74,7 @@ variant, not an instruction to recolour the existing application.
 
 ## Usage
 
-- Preserve the horizontal ray orientation and native proportions.
+- Preserve the B silhouette and the two wing-shaped counters.
 - Keep at least one counter-opening height of clear space on each side.
 - Recommended horizontal lockup minimum width: 160 px.
 - Recommended standalone symbol minimum height: 24 px.
@@ -80,6 +85,8 @@ variant, not an instruction to recolour the existing application.
 - Do not add shadows, gradients, extra outlines, stretch, or rotate the mark.
 - The sheet demonstrates the proposed identity. No customer proof,
   certifications or ownership claims are implied.
+- Use the separate manta line artwork for narrative illustrations; keep it
+  subtle and never let it compete with the B.
 
 ## Files in this folder
 
@@ -91,8 +98,13 @@ variant, not an instruction to recolour the existing application.
 - `export-manifest.json`: artboards, font resolution, export warnings.
 - `validation.json`: file, outline, transparency and dimension checks.
 - `vectorcraft-journal.json`: exact API command history.
+- `proposals/logo-proposal-02.*`: the side-by-side comparison that led to the
+  current mark.
 
-The app now uses the mono ray-B mark in the sidebar and sign-in screen, the
+The brand narrative and homepage copy live in
+[`../../docs/Betaray_Brand_Narrative.md`](../../docs/Betaray_Brand_Narrative.md).
+
+The app uses the mono ray-B mark in the sidebar and sign-in screen, the
 matching favicon/app icons, and Mont for the Betaray lettering. The public
 product page uses the primary lagoon lockup, the same identity palette,
 and the horizontal ray-B artwork.

@@ -5,9 +5,9 @@ import { Menu, X, ArrowUpRight } from "lucide-react"
 
 const nav = [
   { label: "Product", href: "/#product" },
+  { label: "Philosophy", href: "/#philosophy" },
   { label: "AI Studio", href: "/#ai" },
-  { label: "Customers", href: "/#customers" },
-  { label: "Pricing", href: "/#pricing" },
+  { label: "Open source", href: "/#open-source" },
   { label: "Docs", href: "/docs" },
 ]
 
