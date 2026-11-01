@@ -109,6 +109,10 @@ variant, not an instruction to recolour the existing application.
   - `manta-school.png` — five mantas at different angles and scales.
   - `manta-angle-*.png` — individual bank, underside, far and small poses.
 
+The EffectCraft control-API recipe for the loops, PNG-sequence render, and
+transparent WebP encode is documented in
+[`../../docs/effectcraft-animations.md`](../../docs/effectcraft-animations.md).
+
 The brand narrative and homepage copy live in
 [`../../docs/Betaray_Brand_Narrative.md`](../../docs/Betaray_Brand_Narrative.md).
 
