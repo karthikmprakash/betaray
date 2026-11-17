@@ -52,6 +52,19 @@ jobs:
           registry-url: https://registry.npmjs.org
       - run: npm --prefix cli install
       - run: npm --prefix cli run build
-      - run: npm --prefix cli publish --provenance --access public
+      - name: Check npm token
+        id: npm
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          if [ -n "$NPM_TOKEN" ]; then
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+            echo "NPM_TOKEN is not configured; skipping CLI publish."
+          fi
+      - name: Publish CLI
+        if: steps.npm.outputs.configured == 'true'
+        run: npm --prefix cli publish --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
