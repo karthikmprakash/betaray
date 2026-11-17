@@ -1,44 +1,52 @@
-import { failure, jsonBody, sameOrigin } from "@/lib/server/http"
-import { principalForProject, requireUser } from "@/lib/server/session"
-import { mutatePlatform, readPlatform } from "@/lib/server/platform"
+import { z } from "zod"
+import { failure, idSchema, jsonBody, sameOrigin } from "@/lib/server/http"
+import { resolvePrincipal } from "@/lib/server/session"
+import { runOperation } from "@/lib/server/operations"
+import { readPlatform } from "@/lib/server/platform"
 
-async function resolveUser(request: Request, projectId?: string | null) {
-  const auth = request.headers.get("authorization")
-  if (auth?.startsWith("Bearer ") && projectId) {
-    try {
-      return await principalForProject(request, projectId)
-    } catch {
-      // fall through to session auth for a better error in the caller
-    }
-  }
-  return requireUser()
-}
-
+/** The web app's read model. API tokens receive a project-confined view. */
 export async function GET(request: Request) {
   try {
-    const projectId = new URL(request.url).searchParams.get("projectId")
-    const user = await resolveUser(request, projectId)
-    return Response.json(
-      await readPlatform(user, projectId),
-      { headers: { "Cache-Control": "private, no-store" } },
-    )
+    const { user, token } = await resolvePrincipal(request)
+    const projectId =
+      new URL(request.url).searchParams.get("projectId") ||
+      token?.projectId ||
+      null
+    if (token && projectId !== token.projectId)
+      return Response.json(
+        { error: "This API token is scoped to another project." },
+        { status: 403 },
+      )
+    return Response.json(await readPlatform(user, projectId, !!token), {
+      headers: { "Cache-Control": "private, no-store" },
+    })
   } catch (error) {
     return failure(error)
   }
 }
+
+/** The web app's mutations: `{ action, projectId?, organizationId?, input }`. */
 export async function POST(request: Request) {
   try {
     sameOrigin(request)
-    const body = await jsonBody(request)
-    const projectId = (body as { projectId?: string })?.projectId ?? null
-    const auth = (request as Request).headers.get("authorization")
-    // For token-based mutations the action itself declares write intent;
-    // principalForProject enforces scope + project membership.
-    const user = auth?.startsWith("Bearer ") && projectId
-      ? await principalForProject(request as Request, projectId, true)
-      : await requireUser()
+    const body = z
+      .object({
+        action: z.string().max(80),
+        projectId: idSchema.optional(),
+        organizationId: idSchema.optional(),
+        input: z.unknown().default({}),
+      })
+      .parse(await jsonBody(request))
+    const principal = await resolvePrincipal(request)
     return Response.json(
-      { result: await mutatePlatform(user, body) },
+      {
+        result: await runOperation(principal, {
+          operation: body.action,
+          projectId: body.projectId,
+          organizationId: body.organizationId,
+          input: body.input,
+        }),
+      },
       { headers: { "Cache-Control": "no-store" } },
     )
   } catch (error) {

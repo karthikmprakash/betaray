@@ -135,12 +135,13 @@ npm link
 ### Authentication
 
 ```sh
-betaray login --url https://betaray.example.com --token btr_xxx --project proj_123
+betaray login --url https://betaray.example.com --token btr_xxx
 betaray status
 betaray whoami --json
 ```
 
-Create the token in **Integrations & API → API Tokens → Create token** (shown once).
+A project token already names its project, so `--project` is optional. Create
+the token in **Integrations & API → API Tokens → Create token** (shown once).
 
 **Config file & env vars:**
 
@@ -150,50 +151,78 @@ Create the token in **Integrations & API → API Tokens → Create token** (show
 - Inspect: `betaray config get`, `betaray config path`
 - Clear: `betaray logout` or `betaray config reset`
 
-### Commands
+### Generated commands
 
-| Command | Description |
-|---|---|
-| `betaray login` | Save URL, token, project to config |
-| `betaray logout` | Clear saved config |
-| `betaray status / whoami` | Check connectivity & identity |
-| `betaray project list` | List projects |
-| `betaray test list` | List tests (`--project`, `--limit`) |
-| `betaray test get <key>` | Fetch a single test |
-| `betaray test create` | Create test (`--summary`, `--type`, `--priority`, `--labels`, `--folder`) |
-| `betaray execution list` | List executions |
-| `betaray execution create` | Create execution (`--name`, `--tests`, `--env`, `--version`) |
-| `betaray execution import` | Import results (`--execution`, `--file`) |
-| `betaray requirement list/create` | Manage requirements |
-| `betaray draft list/generate/approve` | AI drafts lifecycle |
-| `betaray import --file <path>` | Bulk import tests from JSON |
-| `betaray config get/set/path/reset` | Manage local config |
-
-**Examples:**
+The CLI fetches `GET /api/operations` and creates a command for every operation:
+`test.list` → `betaray test list`, `execution.import` →
+`betaray execution import`. New server features appear without a CLI release.
 
 ```sh
+betaray ops                    # list every operation
+betaray ops --json             # full JSON input schemas
+betaray test list --limit 20
+betaray test list --query login --label smoke --json
+betaray test get --key MAIN-401
 betaray test create --summary "Login flow" --type Manual --priority High
-betaray test create --summary "Checkout" --labels smokes,regression --folder Payments
-betaray execution create --name "Sprint 1" --tests PROJ-1,PROJ-2 --env Staging --version v1.2
-betaray execution import --execution PROJ-5 --file results.json
-# results.json: [{"testKey":"PROJ-1","status":"PASS"},{"testKey":"PROJ-2","status":"FAIL","comment":"..."}]
-betaray draft generate --source "Requirements text..." --type Manual --mode template
-betaray import --file export.json --project proj_123
+betaray test create --summary "Checkout" --steps @steps.json
+betaray execution list
+betaray execution create --name "Sprint 1" --test-keys MAIN-401,MAIN-402 --env Staging
+betaray execution import --key MAIN-410 --results @results.json
+betaray requirement list --json
+betaray requirement coverage
 ```
 
-### JSON mode & AI agents
-
-Every command supports `--json` for machine-readable output:
+`--input` supplies the whole JSON payload; individual flags override its
+fields. `@file` reads a file, and `-` reads stdin:
 
 ```sh
-echo '{"summary":"API test","type":"Generic"}' | betaray test create --stdin
-betaray test create --file payload.json
-cat payload.json | betaray test create --file - --project proj_123
-betaray test list --json | jq '.tests[].key'
+echo '{"summary":"API test","type":"Generic"}' | betaray test create --input -
+betaray requirement create --input @requirement.json
+betaray call requirement.coverage
+```
+
+Interactive-only operations (minting tokens, approving AI drafts, organization
+creation) need a signed-in browser session and are not generated as CLI
+commands. `betaray ops` lists them with access `session`.
+
+### MCP for AI agents
+
+`betaray mcp` starts a stdio MCP server that relays to the instance's
+`/api/mcp` endpoint. Its tools are generated from the same operation registry,
+filtered by the token's project and read/write scope.
+
+```json
+{
+  "mcpServers": {
+    "betaray": {
+      "command": "betaray",
+      "args": ["mcp"],
+      "env": {
+        "BETARAY_URL": "https://betaray.example.com",
+        "BETARAY_TOKEN": "btr_xxx"
+      }
+    }
+  }
+}
+```
+
+Direct HTTP clients can POST JSON-RPC to `/api/mcp` with a bearer token. The
+endpoint is stateless Streamable HTTP (`initialize`, `ping`, `tools/list`,
+`tools/call`). A read token sees read tools; a write token sees project write
+tools; token/member/organization administration is never exposed to tokens.
+
+### JSON mode & automation
+
+Every command supports `--json` for machine-readable output; pipes are JSON by
+default even without the flag:
+
+```sh
+betaray test list --json | jq '.items[].key'
 betaray whoami --json
 ```
 
-Use `--verbose` to log HTTP requests. Global flags `--url`, `--token`, `--project` work on every command.
+Use `--verbose` to log HTTP requests. Global flags `--url`, `--token`,
+`--organization`, `--project` and `--json` work on every command.
 
 ### CI usage (GitHub Actions)
 
@@ -212,11 +241,10 @@ jobs:
         env:
           BETARAY_URL: ${{ secrets.BETARAY_URL }}
           BETARAY_TOKEN: ${{ secrets.BETARAY_TOKEN }}
-          BETARAY_PROJECT: ${{ secrets.BETARAY_PROJECT }}
         run: |
           betaray execution import \
-            --execution ${{ vars.BETARAY_EXECUTION_KEY }} \
-            --file results.json
+            --key ${{ vars.BETARAY_EXECUTION_KEY }} \
+            --results results.json
 ```
 
 Store `BETARAY_TOKEN` in GitHub → Settings → Secrets (write-scoped token from the Betaray UI).
@@ -234,7 +262,7 @@ curl -H "Authorization: Bearer $BETARAY_TOKEN" \
   "$APP_URL/api/tests?projectId=YOUR_PROJECT_ID"
 ```
 
-> Tokens are per-project. `/api/platform` requires a browser session; use the token endpoints for automation.
+> Tokens are per-project and read/write scoped. `/api/platform` accepts a token and returns a project-confined view; use `/api/operations` or `/api/mcp` for agent workflows.
 
 ### Endpoints
 
@@ -243,8 +271,11 @@ curl -H "Authorization: Bearer $BETARAY_TOKEN" \
 | GET | `/api/tests?projectId=…` | Bearer | List tests |
 | POST | `/api/tests` | Bearer | Create test |
 | POST | `/api/v2/import/execution` | Bearer | Import execution results |
-| GET | `/api/platform?projectId=…` | Session | Read platform state |
-| POST | `/api/platform` | Session | Mutate (`{action, projectId, input}`) |
+| GET | `/api/operations` | None | Operation manifest + JSON Schemas |
+| POST | `/api/operations` | Bearer | Invoke any allowed operation |
+| POST | `/api/mcp` | Bearer | Streamable HTTP MCP endpoint |
+| GET | `/api/platform?projectId=…` | Bearer / Session | Read a project-confined state |
+| POST | `/api/platform` | Bearer / Session | Mutate (`{action, projectId, input}`) |
 | GET | `/api/health` | None | Health check |
 
 ### Examples

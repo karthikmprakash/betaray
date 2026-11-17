@@ -1,20 +1,21 @@
 # Betaray CLI
 
-CLI for [Betaray](https://github.com/...) — automate tests, executions, requirements, drafts and imports from your terminal or AI agents.
+Automate Betaray from a terminal, CI, or an AI agent. Commands are generated
+from the server's operation manifest, so they always match the capabilities of
+the instance you connect to.
 
-## Installation
+## Install
 
 ```bash
-# From npm (once published)
 npm install -g betaray-cli
 # or one-off
 npx betaray-cli --help
 
-# Local development
+# from this repo
 cd cli
 npm install
 npm run build
-npm link        # makes `betaray` available globally
+npm link          # puts `betaray` on PATH
 # or run directly
 npx tsx src/index.ts --help
 node dist/index.js --help
@@ -22,93 +23,110 @@ node dist/index.js --help
 
 Requires Node.js >= 20.
 
-## Quick start
+## Connect
+
+Create a project token in **Integrations & API → Create API token**. A token
+already names its project, so `--project` is optional.
 
 ```bash
-# Authenticate (saves to ~/.betaray/config.json)
-betaray login --url https://betaray.example.com --token btr_xxx --project proj_123
-
-# Verify
+betaray login --url https://betaray.example.com --token btr_xxx
 betaray status
 betaray whoami --json
-
-# Projects
-betaray project list
-betaray project list --json
-
-# Tests
-betaray test list --project proj_123 --limit 20
-betaray test list --json
-betaray test get PROJ-1
-betaray test create --summary "Login flow" --type Manual --priority High
-betaray test create --summary "Checkout" --labels smokes,regression --folder Payments
-
-# Piping / AI agents
-echo '{"summary":"API test","type":"Generic"}' | betaray test create --stdin
-betaray test create --file payload.json
-cat payload.json | betaray test create --file - --project proj_123
-
-# Executions
-betaray execution list
-betaray execution create --name "Sprint 1" --tests PROJ-1,PROJ-2 --env Staging --version v1.2
-betaray execution import --execution PROJ-5 --file results.json
-# results.json: [{"testKey":"PROJ-1","status":"PASS"},{"testKey":"PROJ-2","status":"FAIL","comment":"..."}]
-
-# Requirements
-betaray requirement list --json
-betaray requirement create --summary "As a user I want..." --type Story
-
-# Drafts (AI-generated)
-betaray draft list
-betaray draft generate --source "Requirements text..." --type Manual --mode template
-betaray draft approve --id <draftId> --payload '{"summary":"...","steps":[...],"gherkin":""}'
-
-# Bulk import
-betaray import --file export.json --project proj_123
-# export.json: {"tests":[{"summary":"Test A","type":"Manual"}]}
-
-# Config
-betaray config get
-betaray config get url
-betaray config set project proj_456
-betaray config set format json
-betaray config path
-betaray config reset
-betaray logout
 ```
 
-## Global flags
+Config is stored at `~/.betaray/config.json` (mode 600), or
+`$XDG_CONFIG_HOME/betaray/config.json`. Override the path with
+`BETARAY_CONFIG`.
 
-Every command respects these global options and env vars:
+Precedence: **CLI flag → environment → config file**.
 
-| Flag | Env var | Description |
-|------|---------|-------------|
-| `--url <url>` | `BETARAY_URL` | Base URL |
-| `--token <token>` | `BETARAY_TOKEN` | Bearer token |
-| `--project <id>` | `BETARAY_PROJECT` | Default project ID |
-| `--json` | — | JSON output (for agents/piping) |
+| Flag | Env var | Purpose |
+|---|---|---|
+| `--url <url>` | `BETARAY_URL` | Betaray origin |
+| `--token <token>` | `BETARAY_TOKEN` | Project API token |
+| `--project <id>` | `BETARAY_PROJECT` | Only needed with a session-style setup |
+| `--organization <id>` | — | Organization-level operations |
+| `--json` | — | Compact JSON, including errors |
 | `--verbose` | — | Log HTTP requests |
 
-Precedence: CLI flag > env var > config file (`~/.betaray/config.json`).
+## Generated commands
 
-- `BETARAY_CONFIG` overrides the config file path.
-- `XDG_CONFIG_HOME` is respected: `$XDG_CONFIG_HOME/betaray/config.json`.
+The CLI fetches `GET /api/operations` and creates one command per operation:
+`test.list` → `betaray test list`, `execution.import` →
+`betaray execution import`. Every operation's input schema becomes flags.
 
-## API
+```bash
+betaray ops                     # list every operation
+betaray ops --json              # full input schemas
+betaray test list --limit 20
+betaray test list --query login --label smoke --json
+betaray test get --key MAIN-401
+betaray test create --summary "Login flow" --type Manual --priority High
+betaray test create --summary "Checkout" --steps @steps.json
+betaray execution list
+betaray execution create --name "Nightly" --test-keys MAIN-401,MAIN-402 --env Staging
+betaray execution import --key MAIN-410 --results @results.json
+betaray requirement list --json
+betaray requirement coverage
+```
 
-The CLI talks to your Betaray instance over HTTP. It normalizes the base URL and sends `Authorization: Bearer <token>`.
+`--input` supplies the whole JSON payload; individual flags override its
+fields. `@file` reads a file, and `-` reads stdin:
 
-- `GET /api/tests?projectId=` — list tests
-- `POST /api/tests` — create test
-- `GET /api/platform?projectId=` — list executions/requirements/drafts/projects
-- `POST /api/platform` with `{action, projectId, input}` — mutate (test.import, execution.create, etc.)
-- `POST /api/v2/import/execution` — import execution results
-- Tokens are created in the Betaray UI per-project (`token.create`); use a `write` scope for mutations.
+```bash
+echo '{"summary":"API test","type":"Generic"}' \
+  | betaray test create --input -
+betaray requirement create --input @requirement.json
+```
+
+Use `betaray call <operation> '<json>'` for anything not worth a flag:
+
+```bash
+betaray call requirement.coverage
+```
+
+Interactive-only operations (creating tokens, approving AI drafts, organization
+creation) require a signed-in browser session and are not generated as CLI
+commands. `betaray ops` shows them with access `session`.
+
+## MCP for agents
+
+`betaray mcp` starts a stdio MCP server that relays to the instance's
+`/api/mcp` endpoint. The tool list is generated from the same operation
+registry; it is filtered by the token's project and read/write scope.
+
+```json
+{
+  "mcpServers": {
+    "betaray": {
+      "command": "betaray",
+      "args": ["mcp"],
+      "env": {
+        "BETARAY_URL": "https://betaray.example.com",
+        "BETARAY_TOKEN": "btr_xxx"
+      }
+    }
+  }
+}
+```
+
+For a direct HTTP MCP client, POST JSON-RPC to:
+
+```text
+POST https://betaray.example.com/api/mcp
+Authorization: Bearer btr_xxx
+Content-Type: application/json
+```
+
+The endpoint is stateless Streamable HTTP. Supported methods include
+`initialize`, `ping`, `tools/list` and `tools/call`. A read token receives only
+read tools; a write token receives project write tools. Token, member and
+organization-administration tools are never exposed to API tokens.
 
 ## Exit codes
 
 - `0` success
-- `1` error (auth, validation, network, etc.)
+- `1` authentication, validation, network or command error
 
 ## Development
 
@@ -118,3 +136,6 @@ npm install
 npm run build
 npx tsx src/index.ts --help
 ```
+
+The command list is cached in `manifest.json` beside the config for five
+minutes. Use `betaray ops` to refresh it, or delete the cache to force a fetch.

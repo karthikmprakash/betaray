@@ -73,6 +73,7 @@ Keep `JIRA_TOKEN_KEY` stable — rotating it makes stored Jira tokens unreadable
 - Draft editing with requirement linking, template/AI scaffolds, human review and single-use approval
 - Exploratory charters with timers, observations → defects
 - Project-scoped API tokens (read/write, expiry, revocation, hashed storage)
+- One operation registry behind the web API, HTTP API, MCP tools and generated CLI commands
 - Jira Cloud OAuth per project, `search/jql` import, preserved test links, optional webhooks
 - Audit log with search/export (application log, not certified immutable storage)
 
@@ -85,8 +86,14 @@ Create a token in **Integrations & API** (shown once, store it in your CI secret
 - `GET /api/tests?projectId=…` — list tests
 - `POST /api/tests` — create a test (`projectId`, `summary`, …)
 - `POST /api/v2/import/execution` — atomically update runs (`projectId`, `testExecutionKey`, `tests: [{ testKey, status, comment? }]`)
+- `GET /api/operations` — public operation manifest with JSON Schema inputs
+- `POST /api/operations` — invoke any operation the token may use (`operation`, `input`, optional `projectId`/`organizationId`)
+- `POST /api/mcp` — stateless Streamable HTTP MCP endpoint
 
-Authenticate with `Authorization: Bearer <token>`. The interactive `/api/platform` API requires a browser session.
+Authenticate with `Authorization: Bearer <token>`. A token is confined to its
+project and read/write scope; organization and token administration are
+session-only. The interactive `/api/platform` API also accepts tokens, but only
+returns a project-confined view.
 
 Example:
 
@@ -96,6 +103,27 @@ curl -X POST "$APP_URL/api/v2/import/execution" \
   -H "Content-Type: application/json" \
   -d '{"projectId":"...","testExecutionKey":"BET-1","tests":[{"testKey":"BET-T1","status":"PASS"}]}'
 ```
+
+## Agents: one registry, three surfaces
+
+Every capability is declared once under `src/lib/server/operations/` with a
+name, summary, Zod input schema and access level. The web app, HTTP API, MCP
+tools and CLI all derive from that declaration. Adding an operation adds it to
+all surfaces; there is no second command list to maintain.
+
+```sh
+# Generated CLI, using the operation manifest from your instance
+npx betaray-cli login --url "$APP_URL" --token "$BETARAY_TOKEN"
+npx betaray-cli ops
+npx betaray-cli test list --limit 20 --json
+
+# stdio MCP server (tools are generated from the same registry)
+npx betaray-cli mcp
+```
+
+MCP clients can also call `POST /api/mcp` directly with a token. Read tokens
+see read tools; write tokens see project write tools; token/member/organization
+administration is never exposed to API tokens. See [`cli/README.md`](cli/README.md).
 
 ## Verification
 

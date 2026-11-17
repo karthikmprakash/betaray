@@ -46,8 +46,9 @@ const toc: TocItem[] = [
     children: [
       { id: "cli-install", label: "Install" },
       { id: "cli-auth", label: "Authentication" },
-      { id: "cli-commands", label: "Commands" },
-      { id: "cli-json", label: "JSON & AI agents" },
+      { id: "cli-commands", label: "Generated commands" },
+      { id: "cli-json", label: "JSON & automation" },
+      { id: "cli-mcp", label: "MCP for agents" },
       { id: "cli-ci", label: "CI usage" },
     ],
   },
@@ -441,7 +442,7 @@ node dist/index.js --help`}
             />
 
             <SectionHeading id="cli-auth" level={3}>Authentication</SectionHeading>
-            <CodeBlock lang="bash" code={`betaray login --url https://betaray.example.com --token btr_xxx --project proj_123
+            <CodeBlock lang="bash" code={`betaray login --url https://betaray.example.com --token btr_xxx
 
 # Verify
 betaray status
@@ -458,7 +459,13 @@ betaray whoami --json`} />
               </ul>
             </div>
 
-            <SectionHeading id="cli-commands" level={3}>Commands</SectionHeading>
+            <SectionHeading id="cli-commands" level={3}>Generated commands</SectionHeading>
+            <p className="text-[14px] leading-[1.65] text-[#677676]">
+              The CLI fetches <InlineCode>GET /api/operations</InlineCode> and creates a command for
+              every operation: <InlineCode>test.list</InlineCode> → <InlineCode>betaray test list</InlineCode>,
+              <InlineCode>execution.import</InlineCode> → <InlineCode>betaray execution import</InlineCode>.
+              New server features appear without a CLI release.
+            </p>
             <div className="overflow-x-auto rounded-[7px] border border-[#D8E0DB]">
               <table className="w-full text-left text-[13px]">
                 <thead>
@@ -469,19 +476,17 @@ betaray whoami --json`} />
                 </thead>
                 <tbody className="divide-y divide-[#E6EEEA]">
                   {[
-                    ["betaray login", "Save URL, token, project to config"],
-                    ["betaray logout", "Clear saved config"],
-                    ["betaray status / whoami", "Check connectivity & identity"],
-                    ["betaray project list", "List projects"],
-                    ["betaray test list", "List tests (--project, --limit)"],
-                    ["betaray test get <key>", "Fetch a single test"],
-                    ["betaray test create", "Create test (--summary, --type, --priority, --labels, --folder)"],
-                    ["betaray execution list", "List executions"],
-                    ["betaray execution create", "Create execution (--name, --tests, --env, --version)"],
-                    ["betaray execution import", "Import results (--execution, --file)"],
-                    ["betaray requirement list/create", "Manage requirements"],
-                    ["betaray draft list/generate/approve", "AI drafts lifecycle"],
-                    ["betaray import --file <path>", "Bulk import tests from JSON"],
+                    ["betaray ops", "List every operation and its input schema"],
+                    ["betaray login", "Save URL + token and verify the project"],
+                    ["betaray status / whoami", "Check connectivity and identity"],
+                    ["betaray test list", "List/search tests (--query, --label, --limit)"],
+                    ["betaray test get --key MAIN-401", "Fetch one test by key"],
+                    ["betaray test create", "Create a test (--summary, --steps, --labels, --folder)"],
+                    ["betaray execution create", "Create an execution (--name, --test-keys, --env)"],
+                    ["betaray execution import", "Import results (--key, --results)"],
+                    ["betaray requirement list/coverage", "Read requirements and coverage"],
+                    ["betaray call <operation>", "Invoke any operation with raw JSON"],
+                    ["betaray mcp", "Run the stdio MCP server for agents"],
                     ["betaray config get/set/path/reset", "Manage local config"],
                   ].map(([cmd, desc]) => (
                     <tr key={cmd} className="bg-white">
@@ -492,33 +497,60 @@ betaray whoami --json`} />
                 </tbody>
               </table>
             </div>
+            <p className="text-[13px] leading-[1.6] text-[#677676]">
+              Interactive-only operations (minting tokens, approving AI drafts, organization
+              creation) require a signed-in browser session and are not generated as CLI commands.
+            </p>
             <p className="text-[13px] font-medium text-[#35434A]">Examples</p>
             <CodeBlock
               lang="bash"
-              code={`betaray test create --summary "Login flow" --type Manual --priority High
-betaray test create --summary "Checkout" --labels smokes,regression --folder Payments
-betaray execution create --name "Sprint 1" --tests PROJ-1,PROJ-2 --env Staging --version v1.2
-betaray execution import --execution PROJ-5 --file results.json
-# results.json: [{"testKey":"PROJ-1","status":"PASS"},{"testKey":"PROJ-2","status":"FAIL","comment":"..."}]
-betaray draft generate --source "Requirements text..." --type Manual --mode template
-betaray import --file export.json --project proj_123`}
+              code={`betaray ops --json
+betaray test list --query login --label smoke --limit 20
+betaray test create --summary "Login flow" --type Manual --priority High
+betaray test create --summary "Checkout" --steps @steps.json
+betaray execution create --name "Nightly" --test-keys MAIN-401,MAIN-402 --env Staging
+betaray execution import --key MAIN-410 --results @results.json
+betaray requirement coverage
+betaray call requirement.coverage`}
             />
 
-            <SectionHeading id="cli-json" level={3}>JSON mode &amp; piping (AI agents)</SectionHeading>
-            <p className="text-[14px] leading-[1.65] text-[#677676]">Every command supports <InlineCode>--json</InlineCode> for machine-readable output. Combine with <InlineCode>--stdin</InlineCode> and <InlineCode>--file -</InlineCode> for piping:</p>
+            <SectionHeading id="cli-json" level={3}>JSON mode &amp; automation</SectionHeading>
+            <p className="text-[14px] leading-[1.65] text-[#677676]">Every command supports <InlineCode>--json</InlineCode>; pipes are JSON by default. <InlineCode>--input</InlineCode> takes a whole JSON payload, <InlineCode>@file</InlineCode> reads a file, and <InlineCode>-</InlineCode> reads stdin:</p>
             <CodeBlock
               lang="bash"
-              code={`# Pipe JSON stdin
-echo '{"summary":"API test","type":"Generic"}' | betaray test create --stdin
-betaray test create --file payload.json
-cat payload.json | betaray test create --file - --project proj_123
-
-# JSON output for agents
-betaray test list --json | jq '.tests[].key'
-betaray project list --json
+              code={`echo '{"summary":"API test","type":"Generic"}' | betaray test create --input -
+betaray requirement create --input @requirement.json
+betaray test list --json | jq '.items[].key'
 betaray whoami --json`}
             />
-            <Callout>Use <InlineCode>--verbose</InlineCode> to log HTTP requests for debugging. Global flags <InlineCode>--url</InlineCode>, <InlineCode>--token</InlineCode>, <InlineCode>--project</InlineCode> work on every command alongside <InlineCode>--json</InlineCode>.</Callout>
+            <Callout>Global flags <InlineCode>--url</InlineCode>, <InlineCode>--token</InlineCode>, <InlineCode>--organization</InlineCode>, <InlineCode>--project</InlineCode> and <InlineCode>--json</InlineCode> work on every command. Use <InlineCode>--verbose</InlineCode> to log HTTP requests.</Callout>
+
+            <SectionHeading id="cli-mcp" level={3}>MCP for agents</SectionHeading>
+            <p className="text-[14px] leading-[1.65] text-[#677676]">
+              <InlineCode>betaray mcp</InlineCode> starts a stdio MCP server that relays to
+              <InlineCode>/api/mcp</InlineCode>. Tools are generated from the same operation
+              registry and filtered by the token&apos;s project and read/write scope.
+            </p>
+            <CodeBlock
+              lang="json"
+              code={`{
+  "mcpServers": {
+    "betaray": {
+      "command": "betaray",
+      "args": ["mcp"],
+      "env": {
+        "BETARAY_URL": "https://betaray.example.com",
+        "BETARAY_TOKEN": "btr_xxx"
+      }
+    }
+  }
+}`}
+            />
+            <p className="text-[13px] leading-[1.6] text-[#677676]">
+              Direct HTTP clients POST JSON-RPC to <InlineCode>/api/mcp</InlineCode> with a bearer token.
+              Read tokens see read tools; write tokens see project write tools; token, member and
+              organization administration is never exposed to API tokens.
+            </p>
 
             <SectionHeading id="cli-ci" level={3}>CI usage — GitHub Actions</SectionHeading>
             <CodeBlock
@@ -537,11 +569,10 @@ jobs:
         env:
           BETARAY_URL: \${{ secrets.BETARAY_URL }}
           BETARAY_TOKEN: \${{ secrets.BETARAY_TOKEN }}
-          BETARAY_PROJECT: \${{ secrets.BETARAY_PROJECT }}
         run: |
           betaray execution import \\
-            --execution \${{ vars.BETARAY_EXECUTION_KEY }} \\
-            --file results.json`}
+            --key \${{ vars.BETARAY_EXECUTION_KEY }} \\
+            --results results.json`}
             />
             <p className="text-[13px] leading-[1.6] text-[#677676]">Store <InlineCode>BETARAY_TOKEN</InlineCode> in GitHub → Settings → Secrets. Use a <strong>write</strong>-scoped token created in the Betaray UI.</p>
           </section>
@@ -556,7 +587,7 @@ jobs:
             </p>
             <CodeBlock lang="bash" code={`curl -H "Authorization: Bearer $BETARAY_TOKEN" \\
   "$APP_URL/api/tests?projectId=YOUR_PROJECT_ID"`} />
-            <Callout>Tokens are per-project. The interactive <InlineCode>/api/platform</InlineCode> endpoints require a browser session; use the token-based endpoints below for automation.</Callout>
+            <Callout>Tokens are per-project and read/write scoped. <InlineCode>/api/platform</InlineCode> accepts a token and returns a project-confined view; use <InlineCode>/api/operations</InlineCode> or <InlineCode>/api/mcp</InlineCode> for agent workflows.</Callout>
 
             <SectionHeading id="api-endpoints" level={3}>Endpoints</SectionHeading>
             <div className="overflow-x-auto rounded-[7px] border border-[#D8E0DB]">
@@ -574,8 +605,11 @@ jobs:
                     ["GET", "/api/tests?projectId=…", "Bearer", "List tests"],
                     ["POST", "/api/tests", "Bearer", "Create test {projectId, summary, …}"],
                     ["POST", "/api/v2/import/execution", "Bearer", "Import execution results"],
-                    ["GET", "/api/platform?projectId=…", "Session", "Read platform state"],
-                    ["POST", "/api/platform", "Session", "Mutate ({action, projectId, input})"],
+                    ["GET", "/api/operations", "None", "Operation manifest + JSON Schemas"],
+                    ["POST", "/api/operations", "Bearer", "Invoke any allowed operation"],
+                    ["POST", "/api/mcp", "Bearer", "Streamable HTTP MCP endpoint"],
+                    ["GET", "/api/platform?projectId=…", "Bearer / Session", "Read a project-confined state"],
+                    ["POST", "/api/platform", "Bearer / Session", "Mutate ({action, projectId, input})"],
                     ["GET", "/api/health", "None", "Health check"],
                   ].map(([m, p, a, d]) => (
                     <tr key={p} className="bg-white">

@@ -1,65 +1,83 @@
 #!/usr/bin/env node
 import { Command } from "commander";
-import chalk from "chalk";
 import { registerConfigCommands } from "./commands/config.js";
 import { registerAuthCommands } from "./commands/auth.js";
-import { registerProjectCommands } from "./commands/project.js";
-import { registerTestCommands } from "./commands/test.js";
-import { registerExecutionCommands } from "./commands/execution.js";
-import { registerRequirementCommands } from "./commands/requirement.js";
-import { registerDraftCommands } from "./commands/draft.js";
-import { registerImportCommand } from "./commands/import.js";
+import { registerMcpCommand } from "./commands/mcp.js";
+import { registerOperationCommands, registerOperationTools } from "./commands/operations.js";
+import { resolveBaseUrl } from "./config.js";
+import { loadManifest } from "./manifest.js";
 
 const program = new Command();
-
 program
   .name("betaray")
-  .description("Betaray CLI — automate test management from your terminal and AI agents")
-  .version("0.1.0", "-v, --version", "Show version")
+  .description("Betaray CLI — test management for terminals, CI and AI agents")
+  .version("0.2.0", "-V, --cli-version", "Show CLI version")
   .option("--url <url>", "Betaray base URL (overrides config and BETARAY_URL)")
-  .option("--token <token>", "API bearer token (overrides config and BETARAY_TOKEN)")
-  .option("--project <id>", "Project ID (overrides config and BETARAY_PROJECT)")
-  .option("--json", "Output as JSON (for AI agents and piping)")
-  .option("--verbose", "Verbose HTTP logging")
+  .option("--token <token>", "API token (overrides config and BETARAY_TOKEN)")
+  .option("--project <id>", "Project ID; optional with a token, which already names its project")
+  .option("--organization <id>", "Organization ID, for organization-level operations")
+  .option("--json", "Compact JSON output, including errors")
+  .option("--verbose", "Log HTTP requests to stderr")
   .addHelpText("after", `
-Environment variables:
-  BETARAY_URL      Base URL of your Betaray instance
-  BETARAY_TOKEN    API token (bearer)
-  BETARAY_PROJECT  Default project ID
-  BETARAY_CONFIG   Custom config file path
-  XDG_CONFIG_HOME  Base for config directory
+Commands below "mcp" are generated from the server you are connected to
+(GET <url>/api/operations), so they always match its capabilities.
+Run "betaray ops" to list them, or "betaray <group> <verb> --help" for the fields.
+
+Environment: BETARAY_URL, BETARAY_TOKEN, BETARAY_PROJECT, BETARAY_CONFIG
 
 Examples:
-  betaray login --url https://betaray.example.com --token btr_xxx --project proj_123
-  betaray test list --limit 20 --json
-  betaray test create --summary "Login flow" --type Manual --priority High
-  echo '{"summary":"API test"}' | betaray test create --stdin --project proj_123
-  betaray execution create --name "Sprint 1" --tests PROJ-1,PROJ-2 --env Staging
-  betaray execution import --execution PROJ-5 --file results.json
-  betaray import --file export.json --project proj_123
+  betaray login --url https://betaray.example.com --token btr_xxx
+  betaray test list --priority High --limit 20
+  betaray test create --summary "Login flow" --steps @steps.json
+  betaray execution create --name "Nightly" --test-keys MAIN-401,MAIN-402 --env Staging
+  betaray execution import --key MAIN-410 --results @results.json
+  betaray call requirement.coverage
+  betaray mcp        # stdio MCP server for AI agents
 `);
 
 registerConfigCommands(program);
 registerAuthCommands(program);
-registerProjectCommands(program);
-registerTestCommands(program);
-registerExecutionCommands(program);
-registerRequirementCommands(program);
-registerDraftCommands(program);
-registerImportCommand(program);
+registerMcpCommand(program);
 
-// global error handler for unhandled rejections
-process.on("unhandledRejection", (err) => {
-  const msg = err instanceof Error ? err.message : String(err);
-  process.stderr.write(chalk.red(`Error: ${msg}\n`));
-  process.exit(1);
-});
-
-program.parseAsync(process.argv).catch((err) => {
-  const msg = err instanceof Error ? err.message : String(err);
-  // commander already prints help/errors; only handle unexpected
-  if (msg && !msg.includes("commander")) {
-    process.stderr.write(chalk.red(`Error: ${msg}\n`));
+// Commands that work without the server's operation list.
+const LOCAL = new Set(["config", "login", "logout", "mcp", "status", "whoami"]);
+const VALUE_FLAGS = new Set(["--url", "--token", "--project", "--organization"]);
+function firstCommand(argv: string[]) {
+  for (let index = 0; index < argv.length; index++) {
+    if (VALUE_FLAGS.has(argv[index])) index++;
+    else if (!argv[index].startsWith("-")) return argv[index];
   }
+  return undefined;
+}
+function flagValue(argv: string[], flag: string) {
+  const index = argv.indexOf(flag);
+  return index >= 0 ? argv[index + 1] : argv.find((arg) => arg.startsWith(flag + "="))?.slice(flag.length + 1);
+}
+
+async function main() {
+  const argv = process.argv.slice(2);
+  const command = firstCommand(argv);
+  const url = resolveBaseUrl({ url: flagValue(argv, "--url") });
+  if (url && !(command && LOCAL.has(command))) {
+    try {
+      const operations = await loadManifest(url, command === "ops");
+      registerOperationCommands(program, operations);
+      registerOperationTools(program, operations);
+    } catch (error) {
+      // Still show help and local commands; anything else cannot run without the list.
+      if (command && command !== "help") {
+        process.stderr.write(`Error: ${(error as Error).message}\n`);
+        process.exit(1);
+      }
+    }
+  } else if (!url && command && !LOCAL.has(command) && command !== "help") {
+    process.stderr.write("No server configured. Run: betaray login --url <url> --token <token>\n");
+    process.exit(1);
+  }
+  await program.parseAsync(process.argv);
+}
+
+main().catch((error) => {
+  process.stderr.write(`Error: ${error instanceof Error ? error.message : String(error)}\n`);
   process.exit(1);
 });

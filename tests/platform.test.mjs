@@ -1031,3 +1031,122 @@ test("a new invited member can sign up directly into the organization", async ()
   assert.equal(state.organizationId, orgId)
   assert.equal(state.role, "Tester")
 })
+
+test("operations are one registry behind the HTTP API, MCP tools and token confinement", async () => {
+  const anonymous = new Client()
+  const manifest = await anonymous.request("/api/operations")
+  assert.equal(manifest.status, 200)
+  const names = manifest.body.operations.map((operation) => operation.name)
+  for (const name of ["test.create", "test.list", "execution.import", "member.remove"])
+    assert(names.includes(name), name)
+  const create = manifest.body.operations.find((item) => item.name === "test.create")
+  assert.equal(create.inputSchema.type, "object")
+  assert(create.inputSchema.required.includes("summary"))
+
+  const mint = async (scope) =>
+    (await owner.mutate("token.create", { name: `Agent ${scope}`, scope, days: 1 }, projectId))
+      .body.result.token
+  const write = { Authorization: "Bearer " + (await mint("write")) }
+  const read = { Authorization: "Bearer " + (await mint("read")) }
+  const call = (headers, operation, input, extra = {}) =>
+    anonymous.request("/api/operations", "POST", { operation, input, ...extra }, headers)
+
+  // A token implies its project, reads need no write scope, and keys work as references.
+  const created = await call(write, "test.create", { summary: "Created by an agent" })
+  assert.equal(created.status, 200, JSON.stringify(created.body))
+  const key = created.body.result.key
+  const fetched = await call(read, "test.get", { key })
+  assert.equal(fetched.body.result.summary, "Created by an agent")
+  const listed = await call(read, "test.list", { query: "by an agent" })
+  assert(listed.body.result.items.some((item) => item.key === key))
+
+  // Labels are an exact member match and paginate after filtering, not before.
+  const label = `agent-${suffix}`
+  for (const summary of ["Label A", "Label B"]) await call(write, "test.create", { summary, labels: [label] })
+  await call(write, "test.create", { summary: "Label similar", labels: [label + "-extra"] })
+  const firstPage = await call(read, "test.list", { label, limit: 1 })
+  const secondPage = await call(read, "test.list", { label, limit: 1, offset: 1 })
+  assert.equal(firstPage.body.result.total, 2)
+  assert.equal(firstPage.body.result.items.length, 1)
+  assert.equal(secondPage.body.result.total, 2)
+  assert.notEqual(firstPage.body.result.items[0].key, secondPage.body.result.items[0].key)
+  assert.equal((await call(read, "test.list", { label: label + "-extra" })).body.result.total, 1)
+  assert.equal((await call(read, "test.create", { summary: "Denied" })).status, 403)
+  assert.equal((await call(write, "test.list", {}, { projectId: b.projectId })).status, 403)
+
+  // A project token must never reach organization administration or mint credentials,
+  // even though it acts for an administrator.
+  for (const [operation, input, extra] of [
+    ["member.remove", { id: "anyone" }, { organizationId: orgId }],
+    ["invitation.create", { email: "intruder@example.test", role: "Admin" }, { organizationId: orgId }],
+    ["token.create", { name: "Escalated", scope: "write", days: 90 }, {}],
+    ["organization.list", {}, {}],
+  ]) {
+    assert.equal((await call(write, operation, input, extra)).status, 403, operation)
+    const viaPlatform = await anonymous.request(
+      "/api/platform",
+      "POST",
+      { action: operation, input, projectId, ...extra },
+      write,
+    )
+    assert.equal(viaPlatform.status, 403, operation + " via /api/platform")
+  }
+  const tokenView = await anonymous.request("/api/platform", "GET", undefined, read)
+  assert.equal(tokenView.status, 200)
+  assert.equal(tokenView.body.projectId, projectId)
+  assert.deepEqual(tokenView.body.members, [])
+  assert.deepEqual(tokenView.body.tokens, [])
+  assert(!JSON.stringify(tokenView.body).includes("@example.test".replace("@", `-${suffix}@`)) ||
+    !tokenView.body.members.length)
+
+  // Results reported by key, as CI would.
+  const environment = (await owner.state(projectId)).environments.find((item) => !item.archivedAt)
+  const execution = await call(write, "execution.create", {
+    name: "Agent run",
+    testKeys: [key],
+    env: environment.name,
+  })
+  assert.equal(execution.status, 200, JSON.stringify(execution.body))
+  const reported = await call(write, "execution.import", {
+    key: execution.body.result.key,
+    results: [{ testKey: key, status: "PASS" }],
+  })
+  assert.equal(reported.body.result.status, "Done")
+  assert.equal(
+    (await call(write, "execution.import", {
+      key: execution.body.result.key,
+      results: [{ testKey: "NOPE-1", status: "PASS" }],
+    })).status,
+    400,
+  )
+
+  // MCP: tools are the operations the token may use.
+  const rpc = (headers, method, params, id = 1) =>
+    anonymous.request("/api/mcp", "POST", { jsonrpc: "2.0", id, method, params }, headers)
+  assert.equal((await rpc({}, "tools/list")).status, 401)
+  const initialized = await rpc(read, "initialize", { protocolVersion: "2025-06-18" })
+  assert.equal(initialized.body.result.serverInfo.name, "betaray")
+  assert.equal(initialized.body.result.protocolVersion, "2025-06-18")
+  const readTools = (await rpc(read, "tools/list")).body.result.tools.map((tool) => tool.name)
+  const writeTools = (await rpc(write, "tools/list")).body.result.tools.map((tool) => tool.name)
+  assert(readTools.includes("test_list") && !readTools.includes("test_create"))
+  assert(writeTools.includes("test_create"))
+  for (const forbidden of ["token_create", "member_remove", "draft_approve"])
+    assert(!writeTools.includes(forbidden), forbidden)
+  const toolResult = await rpc(read, "tools/call", { name: "test_get", arguments: { key } })
+  assert.equal(JSON.parse(toolResult.body.result.content[0].text).key, key)
+  const toolError = await rpc(read, "tools/call", { name: "test_create", arguments: { summary: "x" } })
+  assert.equal(toolError.body.result.isError, true)
+  const invalid = await rpc(write, "tools/call", { name: "test_create", arguments: {} })
+  assert.match(invalid.body.result.content[0].text, /summary/)
+  assert.equal((await rpc(read, "nope/method")).body.error.code, -32601)
+  const notification = await fetch(base + "/api/mcp", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", ...read },
+    body: JSON.stringify({ jsonrpc: "2.0", method: "notifications/initialized" }),
+  })
+  assert.equal(notification.status, 202)
+
+  const coverage = await call(read, "requirement.coverage", {})
+  assert.equal(typeof coverage.body.result.requirements, "number")
+})

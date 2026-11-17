@@ -109,6 +109,51 @@ export async function throttle(key: string) {
   )
 }
 
+/** Authenticate a bearer API token. The token's owner must still have access to its project. */
+async function tokenPrincipal(authorization: string) {
+  assert(authorization.startsWith("Bearer "), 401, "Use a valid bearer token.")
+  const token = await prisma.apiKey.findUnique({
+    where: { token: hashToken(authorization.slice(7).trim()) },
+  })
+  assert(
+    token &&
+      !token.revokedAt &&
+      token.expiresAt &&
+      token.expiresAt > new Date() &&
+      token.projectId &&
+      token.userId,
+    401,
+    "The API token is invalid, expired, revoked, or scoped to another project.",
+  )
+  const user = await prisma.user.findUnique({ where: { id: token.userId } })
+  assert(user, 401, "The token owner is no longer available.")
+  await prisma.apiKey.update({
+    where: { id: token.id },
+    data: { lastUsedAt: new Date() },
+  })
+  return {
+    user,
+    token: {
+      id: token.id,
+      projectId: token.projectId,
+      scope: token.scope === "write" ? ("write" as const) : ("read" as const),
+    },
+  }
+}
+
+/**
+ * Who is calling: a signed-in person (session cookie) or an API token.
+ * Token callers are confined to the token's project and scope by `runOperation`.
+ */
+export async function resolvePrincipal(
+  request: Request,
+): Promise<import("./operations/core").Principal> {
+  const authorization = request.headers.get("authorization")
+  return authorization
+    ? tokenPrincipal(authorization)
+    : { user: await requireUser() }
+}
+
 export async function principalForProject(
   request: Request,
   projectId: string,
@@ -116,29 +161,15 @@ export async function principalForProject(
 ) {
   const authorization = request.headers.get("authorization")
   if (!authorization) return requireUser()
-  assert(authorization.startsWith("Bearer "), 401, "Use a valid bearer token.")
-  const token = await prisma.apiKey.findUnique({
-    where: { token: hashToken(authorization.slice(7)) },
-  })
+  const { user, token } = await tokenPrincipal(authorization)
   assert(
-    token &&
-      !token.revokedAt &&
-      token.expiresAt &&
-      token.expiresAt > new Date() &&
-      token.projectId === projectId &&
-      token.userId,
+    token.projectId === projectId,
     401,
     "The API token is invalid, expired, revoked, or scoped to another project.",
   )
   if (write)
     assert(token.scope === "write", 403, "This API token is read-only.")
-  const user = await prisma.user.findUnique({ where: { id: token.userId } })
-  assert(user, 401, "The token owner is no longer available.")
   const { projectAccess } = await import("./permissions")
   await projectAccess(user.id, projectId, write)
-  await prisma.apiKey.update({
-    where: { id: token.id },
-    data: { lastUsedAt: new Date() },
-  })
   return user
 }
